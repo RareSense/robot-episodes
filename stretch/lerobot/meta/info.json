@@ -1,0 +1,253 @@
+{
+    "codebase_version": "v3.0",
+    "robot_type": "hello_robot_stretch_3",
+    "total_episodes": 1,
+    "total_frames": 11859,
+    "total_tasks": 1,
+    "chunks_size": 1000,
+    "data_files_size_in_mb": 100,
+    "video_files_size_in_mb": 200,
+    "fps": 10,
+    "splits": {
+        "train": "0:1"
+    },
+    "data_path": "data/chunk-{chunk_index:03d}/file-{file_index:03d}.parquet",
+    "video_path": "videos/{video_key}/chunk-{chunk_index:03d}/file-{file_index:03d}.mp4",
+    "features": {
+        "observation.state": {
+            "dtype": "float32",
+            "shape": [
+                20
+            ],
+            "names": [
+                "joint_right_wheel",
+                "joint_left_wheel",
+                "joint_lift",
+                "joint_head_pan",
+                "joint_head_tilt",
+                "joint_arm_l3",
+                "joint_head_nav_cam",
+                "joint_arm_l2",
+                "joint_arm_l1",
+                "joint_arm_l0",
+                "joint_wrist_yaw",
+                "joint_wrist_pitch",
+                "joint_wrist_roll",
+                "joint_gripper_slide",
+                "joint_gripper_finger_left_open",
+                "joint_gripper_finger_right_open",
+                "rubber_left_x:0",
+                "rubber_left_x:1",
+                "rubber_right_x:0",
+                "rubber_right_x:1"
+            ]
+        },
+        "observation.velocity": {
+            "dtype": "float32",
+            "shape": [
+                20
+            ],
+            "names": [
+                "joint_right_wheel",
+                "joint_left_wheel",
+                "joint_lift",
+                "joint_head_pan",
+                "joint_head_tilt",
+                "joint_arm_l3",
+                "joint_head_nav_cam",
+                "joint_arm_l2",
+                "joint_arm_l1",
+                "joint_arm_l0",
+                "joint_wrist_yaw",
+                "joint_wrist_pitch",
+                "joint_wrist_roll",
+                "joint_gripper_slide",
+                "joint_gripper_finger_left_open",
+                "joint_gripper_finger_right_open",
+                "rubber_left_x:0",
+                "rubber_left_x:1",
+                "rubber_right_x:0",
+                "rubber_right_x:1"
+            ]
+        },
+        "observation.base_pose": {
+            "dtype": "float32",
+            "shape": [
+                7
+            ],
+            "names": [
+                "x",
+                "y",
+                "z",
+                "qx",
+                "qy",
+                "qz",
+                "qw"
+            ]
+        },
+        "observation.oven_joints": {
+            "dtype": "float32",
+            "shape": [
+                5
+            ],
+            "names": [
+                "door",
+                "knob0",
+                "knob1",
+                "knob2",
+                "knob3"
+            ]
+        },
+        "observation.environment_state": {
+            "dtype": "float32",
+            "shape": [
+                14
+            ],
+            "names": [
+                "plate_x",
+                "plate_y",
+                "plate_z",
+                "plate_qx",
+                "plate_qy",
+                "plate_qz",
+                "plate_qw",
+                "pizza_x",
+                "pizza_y",
+                "pizza_z",
+                "pizza_qx",
+                "pizza_qy",
+                "pizza_qz",
+                "pizza_qw"
+            ]
+        },
+        "action": {
+            "dtype": "float32",
+            "shape": [
+                40
+            ],
+            "names": [
+                "pos_target_joint_right_wheel",
+                "pos_target_joint_left_wheel",
+                "pos_target_joint_lift",
+                "pos_target_joint_head_pan",
+                "pos_target_joint_head_tilt",
+                "pos_target_joint_arm_l3",
+                "pos_target_joint_head_nav_cam",
+                "pos_target_joint_arm_l2",
+                "pos_target_joint_arm_l1",
+                "pos_target_joint_arm_l0",
+                "pos_target_joint_wrist_yaw",
+                "pos_target_joint_wrist_pitch",
+                "pos_target_joint_wrist_roll",
+                "pos_target_joint_gripper_slide",
+                "pos_target_joint_gripper_finger_left_open",
+                "pos_target_joint_gripper_finger_right_open",
+                "pos_target_rubber_left_x:0",
+                "pos_target_rubber_left_x:1",
+                "pos_target_rubber_right_x:0",
+                "pos_target_rubber_right_x:1",
+                "vel_target_joint_right_wheel",
+                "vel_target_joint_left_wheel",
+                "vel_target_joint_lift",
+                "vel_target_joint_head_pan",
+                "vel_target_joint_head_tilt",
+                "vel_target_joint_arm_l3",
+                "vel_target_joint_head_nav_cam",
+                "vel_target_joint_arm_l2",
+                "vel_target_joint_arm_l1",
+                "vel_target_joint_arm_l0",
+                "vel_target_joint_wrist_yaw",
+                "vel_target_joint_wrist_pitch",
+                "vel_target_joint_wrist_roll",
+                "vel_target_joint_gripper_slide",
+                "vel_target_joint_gripper_finger_left_open",
+                "vel_target_joint_gripper_finger_right_open",
+                "vel_target_rubber_left_x:0",
+                "vel_target_rubber_left_x:1",
+                "vel_target_rubber_right_x:0",
+                "vel_target_rubber_right_x:1"
+            ]
+        },
+        "observation.images.wrist": {
+            "dtype": "video",
+            "shape": [
+                480,
+                640,
+                3
+            ],
+            "names": [
+                "height",
+                "width",
+                "channels"
+            ],
+            "info": {
+                "video.height": 480,
+                "video.width": 640,
+                "video.codec": "av1",
+                "video.pix_fmt": "yuv420p",
+                "video.is_depth_map": false,
+                "video.fps": 10,
+                "video.channels": 3,
+                "has_audio": false
+            }
+        },
+        "observation.images.fixed": {
+            "dtype": "video",
+            "shape": [
+                480,
+                640,
+                3
+            ],
+            "names": [
+                "height",
+                "width",
+                "channels"
+            ],
+            "info": {
+                "video.height": 480,
+                "video.width": 640,
+                "video.codec": "av1",
+                "video.pix_fmt": "yuv420p",
+                "video.is_depth_map": false,
+                "video.fps": 10,
+                "video.channels": 3,
+                "has_audio": false
+            }
+        },
+        "timestamp": {
+            "dtype": "float32",
+            "shape": [
+                1
+            ],
+            "names": null
+        },
+        "frame_index": {
+            "dtype": "int64",
+            "shape": [
+                1
+            ],
+            "names": null
+        },
+        "episode_index": {
+            "dtype": "int64",
+            "shape": [
+                1
+            ],
+            "names": null
+        },
+        "index": {
+            "dtype": "int64",
+            "shape": [
+                1
+            ],
+            "names": null
+        },
+        "task_index": {
+            "dtype": "int64",
+            "shape": [
+                1
+            ],
+            "names": null
+        }
+    }
+}

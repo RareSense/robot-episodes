@@ -51,7 +51,7 @@ NumPy `.npz`, one sample every 1/30 of a sim second.
 
 `code/pz_task.py` is one revision newer than this take: it also turns the head toward the arm and has a firmer door step.
 
-`lerobot/` holds the same take as a LeRobot v3.0 dataset with camera video.
+`lerobot/` holds the same take as a LeRobot v3.0 dataset at 10 fps: state, velocity, base pose, oven joints, plate and pizza poses, and commanded targets as the action. The wrist and fixed camera videos are 420 MB, so the complete dataset, with videos, is on Drive: [LeRobot dataset](https://drive.google.com/drive/folders/1GRNoe8o7cBJNFRZHqCCtMN1NETl9DcR1). Copy its `videos/` folder into `lerobot/` to use the cameras.
 
 ---
 
