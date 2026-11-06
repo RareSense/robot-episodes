@@ -8,7 +8,7 @@ Two robots. Two household tasks. Videos, recordings, datasets and code.
 
 <!-- STRETCH_FILL: Stretch hero image, assets/stretch_hero.jpg, linked to its Drive video -->
 
-<a href="DRIVE_LINK_2_G1_tea_full_film.mp4"><img src="assets/g1_hero.jpg" width="880" alt="G1 tea film"></a>
+<a href="https://drive.google.com/file/d/1spM1i6wIExMvC1jkMVOc9FQAzvbNt_F0/view"><img src="assets/g1_hero.jpg" width="880" alt="G1 tea film"></a>
 
 **[Stretch pizza](#stretch-pizza)** · **[G1 tea](#g1-tea)** · **[All videos](videos/README.md)** · **[Load the data](#load-the-data)**
 
@@ -41,14 +41,14 @@ A Unitree G1 with three-finger hands makes tea, following a person's head-camera
 
 <table>
 <tr>
-<td align="center"><a href="DRIVE_LINK_1_mug_film.mp4"><img src="videos/previews/g1_mug.gif" width="270" alt="Mug"></a><br><b>Mug from the rack</b></td>
-<td align="center"><a href="DRIVE_LINK_2_teabag_film.mp4"><img src="videos/previews/g1_teabag.gif" width="270" alt="Tea bag"></a><br><b>Tea bag into the mug</b></td>
-<td align="center"><a href="DRIVE_LINK_3_pour_film.mp4"><img src="videos/previews/g1_pour.gif" width="270" alt="Kettle pour"></a><br><b>Kettle pour</b></td>
+<td align="center"><a href="https://drive.google.com/file/d/1EK6eBAKdnizzRsaeaNjBeeCeCXAq2UNg/view"><img src="videos/previews/g1_mug.gif" width="270" alt="Mug"></a><br><b>Mug from the rack</b></td>
+<td align="center"><a href="https://drive.google.com/file/d/1fDY5jhz7nwqIqgRuiV02NdJ5YdjpjeJY/view"><img src="videos/previews/g1_teabag.gif" width="270" alt="Tea bag"></a><br><b>Tea bag into the mug</b></td>
+<td align="center"><a href="https://drive.google.com/file/d/1HeH4_iTY3QBOXg1_lQlmVBzw7K9BOG24/view"><img src="videos/previews/g1_pour.gif" width="270" alt="Kettle pour"></a><br><b>Kettle pour</b></td>
 </tr>
 <tr>
-<td align="center"><a href="DRIVE_LINK_5_stir_closeup.mp4"><img src="videos/previews/g1_stir.gif" width="270" alt="Stir"></a><br><b>Stir</b></td>
-<td align="center"><a href="DRIVE_LINK_6_cup_film.mp4"><img src="videos/previews/g1_cup.gif" width="270" alt="Cup"></a><br><b>Take the cup and walk away</b></td>
-<td align="center"><a href="DRIVE_LINK_2_G1_tea_full_film.mp4"><img src="assets/g1_contact_sheet.jpg" width="270" alt="Full film"></a><br><b>Full film</b></td>
+<td align="center"><a href="https://drive.google.com/file/d/1kpsRvo1WS-OJn2qgDVDvs2LpM2GksjER/view"><img src="videos/previews/g1_stir.gif" width="270" alt="Stir"></a><br><b>Stir</b></td>
+<td align="center"><a href="https://drive.google.com/file/d/1UvGd_2ws0di6PxO1iZwcGZAzw8Hu1ksg/view"><img src="videos/previews/g1_cup.gif" width="270" alt="Cup"></a><br><b>Take the cup and walk away</b></td>
+<td align="center"><a href="https://drive.google.com/file/d/1spM1i6wIExMvC1jkMVOc9FQAzvbNt_F0/view"><img src="assets/g1_contact_sheet.jpg" width="270" alt="Full film"></a><br><b>Full film</b></td>
 </tr>
 </table>
 
