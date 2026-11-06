@@ -123,3 +123,23 @@ A video is a replay of recorded poses, rendered afterwards. It is not a live phy
 - The twin differs from the real room in places, including the tray layout and the jar shape.
 - Sequence and timing are slower than a person.
 - Isaac Sim 6.2.0-rc.14 is a release candidate, and results may not carry to a final release.
+
+## Final chain, 6 Nov 2026
+
+The full episode is joined from five saved runs: `final08`, `f11`, `f13`, `f17`, `f20`. Each restarts from the saved state of the run before it. Only the last join, at t 465.9, falls inside a step, with the spoon held; `f20` commands the recorded squeeze before physics resumes. It is not one single full run, and `full_episode_passed` stays false in the result files.
+
+Results: mug, tea bag, kettle (102.3 ml, 1.1 ml spilled), powder (35 grains counted in the mug; grains in the water are not visible in frames), stir (2.4 full turns at the bowl, mug moved 0.0 mm), spoon on the counter, cup carried to the exit (102.3 ml, 0.0 ml lost in the carry). Task checks pass for these steps, reading the stir task across `f17` and `f20`: `f17` holds the stirring and `f20` holds the put-down, and `f20`'s stir step PASS covers only the put-down. In the cup step, strict fall, penetration, moved and spill pass; strict torque (2.96) and slip (18.26 mm) fail. Gates were not reported for every run.
+
+Live corrections, AI-operated, during `f17` and `f20`:
+
+- The hand was rolled to the handle as found, and the fingers were tipped 7 then 10 degrees about the pinch line, after the wrist pressed the tray with 62 N.
+- That correction dragged the tray 16 mm. The spoon moved with it and resettled; its pose was re-read and the approach repeated.
+- At the put-down the little finger pressed the tray with 36 N. The hand was lifted back, the spoon levelled, and a new spot chosen. In `f17` that spot was past the counter edge and the spoon fell. `f20` restarts before that release and uses y 2.09.
+- First lift slowed from 1.0 s to 2.5 s.
+
+Collision audit of the render meshes at recorded poses, sampled at 5 Hz:
+
+- The right elbow, hand and wrist pass into the robot's own torso and pelvis by up to 38.5 mm, faintly visible in a frame. Self-collision was not acting.
+- The right knee and hip pass through a cabinet divider by up to 51 mm, below the counter and not seen in frames.
+- The palm and little finger overlap the render kettle by up to 9.8 mm; its physics shape is simpler than its render mesh (colliders 1.1 to 1.7 mm).
+- Soles sit 2.36 mm into the floor at all times, which is a constant offset.

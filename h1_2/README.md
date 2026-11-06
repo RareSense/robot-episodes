@@ -1,10 +1,10 @@
 # Unitree H1-2 tea episode in Isaac Sim (PhysX)
 
-One continuous simulated episode in which a Unitree H1-2 humanoid with five-finger hands is scripted to walk into a tea corner and make a cup of tea, with live
+One simulated episode, joined from five saved runs, in which a Unitree H1-2 humanoid with five-finger hands is scripted to walk into a tea corner and make a cup of tea, with live
 particle water and contact-only grasps. This repo holds the code, the data format and the plain list of what was added or assumed, so that
 robotics engineers can judge whether the data point is sound.
 
-**State of this folder: results here come from the saved runs listed in [data/README.md](data/README.md). Final results will be added.**
+**Results come from the saved runs listed in [data/README.md](data/README.md). Watch the full episode: [h12_tea_full_episode.mp4](https://drive.google.com/file/d/1s6GQjwAkeg5sQVbLCLtaNnbzqOu75sJI/view).**
 Read [DISCLOSURES.md](DISCLOSURES.md) before you read any number here.
 
 ## The episode

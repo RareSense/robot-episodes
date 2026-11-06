@@ -1,0 +1,121 @@
+{
+ "name": "f20",
+ "overall": "FAIL",
+ "steps_checked": 48167,
+ "sim_time": 546.1783333328528,
+ "gates": {
+  "fall": {
+   "status": "PASS",
+   "value": 0.8864191770553589,
+   "unit": "m min pelvis z",
+   "limit": ">= 0.6; pelvis tilt <= 55 degrees",
+   "samples": 48167,
+   "note": "",
+   "at_t": 515.0683333328811,
+   "max_tilt_deg": 5.106152368777584
+  },
+  "torque": {
+   "status": "FAIL",
+   "value": 2.9562828063964846,
+   "unit": "worst |tau|/limit",
+   "limit": "<= 1.0",
+   "samples": 48167,
+   "note": "99 steps over, longest run 2, motor estimate 1.000 (left_hip_pitch_joint)",
+   "joint": "left_ankle_pitch_joint",
+   "nm": 177.37696838378906,
+   "at_t": 539.1899999995259,
+   "steps_over": 99,
+   "longest_run_steps": 2,
+   "motor_estimate_ratio": 1.0,
+   "motor_estimate_joint": "left_hip_pitch_joint",
+   "limit_scale": 1.0,
+   "joints_without_urdf_limit": [],
+   "max_force_mismatch": [],
+   "actuation_force_worst_nm": 4.149940013885498,
+   "top5": [
+    [
+     "left_ankle_pitch_joint",
+     177.377,
+     60.0
+    ],
+    [
+     "left_ankle_roll_joint",
+     106.75,
+     40.0
+    ],
+    [
+     "right_ankle_pitch_joint",
+     140.772,
+     60.0
+    ],
+    [
+     "right_ankle_roll_joint",
+     82.488,
+     40.0
+    ],
+    [
+     "R_thumb_proximal_pitch_joint",
+     1.19,
+     1.0
+    ]
+   ]
+  },
+  "penetration": {
+   "status": "PASS",
+   "value": 0.33360719680786133,
+   "unit": "mm deepest",
+   "limit": "<= 2.0",
+   "samples": 56787226,
+   "note": "",
+   "at_t": 540.4099999995248,
+   "pair": [
+    "/World/h1_2/Geometry/pelvis/right_hip_yaw_link/right_hip_pitch_link/right_hip_roll_link/right_knee_link/right_ankle_pitch_link/right_ankle_roll_link",
+    "/World/Objects/object_0000/visual"
+   ],
+   "sensors": 69,
+   "reads": 48167
+  },
+  "slip": {
+   "status": "FAIL",
+   "value": 18.259884549731,
+   "unit": "mm in hand frame",
+   "limit": "<= 5.0",
+   "samples": 21798,
+   "note": "",
+   "per_object": {
+    "object_0316": 18.26
+   }
+  },
+  "moved": {
+   "status": "PASS",
+   "value": 0.006478013119313014,
+   "unit": "mm worst object",
+   "limit": "< 5.0",
+   "samples": 360983,
+   "note": "",
+   "worst": "object_0316",
+   "per_object": {
+    "object_0310": 0.0,
+    "object_0312": 0.0,
+    "object_0317": 0.0,
+    "object_0318": 0.0,
+    "object_0319": 0.0,
+    "object_0295": 0.0,
+    "object_0309": 0.0,
+    "object_0316": 0.006
+   },
+   "never_sampled": [],
+   "released": [
+    "object_0316"
+   ]
+  },
+  "spill": {
+   "status": "PASS",
+   "value": 1.1,
+   "unit": "ml",
+   "limit": "<= 3.0",
+   "samples": 803,
+   "note": ""
+  }
+ }
+}
