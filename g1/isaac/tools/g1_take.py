@@ -6,6 +6,12 @@ TAG, TASK, MODE = sys.argv[1:4]
 from isaacsim import SimulationApp
 app = SimulationApp({"headless": True})
 sys.path.insert(0, "E:/g1_isaac/tools")
+if os.environ.get("WATER"):
+    import carb
+    import omni.physx.bindings._physx as pb
+    cs_ = carb.settings.get_settings()
+    cs_.set(pb.SETTING_UPDATE_TO_USD, False)
+    cs_.set(pb.SETTING_UPDATE_PARTICLES_TO_USD, False)
 import g1_core as C
 import numpy as np
 OUT = f"E:/g1_isaac/{TASK}/takes/{TAG}"
@@ -18,6 +24,27 @@ fix = f"E:/g1_isaac/tools/fix_{TASK}.py"
 if os.path.exists(fix):
     exec(open(fix, encoding="utf-8").read(), ns)
 R, FR, advance, status = ns["R"], ns["FR"], ns["advance"], ns["status"]
+WL = []
+if s.F is not None:
+    orig = s.step
+    wf = open(OUT + "/water.f32", "wb")
+    wc = [0]
+    wt = []
+
+    def step_w():
+        wc[0] += 1
+        if wc[0] % 60 == 1:                                  # 10 Hz of sim time
+            P = s.F.sample(orig)
+            wf.write(np.ascontiguousarray(P, np.float32).tobytes())
+            wf.flush()
+            wt.append(s.tr)
+            r = s.F.report()
+            WL.append(dict(t=round(s.tr, 2), **{k: r[k] for k in ("kettle_ml", "mug_ml", "other_ml", "spill_ml", "tilt")}))
+            if len(wt) % 10 == 1:
+                print("WATER", WL[-1], flush=True)
+        else:
+            orig()
+    s.step = step_w
 T1 = float(os.environ.get("TAKE_END", R.t[-1]))
 print("TAKE", TAG, TASK, MODE, flush=True)
 t0 = time.time()
@@ -41,6 +68,11 @@ status("END")
 A = {k: np.array(v) for k, v in FR.items()}
 np.savez_compressed(OUT + "/rec60.npz", names=np.array(s.names), links=np.array(s.links), objects=np.array(ns["OBJK"]), peak_force=peak, limits=s.lim, **A)
 print("SAVED", len(A["t"]), "frames", flush=True)
+if s.F is not None:
+    wf.close()
+    np.savez(OUT + "/water_index.npz", t=np.array(wt), n=s.F.n, vp=s.F.vp)
+    json.dump(WL, open(OUT + "/water_log.json", "w"), indent=0)
+    print("WATER END", WL[-1], flush=True)
 print("ALL DONE", flush=True)
 sys.stdout.flush()
 os._exit(0)

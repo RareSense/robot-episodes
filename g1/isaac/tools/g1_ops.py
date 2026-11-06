@@ -128,14 +128,23 @@ def still(name, cam="film", eye=None, tgt=None, hfov=None, reqdir="E:/g1_isaac/l
 
 
 # state snapshot for live what-ifs (debug only, never inside a delivered take)
+from pxr import UsdPhysics as _UP
+ALLP = [v.GetPath().pathString for k, v in s.objs.items() if v.HasAPI(_UP.RigidBodyAPI) and "object_0294" < k < "object_0322"]
+ALLV = s.sv.create_rigid_body_view(ALLP)
+print("snapshot bodies", len(ALLP))
+
+
 def snap():
-    return dict(q=s.q(), v=s.v(), root=s.art.get_root_transforms().copy(), rv=s.art.get_root_velocities().copy(), tr=s.tr, t=s.t, off=s.off.copy(), o={k: (s.body(k).get_transforms().copy(), s.body(k).get_velocities().copy()) for k in OBJK}, nf=len(FR["t"]), pv=(s.prop_view.get_transforms().copy(), s.prop_view.get_velocities().copy()) if s.prop_view is not None else None)
+    return dict(allb=(ALLV.get_transforms().copy(), ALLV.get_velocities().copy()), q=s.q(), v=s.v(), root=s.art.get_root_transforms().copy(), rv=s.art.get_root_velocities().copy(), tr=s.tr, t=s.t, off=s.off.copy(), o={k: (s.body(k).get_transforms().copy(), s.body(k).get_velocities().copy()) for k in OBJK}, nf=len(FR["t"]), pv=(s.prop_view.get_transforms().copy(), s.prop_view.get_velocities().copy()) if s.prop_view is not None else None)
 
 
 def restore(z):
     a = s.art
     a.set_root_transforms(z["root"], s.idx); a.set_root_velocities(z["rv"], s.idx)
     a.set_dof_positions(s.f(z["q"]), s.idx); a.set_dof_velocities(s.f(z["v"]), s.idx)
+    ixa = np.arange(ALLV.count, dtype=np.uint32)
+    ALLV.set_transforms(z["allb"][0], ixa)
+    ALLV.set_velocities(z["allb"][1], ixa)
     for k, (T, V) in z["o"].items():
         b = s.body(k); ix = np.arange(1, dtype=np.uint32)
         b.set_transforms(T, ix); b.set_velocities(V, ix)

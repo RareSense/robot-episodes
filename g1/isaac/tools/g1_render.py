@@ -299,8 +299,36 @@ def run_job(J):
     b_ = min(b_, len(S["xpos"]) - 1)
     ff = subprocess.Popen(["ffmpeg", "-y", "-loglevel", "error", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{W2}x{H2}", "-r", "60", "-i", "-", "-c:v", "libx264", "-preset", "medium", "-crf", "18", "-pix_fmt", "yuv420p", J["out"]], stdin=subprocess.PIPE)
     t_s = time.time()
+    wat = None
+    if J.get("water"):
+        WI = np.load(J["water"] + "/water_index.npz")
+        wn = int(WI["n"])
+        WP = np.memmap(J["water"] + "/water.f32", np.float32, "r").reshape(-1, wn, 3)
+        wt_ = WI["t"]
+        if not stage.GetPrimAtPath("/World/RecWater"):
+            wat = UsdGeom.Points.Define(stage, "/World/RecWater")
+            wat.CreateWidthsAttr([0.003])
+            wat.SetWidthsInterpolation(UsdGeom.Tokens.constant)
+            wm = UsdShade.Material.Define(stage, "/World/Looks/recwater")
+            ws = UsdShade.Shader.Define(stage, "/World/Looks/recwater/S")
+            ws.CreateIdAttr("UsdPreviewSurface")
+            ws.CreateInput("diffuseColor", Sdf.ValueTypeNames.Color3f).Set(Gf.Vec3f(0.45, 0.72, 0.95))
+            ws.CreateInput("roughness", Sdf.ValueTypeNames.Float).Set(0.1)
+            wm.CreateSurfaceOutput().ConnectToSource(ws.ConnectableAPI(), "surface")
+            UsdShade.MaterialBindingAPI.Apply(wat.GetPrim()).Bind(wm)
+        else:
+            wat = UsdGeom.Points(stage.GetPrimAtPath("/World/RecWater"))
+        ki_ = [str(x) for x in Sn["obj_paths"]].index("/World/Objects/object_0295")
     for k in range(a_, b_ + 1):
         set_frame(k)
+        if wat is not None:
+            j_ = int(np.argmin(np.abs(wt_ - float(Sn["t"][k]))))
+            Pw = np.asarray(WP[j_], float)
+            Mk_ = S["obj_mats"][k, ki_]
+            lc = (Pw - Mk_[3, :3]) @ Mk_[:3, :3].T
+            ins = (np.hypot(lc[:, 0], lc[:, 1]) < 0.08) & (lc[:, 2] > 0) & (lc[:, 2] < 0.215)
+            Pv = Pw[~ins].astype(np.float32)
+            wat.GetPointsAttr().Set(Vt.Vec3fArray.FromNumpy(Pv) if len(Pv) else Vt.Vec3fArray())
         rep.orchestrator.step(rt_subframes=1, pause_timeline=True)
         ff.stdin.write(np.ascontiguousarray(np.asarray(an2.get_data())[:, :, :3]).tobytes())
         if k % 120 == 0:
@@ -309,6 +337,8 @@ def run_job(J):
     ff.wait()
     an2.detach()
     rp2.destroy()
+    if wat is not None:
+        wat.GetPointsAttr().Set(Vt.Vec3fArray())
     A.cam = "film"
     for h_ in heads:
         UsdGeom.Imageable(stage.GetPrimAtPath(h_)).MakeVisible()

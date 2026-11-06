@@ -191,6 +191,14 @@ def add_teabag(sim, st):
     sim.prop_paths = paths
 
 
+def add_water(sim, st):
+    """GPU PhysX particle water in the kettle, from the H1-2 water tool (read only). Must run before scene_fix: it reads the kettle's mesh hulls."""
+    sys.path.insert(0, "D:/tea_robot/isaac_delivery/fluids")
+    import fluids
+    sim.F = fluids.Fluids(fill_ml=float(os.environ.get("WATER_ML", "400")))
+    sim.F.pre_physics(st, sim.scene)
+
+
 def key(tbl, name):
     for k, v in tbl.items():
         if k in name:
@@ -244,6 +252,9 @@ class Sim:
     def __init__(self, app, task, gpu=False, extra=(scene_fix,), iters=None):
         self.app, self.task = app, task
         self.rec = R = Rec(task)
+        ts = float(os.environ.get("START_T", "0"))          # stance start: the take begins at this recorded moment, then nothing writes state
+        self.i0 = int(np.clip(round((ts - R.t[0]) * 60), 0, len(R.t) - 1)) if ts > 0 else 0
+        R.prop0 = dict(pos=np.array(R.prop_xpos[self.i0], float), quat=np.array(R.prop_xquat[self.i0], float))
         ctx = omni.usd.get_context()
         ctx.open_stage(ROOM)
         for _ in range(5):
@@ -257,7 +268,7 @@ class Sim:
         corr = {k: v for k, v in json.load(open(CORR)).items() if not k.startswith("_")}
         for i, n in enumerate(R.on):                                # start of this take: objects where the recording starts (scene set-up before physics loads)
             if n in OBJ:
-                corr[OBJ[n]] = list(R.obj[0, i])
+                corr[OBJ[n]] = list(R.obj[self.i0, i])
         for k, v in corr.items():
             p = self.objs.get(k)
             if p is None or len(v) != 7:
@@ -267,6 +278,8 @@ class Sim:
             xf.AddTranslateOp().Set(Gf.Vec3d(*v[:3]))
             xf.AddOrientOp(UsdGeom.XformOp.PrecisionDouble).Set(Gf.Quatd(v[3], v[4], v[5], v[6]))
         for k, m in MASS.items():
+            if k == "object_0295" and os.environ.get("WATER"):
+                m = m - float(os.environ.get("WATER_ML", "400")) / 1000.0     # 1.25 kg includes 0.4 kg of water; with real particles the water carries its own mass
             UsdPhysics.MassAPI.Apply(self.objs[k]).CreateMassAttr().Set(float(m))
         sc = self.scene = next(p for p in st.Traverse() if p.IsA(UsdPhysics.Scene))
         px = PhysxSchema.PhysxSceneAPI.Apply(sc)
@@ -281,7 +294,9 @@ class Sim:
         vs.SetVariantSelection("physx")
         app.update()
         self.prop_paths = []
-        for f in tuple(extra) + ({"stir": (add_spoon,), "teabag": (add_teabag,)}.get(task, ())):
+        self.F = None
+        pre = (add_water,) if os.environ.get("WATER") else ()
+        for f in pre + tuple(extra) + ({"stir": (add_spoon,), "teabag": (add_teabag,)}.get(task, ())):
             f(self, st)
         root = next(p.GetPath().pathString for p in Usd.PrimRange(r, Usd.TraverseInstanceProxies()) if p.HasAPI(UsdPhysics.ArticulationRootAPI))
         print("art root", root, flush=True)
@@ -323,10 +338,12 @@ class Sim:
         a.set_dof_dampings(self.f(self.kd), self.idx)
         self.mass = a.get_masses()[0].astype(float)
         print("robot mass", round(float(self.mass.sum()), 3), flush=True)
-        self.tr = float(R.t[0])                                       # time in the recording
+        self.tr = float(R.t[self.i0])                                 # time in the recording
         self.t = 0.0
         self.off = np.zeros(self.n)                                   # live fix: target offset added to the recorded target
         self.bodies = {}
+        if self.F is not None:
+            self.F.attach(self.sv)
         self.prop_view = self.sv.create_rigid_body_view(self.prop_paths) if self.prop_paths else None
         if self.prop_view is not None:
             act = list(map(str, self.prop_view.prim_paths))
@@ -338,12 +355,12 @@ class Sim:
 
     def spawn(self, dz=0.0):
         R, a = self.rec, self.art
-        q0 = R.q[0][self.perm]
+        q0 = R.q[self.i0][self.perm]
         self.qd, self.vd = q0.copy(), np.zeros(self.n)
         a.set_dof_positions(self.f(q0), self.idx)
         a.set_dof_velocities(self.f(np.zeros(self.n)), self.idx)
         a.set_dof_position_targets(self.f(q0), self.idx)
-        b = R.base[0]
+        b = R.base[self.i0]
         tf = a.get_root_transforms().copy()
         tf[0] = [b[0], b[1], b[2] + dz, b[4], b[5], b[6], b[3]]
         a.set_root_transforms(tf, self.idx)
