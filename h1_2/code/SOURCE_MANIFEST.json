@@ -1,0 +1,137 @@
+{
+ "note": "source_sha256 is the file as it ran; release_sha256 is the copy here, with paths and bootstrap changed only (see tools/export_code.py)",
+ "files": [
+  {
+   "file": "run_live_episode.py",
+   "source_sha256": "6b12d7748ffb2742ef8d23391064985b5c77bf9877091f31213be7a4c03286f2",
+   "release_sha256": "6b12d7748ffb2742ef8d23391064985b5c77bf9877091f31213be7a4c03286f2",
+   "lines_added_or_removed": 0
+  },
+  {
+   "file": "full_episode.py",
+   "source_sha256": "9372fafcbe17962ceb9a7bc3eb03df86cd78d5e225b7c681765a7ea98cac5315",
+   "release_sha256": "9c877ddb1d0fdc2243e5a0936c061ca1aa2af5a7f0bf711d41b30c0b2de0b560",
+   "lines_added_or_removed": 28
+  },
+  {
+   "file": "h12_physx.py",
+   "source_sha256": "4008eb555ef54fd380fe9c6131a509190391955a4dd4ee2e9fea660a94283ede",
+   "release_sha256": "1681cf402cf344f5dc2a1c5d4884996d54b6f59e4154328b05a13168e28271fd",
+   "lines_added_or_removed": 18
+  },
+  {
+   "file": "mug_place.py",
+   "source_sha256": "5a9eeee1160855b85a5d3e578c2872527a33fec621a86400fc049e13bb9aa27a",
+   "release_sha256": "5a9eeee1160855b85a5d3e578c2872527a33fec621a86400fc049e13bb9aa27a",
+   "lines_added_or_removed": 0
+  },
+  {
+   "file": "arm_servo.py",
+   "source_sha256": "e59dd7c49197435edd40f871faa500a30f6d4ab641dc90e429860024916815c1",
+   "release_sha256": "e59dd7c49197435edd40f871faa500a30f6d4ab641dc90e429860024916815c1",
+   "lines_added_or_removed": 0
+  },
+  {
+   "file": "cup_walk_away.py",
+   "source_sha256": "a61f76543bcef4e52b440d75f205b8db09bf8b758094e5c680113a93ea65a5b2",
+   "release_sha256": "c10c3264dfd7b265fb188ea6424cb130187bb6e8bb9010d62cd227f2e1b27bea",
+   "lines_added_or_removed": 6
+  },
+  {
+   "file": "import_h12.py",
+   "source_sha256": "188c63a1c022b053d55a4fdd9f3722725f5d0189dadcd469fbed575c9c0a1ab8",
+   "release_sha256": "58da6ecd9b895b65bf6919ca8ec1b0438c92a59ab021fcf8d5e67ae65af74727",
+   "lines_added_or_removed": 10
+  },
+  {
+   "file": "props/gates.py",
+   "source_sha256": "38012446be973a4cf7ae132e113637e1403c714b8611693feeabab57ebfd58ad",
+   "release_sha256": "38012446be973a4cf7ae132e113637e1403c714b8611693feeabab57ebfd58ad",
+   "lines_added_or_removed": 0
+  },
+  {
+   "file": "props/props.py",
+   "source_sha256": "6004e170364f355fb22c4d7c0be27140baf660a67392b4261c3cb910d612c165",
+   "release_sha256": "504d6f26c60306602c37baae739422404ec9e04cc9a12ec15ceb1b88221e0ecf",
+   "lines_added_or_removed": 6
+  },
+  {
+   "file": "props/record.py",
+   "source_sha256": "45ec39dc18af5f942a880cb8cd688807427a4804efa64b2e349d1f926e219987",
+   "release_sha256": "384ea8dfefa5f0524f382bd414314bbe717c384d67ce4a4a34bf8d6164a3b3bf",
+   "lines_added_or_removed": 26
+  },
+  {
+   "file": "fluids/boot.py",
+   "source_sha256": "0bc24a8804f6ac737971996acd9a3743313e38cfaf6b05621e0b1c37f0147f42",
+   "release_sha256": "e59a109bc275a6fa7bcd14b4daf1fef84698c091164febb54b0ecf71248e319d",
+   "lines_added_or_removed": 6
+  },
+  {
+   "file": "fluids/fluids.py",
+   "source_sha256": "416731b2b46a373d516767aafd4cebb3e0c5bd5c2ef0d0e74391da3d90e30754",
+   "release_sha256": "7237c706ca48e9c72e21e28ecedc4265ffc2cbbe3ad577751c58e874c435940b",
+   "lines_added_or_removed": 6
+  },
+  {
+   "file": "steps/kettle/stage.py",
+   "source_sha256": "11a94e46eeb63e2fa92be33960b4325e21e2caba56f51540628b2081e0857cb3",
+   "release_sha256": "3c351380400f850da9099a3d1622d09cbab1fb844e08388fab36759ff90b8558",
+   "lines_added_or_removed": 8
+  },
+  {
+   "file": "steps/kettle/stage_live.py",
+   "source_sha256": "6252353f5596b3559604695755cb1b896aca9563858c03fae841d478b9059ca4",
+   "release_sha256": "395c37b054aa5ae530b7e60b2eb4acf631b002f9c9d0c60d360f3010792181f7",
+   "lines_added_or_removed": 6
+  },
+  {
+   "file": "steps/powder/stage.py",
+   "source_sha256": "6f5f509f0d7e5035f58166b1215c6ee55ec8c308107e25a90be24208cf94dcef",
+   "release_sha256": "f0258ca701250f2584f13aac6422c5f9bd94cbab4fc7f221cfa55e4f522d845e",
+   "lines_added_or_removed": 8
+  },
+  {
+   "file": "steps/powder/stage_live.py",
+   "source_sha256": "9674679c94ee386e143f46d237e2348126eaddea8b253658e19a5b782fd93225",
+   "release_sha256": "a109a9cfeaefd983d262dabebcb65e66cfea48ade0ad8cd2854f6b3fdcd23334",
+   "lines_added_or_removed": 6
+  },
+  {
+   "file": "steps/powder/pwprops.py",
+   "source_sha256": "ae1454a17352c1230bd3c64a7052708db9842c2c44c33dc9d424cf7df7669b57",
+   "release_sha256": "6fedafc3d16ae95328fa5c900df18c7f97a27490a5c2d24054afa27157eb8bd2",
+   "lines_added_or_removed": 12
+  },
+  {
+   "file": "steps/powder/pw_scoop.py",
+   "source_sha256": "657682e87081ffcd371fe61baa5e10efa9f7c9ef43ac3dfade462dee0d854936",
+   "release_sha256": "657682e87081ffcd371fe61baa5e10efa9f7c9ef43ac3dfade462dee0d854936",
+   "lines_added_or_removed": 0
+  },
+  {
+   "file": "steps/teabag_stir/stage.py",
+   "source_sha256": "8c6f56a05a7ba97be8eeaca569da1527c049132fabc79d3e7934a1f5cf3e7c2b",
+   "release_sha256": "7a33345b4596e29d6a9c8e0748a56f593261aaded94db3bddbd6a18365f5ad85",
+   "lines_added_or_removed": 8
+  },
+  {
+   "file": "steps/teabag_stir/stage_live.py",
+   "source_sha256": "373d9c2bd90c9072db4f3eb698bd950a806af723a15e5c60a6e14130a8087004",
+   "release_sha256": "bbd88cec21f05ce5267212bb25d7e451d12d499a819d8961d502c5d3956ab4b9",
+   "lines_added_or_removed": 6
+  },
+  {
+   "file": "balance_support/crouch_support.py",
+   "source_sha256": "5b0918ea270d657c6827d3361cedf4fa2b9354858092035f2655957671d184be",
+   "release_sha256": "625f1a48f3b648b7baa8413ce9d05fc5fa01bf1bfb0ea6f6fce92ca5ac39de0b",
+   "lines_added_or_removed": 2
+  },
+  {
+   "file": "water/water_layer.py",
+   "source_sha256": "71f8720173aac1fe924459ba94948cb798c06b2b0188fee8aaf00ff947f9acc6",
+   "release_sha256": "5dc4ad8a064dbd320a9ef3e7e9333ea3d20af32a63cf0fb3b3aa3b940ddf4d7e",
+   "lines_added_or_removed": 2
+  }
+ ]
+}

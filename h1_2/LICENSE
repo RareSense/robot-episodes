@@ -1,0 +1,6 @@
+NO LICENCE HAS BEEN CHOSEN YET.
+
+Until this file is replaced, no permission is granted to use, copy, modify or distribute the project's own code and data in this repository.
+Files under assets/ keep their own BSD-3-Clause licence (see THIRD_PARTY.md).
+
+Recommendation for the owner: Apache-2.0 for the code and CC BY 4.0 for the data; avoid copyleft because of section 6.9 of the NVIDIA licence.

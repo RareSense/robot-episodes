@@ -1,0 +1,183 @@
+{
+ "legs": [
+  "left_hip_yaw_joint",
+  "left_hip_pitch_joint",
+  "left_hip_roll_joint",
+  "left_knee_joint",
+  "left_ankle_pitch_joint",
+  "left_ankle_roll_joint",
+  "right_hip_yaw_joint",
+  "right_hip_pitch_joint",
+  "right_hip_roll_joint",
+  "right_knee_joint",
+  "right_ankle_pitch_joint",
+  "right_ankle_roll_joint"
+ ],
+ "default": [
+  0.0,
+  -0.16,
+  0.0,
+  0.36,
+  -0.2,
+  0.0,
+  0.0,
+  -0.16,
+  0.0,
+  0.36,
+  -0.2,
+  0.0
+ ],
+ "kp": [
+  200,
+  200,
+  200,
+  300,
+  40,
+  40,
+  200,
+  200,
+  200,
+  300,
+  40,
+  40
+ ],
+ "kd": [
+  2.5,
+  2.5,
+  2.5,
+  4,
+  2,
+  2,
+  2.5,
+  2.5,
+  2.5,
+  4,
+  2,
+  2
+ ],
+ "action_scale": 0.25,
+ "obs": "lstm_phase",
+ "gait_period": 0.8,
+ "cmd_scale": [
+  2.0,
+  2.0,
+  0.25
+ ],
+ "vmax": [
+  0.6,
+  0.3,
+  0.8
+ ],
+ "hold_gains": [
+  [
+   "torso",
+   400,
+   8
+  ],
+  [
+   "shoulder",
+   120,
+   3
+  ],
+  [
+   "elbow",
+   80,
+   2
+  ],
+  [
+   "wrist",
+   40,
+   1
+  ],
+  [
+   "thumb",
+   3,
+   0.05
+  ],
+  [
+   "proximal",
+   3,
+   0.05
+  ],
+  [
+   "",
+   50,
+   1
+  ]
+ ],
+ "hold_pose": {
+  "left_shoulder_pitch_joint": 0.0,
+  "right_shoulder_pitch_joint": 0.0,
+  "left_shoulder_roll_joint": 0.15,
+  "right_shoulder_roll_joint": -0.15,
+  "left_shoulder_yaw_joint": 0.0,
+  "right_shoulder_yaw_joint": 0.0,
+  "left_elbow_joint": -0.4,
+  "right_elbow_joint": -0.4,
+  "left_wrist_roll_joint": 0.0,
+  "right_wrist_roll_joint": 0.0,
+  "left_wrist_pitch_joint": 0.0,
+  "right_wrist_pitch_joint": 0.0,
+  "left_wrist_yaw_joint": 0.0,
+  "right_wrist_yaw_joint": 0.0,
+  "torso_joint": 0.0
+ },
+ "blend_s": 0.2,
+ "warm_s": 1.0,
+ "idle_s": 0.3,
+ "settle_s": 0.4,
+ "stand_kp": [
+  500,
+  900,
+  600,
+  1000,
+  400,
+  300,
+  500,
+  900,
+  600,
+  1000,
+  400,
+  300
+ ],
+ "stand_kd": [
+  8,
+  12,
+  10,
+  14,
+  4,
+  3,
+  8,
+  12,
+  10,
+  14,
+  4,
+  3
+ ],
+ "balance": [
+  1.0,
+  0.3,
+  0.0,
+  0.4
+ ],
+ "foot_cx": 0.036,
+ "ankle_pitch_idx": [
+  4,
+  10
+ ],
+ "hip_roll_idx": [
+  2,
+  8
+ ],
+ "ankle_roll_idx": [
+  5,
+  11
+ ],
+ "leg_joint": {
+  "armature": 0.01,
+  "damping": 0.001,
+  "frictionloss": 0.1
+ },
+ "_note_hold_pose": "arms while walking: upper arms down, forearms raised 23 deg above horizontal (elbow -0.4; H1-2 elbow zero = forearm horizontal), hands ~1.2 m high, clear of counter items. The network was trained on a 12-dof model with the arms fixed at zero; this keeps the arm CoM where training had it. Measured zero-command drift (t_policy_ref.py, our model): elbow -0.4: -0.01 m/s, 0.0: -0.01, 0.35: -0.015, 0.8: -0.03, 1.25 (hanging): -0.08 m/s (backwards).",
+ "_note_blend": "blend 0.2 s: during the blend only PD holds the legs (the network is not yet running); H1-2's ankle kp 40 cannot hold the CoM 36 mm ahead of the ankles, so with 1.0 s the robot tipped forward and the network's first steps lurched 25-28 cm forward (into the cabinet at the mug stance, run w10)"
+}
