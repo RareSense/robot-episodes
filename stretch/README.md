@@ -4,7 +4,7 @@
 
 A Stretch 3 puts a pizza in an oven and takes it out, in one continuous take
 
-<!-- STRETCH_FILL: hero image, videos/previews/stretch_hero.jpg, linked to its Drive video -->
+<a href="https://drive.google.com/file/d/1TLCOr916MN6OHsVB2__FtIA-nRvagDT1/view"><img src="videos/previews/stretch_hero.jpg" width="100%" alt="Wrist and fixed camera views of Stretch holding the pizza plate"></a>
 
 </div>
 
@@ -19,7 +19,7 @@ A Stretch 3 takes a plate with a pizza, carries it past the oven and sets it dow
 | Recording | 30 samples per sim second |
 | Camera views | Wrist and fixed |
 
-<!-- STRETCH_FILL: Stretch GIF previews from the pz_final03 views, each linked to its Drive video -->
+<a href="https://drive.google.com/file/d/1bP5InmzR3Xd1kR4S9nY7Jc7U2xoaq0LF/view"><img src="videos/previews/stretch_door_open.gif" width="24%" alt="Opening the oven door"></a> <a href="https://drive.google.com/file/d/1bP5InmzR3Xd1kR4S9nY7Jc7U2xoaq0LF/view"><img src="videos/previews/stretch_in_oven.gif" width="24%" alt="Plate on the oven rack"></a> <a href="https://drive.google.com/file/d/1bP5InmzR3Xd1kR4S9nY7Jc7U2xoaq0LF/view"><img src="videos/previews/stretch_knobs.gif" width="24%" alt="Turning the knobs"></a> <a href="https://drive.google.com/file/d/1bP5InmzR3Xd1kR4S9nY7Jc7U2xoaq0LF/view"><img src="videos/previews/stretch_back.gif" width="24%" alt="Plate back on the counter"></a>
 
 [All Stretch videos](videos/README.md)
 
@@ -43,7 +43,13 @@ NumPy `.npz`, one sample every 1/30 of a sim second.
 | `oven` | N x 5 | Oven joints, door first, radians |
 | `plate`, `pizza` | N x 7 | Object poses |
 
-<!-- STRETCH_FILL: add the extra pz_final03 keys (oven body pose, heat state) and the view-frame index -->
+| `body` | N x 7 | Oven body pose |
+| `heat` | N x 2 | Pizza colour-change amount and oven-on flag |
+| `video_frame` | N | Index of the rendered film frame at each sample |
+
+`data/pz_final03_views_index.csv` maps each video frame to its sample and sim time. The wrist and fixed videos run at 10 fps and show every third sample at real speed.
+
+`code/pz_task.py` is one revision newer than this take: it also turns the head toward the arm and has a firmer door step.
 
 `lerobot/` holds the same take as a LeRobot v3.0 dataset with camera video.
 

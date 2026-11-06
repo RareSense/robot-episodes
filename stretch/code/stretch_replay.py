@@ -1,5 +1,5 @@
 """Renders a recorded Stretch pizza take from its recording. REPLAY: recorded poses only, physics is off, nothing is simulated here. Labelled so in every output.
-Three views, one frame per recorded sample (30 Hz of sim time), frame number = sample number: head (link realsense), wrist (link d405_cam), third (one fixed camera, no cuts).
+Two views, one frame per recorded sample (30 Hz of sim time), frame number = sample number: wrist (link d405_cam), fixed (one fixed camera, no cuts).
 Resumes from the frames already on disk. usage (through stretch_launch.py): stretch_replay.py <tag> <rec tag>   env RP_MAX (stop after n samples, for a check), RP_STRIDE (default 1)."""
 import json
 import math
@@ -30,8 +30,10 @@ for k, v in {"/rtx/rendermode": "RaytracedLighting", "/rtx/post/aa/op": 3, "/rtx
              "/rtx/directLighting/sampledLighting/enabled": True, "/omni/replicator/RTSubframes": 1, "/app/viewport/grid/enabled": False, "/app/viewport/show/grid": False,
              "/app/viewport/outline/enabled": False, "/rtx/translucency/enabled": True, "/rtx/raytracing/fractionalCutoutOpacity": True}.items():
     cs.set(k, v)
-D = f"E:/stretch_assets/data/{REC}_views"
-VIEWS = {"head": ("realsense", 75.0), "wrist": ("d405_cam", 87.0)}
+D = os.environ.get("RP_DIR", f"E:/stretch_assets/data/{REC}_views")
+LOOP = os.environ.get("RP_LOOP", "rep")
+UPD = int(os.environ.get("RP_UPD", 2))
+VIEWS = {"wrist": ("d405_cam", 87.0)}
 THIRD = (58.0, (2.45, .80, 1.72), (1.22, 2.20, .92))
 S = np.load(f"E:/stretch_assets/data/{REC}_rec.npz")
 LINKN = [str(x) for x in S["links"]]
@@ -99,7 +101,8 @@ op_body, op_door, op_plate, op_pizza = xop(O.BODY), xop(O.DOOR), xop(K.PLATE), x
 op_knob = [xop(p) for p in O.KNOBS]
 T_DOOR = Gf.Matrix4d().SetTranslate(Gf.Vec3d(0, O.HY, O.HZ))
 T_KNOB = [Gf.Matrix4d().SetTranslate(Gf.Vec3d(O.KNOB_X, -.002, z)) for z in O.KNOB_Z]
-RCAM = Gf.Matrix4d().SetRotate(Gf.Rotation(Gf.Vec3d(0, 1, 0), 180.0))       # camera looks down -z, these links look down +z
+RCAM = {"wrist": Gf.Matrix4d().SetRotate(Gf.Rotation(Gf.Vec3d(0, 1, 0), 180.0)),      # d405_cam looks down +z, x left, y up. USD cameras look down -z
+        "head": Gf.Matrix4d(0, 0, 1, 0, 0, 1, 0, 0, -1, 0, 0, 0, .03, 0, 0, 1)}        # realsense link looks down +x, y up; 30 mm forward clears the head shell
 
 
 def cam(path, hfov):
@@ -112,7 +115,7 @@ def cam(path, hfov):
 
 
 cops = {k: (LINKN.index(v[0]), cam("/World/rp_" + k, v[1])) for k, v in VIEWS.items()}
-cam("/World/rp_third", THIRD[0]).Set(Gf.Matrix4d().SetLookAt(Gf.Vec3d(*THIRD[1]), Gf.Vec3d(*THIRD[2]), Gf.Vec3d(0, 0, 1)).GetInverse())
+cam("/World/rp_fixed", THIRD[0]).Set(Gf.Matrix4d().SetLookAt(Gf.Vec3d(*THIRD[1]), Gf.Vec3d(*THIRD[2]), Gf.Vec3d(0, 0, 1)).GetInverse())
 last = {}
 
 
@@ -132,7 +135,7 @@ def frame(f):
     op_plate.Set(mat(PL[f]))
     op_pizza.Set(mat(PI[f]))
     for k, (i, o) in cops.items():
-        o.Set(RCAM * mat(L[i]))
+        o.Set(RCAM[k] * mat(L[i]))
     h = (int(HT[f, 0]), int(HT[f, 1]))
     if last.get("heat") != h:
         last["heat"] = h
@@ -142,19 +145,29 @@ def frame(f):
 
 rep.orchestrator.set_capture_on_play(False)
 ann = {}
-for k in ("head", "wrist", "third"):
+for k in ("wrist", "fixed"):
     os.makedirs(f"{D}/{k}", exist_ok=True)
     rp = rep.create.render_product("/World/rp_" + k, (W, H))
     a = rep.AnnotatorRegistry.get_annotator("rgb")
     a.attach([rp])
     ann[k] = a
 stride = int(os.environ.get("RP_STRIDE", 1))
-start = len(os.listdir(f"{D}/third")) * stride
+start = 0
 stop = min(N, start + int(os.environ.get("RP_MAX", N)))
 print("replay samples", start, "to", stop, "of", N, flush=True)
 frame(start)
 for _ in range(6):
     rep.orchestrator.step(rt_subframes=4, pause_timeline=False)
+if os.environ.get("RP_PICK"):            # check frames only
+    for f in map(int, os.environ["RP_PICK"].split(",")):
+        frame(f)
+        for _ in range(3):
+            rep.orchestrator.step(rt_subframes=2, pause_timeline=False)
+        for k, a in ann.items():
+            Image.fromarray(np.asarray(a.get_data())[:, :, :3]).save(f"D:/tea_robot/stretch/previews/pz/rp_{f}_{k}.jpg", quality=85)
+        print("picked", f, flush=True)
+    print("END status PICK DONE", flush=True)
+    os._exit(0)
 pool = ThreadPoolExecutor(6)
 
 
@@ -162,16 +175,19 @@ def save(im, p):
     Image.fromarray(im).save(p, quality=90)
 
 
+EVERY = int(os.environ.get("RP_EVERY", 1))
+todo = [f for f in range(0, N, EVERY) if not (os.path.exists(f"{D}/wrist/{f:06d}.jpg") and os.path.exists(f"{D}/fixed/{f:06d}.jpg"))]
+print("to render", len(todo), "of", len(range(0, N, EVERY)), flush=True)
 t0 = time.time()
-for n, f in enumerate(range(start, stop, stride)):
+for n, f in enumerate(todo):
     frame(f)
     rep.orchestrator.step(rt_subframes=1, pause_timeline=False)
     for k, a in ann.items():
         im = np.asarray(a.get_data())
         if im.ndim == 3:
-            pool.submit(save, np.ascontiguousarray(im[:, :, :3]), f"{D}/{k}/{f // stride:06d}.jpg")
+            pool.submit(save, np.ascontiguousarray(im[:, :, :3]), f"{D}/{k}/{f:06d}.jpg")
     if n % 300 == 0:
-        print("frame", f, "of", stop, "rate", round((n + 1) / (time.time() - t0), 2), "per s", flush=True)
+        print("frame", f, "done", n, "of", len(todo), "rate", round((n + 1) / (time.time() - t0), 2), "per s", flush=True)
 pool.shutdown()
 print("END status REPLAY DONE", flush=True)
 os._exit(0)

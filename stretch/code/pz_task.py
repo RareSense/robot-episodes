@@ -10,7 +10,7 @@ import pz
 
 LINE_C, LINE_D = 1.70, 1.40        # counter line, door line
 HX = 1.19                          # hand x at the door and rack
-HEAD_TILT = -.45
+HEAD_TILT = -.60
 S = {}
 
 
@@ -138,7 +138,13 @@ def door_close_b(s):
     ok(pz.move(s, [HX, y, z], 1.5, z_lag=.08, y_lag=.08, tilt_max=.6), "in front of the bar")
     for a in (30, 24, 18, 12, 7, 3, 0):
         y, z = pz.door_arc(float(a), (-.040, 0.))
-        ok(pz.move(s, [HX, y, z], 1.5, z_lag=.02, y_lag=.03, tilt_max=.6), "door shut")
+        ok(pz.move(s, [HX, y, z], 1.5, z_lag=.05, y_lag=.08, tilt_max=.6), "door shut")     # pz_final03: door dropped ahead of the hand near 18 deg
+    door_push(s)
+
+
+def door_push(s):
+    g = s.link("link_grasp_center")[:3].copy()
+    ok(pz.move(s, [HX, min(g[1], 1.995), 1.147], 2.0, z_lag=.03, y_lag=.03, tilt_max=.6), "to the bar")
     for y in (2.01, 2.018, 2.024, 2.03, 2.032, 2.034, 2.036, 2.038, 2.04):
         ok(pz.move(s, [HX, y, 1.147], 1.5, z_lag=.02, y_lag=.02, tilt_max=.6), "door shut")
         if pz.oven_q(s)["door_j"] < .05:
@@ -161,7 +167,7 @@ def knob(s, z):
 
 
 def seg_a(s):
-    s.ramp({"joint_head_tilt": HEAD_TILT}, 2.0)        # head looks at the work, a real joint move
+    s.ramp({"joint_head_pan": -math.pi / 2, "joint_head_tilt": HEAD_TILT}, 3.0)        # head turns to the arm side and looks down at the work: real joint moves
     pz.vid_cam(40.0, (.95, 1.25, 1.25), (1.67, 2.12, .95))
     counter_cam(1.67)
     stage(s, "s01_start")
