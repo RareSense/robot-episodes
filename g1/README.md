@@ -89,3 +89,7 @@ work/            scene builder, step skills, replay, export and render scripts
 handoff/         robot model, controller and kitchen twin
 examples/        data loaders
 ```
+
+## Isaac Sim version
+
+Tasks rebuilt on Isaac Sim physics are in [isaac/](isaac/README.md).
