@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Nova movable environment body for the bundled PyBullet launcher. SI metres/kg/radians. Loaded at its body origin; hinge/slider bodies use a fixed world_anchor base with one passive joint. Inertia is about COM. -->
+<robot name="nova_environment_object_0029">
+  <link name="body">
+    <inertial>
+      <origin xyz="0.01 0.05 0.3" rpy="0 0 0" />
+      <mass value="1.1" />
+      <inertia ixx="0.04125" iyy="0.0507466667" izz="0.0259966667" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="object_0029.obj" />
+      </geometry>
+      <material name="surface">
+        <color rgba="0.17 0.29 0.42 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="object_0029_collision_00.obj" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="object_0029_collision_01.obj" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="object_0029_collision_02.obj" />
+      </geometry>
+    </collision>
+  </link>
+</robot>

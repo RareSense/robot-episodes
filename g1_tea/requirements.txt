@@ -1,0 +1,6 @@
+mujoco==3.13.0
+numpy==2.5.3
+scipy==1.18.1
+onnxruntime==1.30.0
+pillow==12.3.0
+# rendering (optional): NVIDIA Isaac Sim 6.2 with its own python (set ISAAC_PY); video export: ffmpeg on PATH

@@ -1,0 +1,15 @@
+#usda 1.0
+(
+    defaultPrim = "World"
+    metersPerUnit = 1
+    upAxis = "Z"
+    subLayers = [
+        @./looks_props.usda@,
+        @./looks_room.usda@,
+        @./looks_exterior.usda@,
+        @./set_fix.usda@,
+        @./kettle_fix.usda@,
+        @./looks.usda@,
+        @../../handoff/project/tea_twin/scene_v3/environment.usda@
+    ]
+)

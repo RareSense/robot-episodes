@@ -1,0 +1,348 @@
+{
+    "codebase_version": "v3.0",
+    "robot_type": "unitree_g1_with_hands",
+    "total_episodes": 5,
+    "total_frames": 10366,
+    "total_tasks": 5,
+    "chunks_size": 1000,
+    "data_files_size_in_mb": 100,
+    "video_files_size_in_mb": 200,
+    "fps": 60,
+    "splits": {
+        "train": "0:5"
+    },
+    "data_path": "data/chunk-{chunk_index:03d}/file-{file_index:03d}.parquet",
+    "video_path": null,
+    "features": {
+        "observation.state": {
+            "dtype": "float32",
+            "shape": [
+                43
+            ],
+            "names": [
+                "left_hip_pitch_joint",
+                "left_hip_roll_joint",
+                "left_hip_yaw_joint",
+                "left_knee_joint",
+                "left_ankle_pitch_joint",
+                "left_ankle_roll_joint",
+                "right_hip_pitch_joint",
+                "right_hip_roll_joint",
+                "right_hip_yaw_joint",
+                "right_knee_joint",
+                "right_ankle_pitch_joint",
+                "right_ankle_roll_joint",
+                "waist_yaw_joint",
+                "waist_roll_joint",
+                "waist_pitch_joint",
+                "left_shoulder_pitch_joint",
+                "left_shoulder_roll_joint",
+                "left_shoulder_yaw_joint",
+                "left_elbow_joint",
+                "left_wrist_roll_joint",
+                "left_wrist_pitch_joint",
+                "left_wrist_yaw_joint",
+                "left_hand_thumb_0_joint",
+                "left_hand_thumb_1_joint",
+                "left_hand_thumb_2_joint",
+                "left_hand_middle_0_joint",
+                "left_hand_middle_1_joint",
+                "left_hand_index_0_joint",
+                "left_hand_index_1_joint",
+                "right_shoulder_pitch_joint",
+                "right_shoulder_roll_joint",
+                "right_shoulder_yaw_joint",
+                "right_elbow_joint",
+                "right_wrist_roll_joint",
+                "right_wrist_pitch_joint",
+                "right_wrist_yaw_joint",
+                "right_hand_thumb_0_joint",
+                "right_hand_thumb_1_joint",
+                "right_hand_thumb_2_joint",
+                "right_hand_middle_0_joint",
+                "right_hand_middle_1_joint",
+                "right_hand_index_0_joint",
+                "right_hand_index_1_joint"
+            ]
+        },
+        "observation.velocity": {
+            "dtype": "float32",
+            "shape": [
+                43
+            ],
+            "names": [
+                "left_hip_pitch_joint",
+                "left_hip_roll_joint",
+                "left_hip_yaw_joint",
+                "left_knee_joint",
+                "left_ankle_pitch_joint",
+                "left_ankle_roll_joint",
+                "right_hip_pitch_joint",
+                "right_hip_roll_joint",
+                "right_hip_yaw_joint",
+                "right_knee_joint",
+                "right_ankle_pitch_joint",
+                "right_ankle_roll_joint",
+                "waist_yaw_joint",
+                "waist_roll_joint",
+                "waist_pitch_joint",
+                "left_shoulder_pitch_joint",
+                "left_shoulder_roll_joint",
+                "left_shoulder_yaw_joint",
+                "left_elbow_joint",
+                "left_wrist_roll_joint",
+                "left_wrist_pitch_joint",
+                "left_wrist_yaw_joint",
+                "left_hand_thumb_0_joint",
+                "left_hand_thumb_1_joint",
+                "left_hand_thumb_2_joint",
+                "left_hand_middle_0_joint",
+                "left_hand_middle_1_joint",
+                "left_hand_index_0_joint",
+                "left_hand_index_1_joint",
+                "right_shoulder_pitch_joint",
+                "right_shoulder_roll_joint",
+                "right_shoulder_yaw_joint",
+                "right_elbow_joint",
+                "right_wrist_roll_joint",
+                "right_wrist_pitch_joint",
+                "right_wrist_yaw_joint",
+                "right_hand_thumb_0_joint",
+                "right_hand_thumb_1_joint",
+                "right_hand_thumb_2_joint",
+                "right_hand_middle_0_joint",
+                "right_hand_middle_1_joint",
+                "right_hand_index_0_joint",
+                "right_hand_index_1_joint"
+            ]
+        },
+        "observation.base_pose": {
+            "dtype": "float32",
+            "shape": [
+                7
+            ],
+            "names": [
+                "x",
+                "y",
+                "z",
+                "qw",
+                "qx",
+                "qy",
+                "qz"
+            ]
+        },
+        "observation.environment_state": {
+            "dtype": "float32",
+            "shape": [
+                35
+            ],
+            "names": [
+                "kettle_x",
+                "kettle_y",
+                "kettle_z",
+                "kettle_qw",
+                "kettle_qx",
+                "kettle_qy",
+                "kettle_qz",
+                "milk_powder_jar_x",
+                "milk_powder_jar_y",
+                "milk_powder_jar_z",
+                "milk_powder_jar_qw",
+                "milk_powder_jar_qx",
+                "milk_powder_jar_qy",
+                "milk_powder_jar_qz",
+                "mug_x",
+                "mug_y",
+                "mug_z",
+                "mug_qw",
+                "mug_qx",
+                "mug_qy",
+                "mug_qz",
+                "teabag_bag_x",
+                "teabag_bag_y",
+                "teabag_bag_z",
+                "teabag_bag_qw",
+                "teabag_bag_qx",
+                "teabag_bag_qy",
+                "teabag_bag_qz",
+                "spoon_x",
+                "spoon_y",
+                "spoon_z",
+                "spoon_qw",
+                "spoon_qx",
+                "spoon_qy",
+                "spoon_qz"
+            ]
+        },
+        "observation.object_present": {
+            "dtype": "float32",
+            "shape": [
+                5
+            ],
+            "names": [
+                "kettle",
+                "milk_powder_jar",
+                "mug",
+                "teabag_bag",
+                "spoon"
+            ]
+        },
+        "observation.eye_camera_pose": {
+            "dtype": "float32",
+            "shape": [
+                12
+            ],
+            "names": [
+                "x",
+                "y",
+                "z",
+                "r00",
+                "r01",
+                "r02",
+                "r10",
+                "r11",
+                "r12",
+                "r20",
+                "r21",
+                "r22"
+            ]
+        },
+        "observation.effort_abs": {
+            "dtype": "float32",
+            "shape": [
+                43
+            ],
+            "names": [
+                "left_hip_pitch_joint",
+                "left_hip_roll_joint",
+                "left_hip_yaw_joint",
+                "left_knee_joint",
+                "left_ankle_pitch_joint",
+                "left_ankle_roll_joint",
+                "right_hip_pitch_joint",
+                "right_hip_roll_joint",
+                "right_hip_yaw_joint",
+                "right_knee_joint",
+                "right_ankle_pitch_joint",
+                "right_ankle_roll_joint",
+                "waist_yaw_joint",
+                "waist_roll_joint",
+                "waist_pitch_joint",
+                "left_shoulder_pitch_joint",
+                "left_shoulder_roll_joint",
+                "left_shoulder_yaw_joint",
+                "left_elbow_joint",
+                "left_wrist_roll_joint",
+                "left_wrist_pitch_joint",
+                "left_wrist_yaw_joint",
+                "left_hand_thumb_0_joint",
+                "left_hand_thumb_1_joint",
+                "left_hand_thumb_2_joint",
+                "left_hand_middle_0_joint",
+                "left_hand_middle_1_joint",
+                "left_hand_index_0_joint",
+                "left_hand_index_1_joint",
+                "right_shoulder_pitch_joint",
+                "right_shoulder_roll_joint",
+                "right_shoulder_yaw_joint",
+                "right_elbow_joint",
+                "right_wrist_roll_joint",
+                "right_wrist_pitch_joint",
+                "right_wrist_yaw_joint",
+                "right_hand_thumb_0_joint",
+                "right_hand_thumb_1_joint",
+                "right_hand_thumb_2_joint",
+                "right_hand_index_0_joint",
+                "right_hand_index_1_joint",
+                "right_hand_middle_0_joint",
+                "right_hand_middle_1_joint"
+            ]
+        },
+        "action": {
+            "dtype": "float32",
+            "shape": [
+                43
+            ],
+            "names": [
+                "left_hip_pitch_joint",
+                "left_hip_roll_joint",
+                "left_hip_yaw_joint",
+                "left_knee_joint",
+                "left_ankle_pitch_joint",
+                "left_ankle_roll_joint",
+                "right_hip_pitch_joint",
+                "right_hip_roll_joint",
+                "right_hip_yaw_joint",
+                "right_knee_joint",
+                "right_ankle_pitch_joint",
+                "right_ankle_roll_joint",
+                "waist_yaw_joint",
+                "waist_roll_joint",
+                "waist_pitch_joint",
+                "left_shoulder_pitch_joint",
+                "left_shoulder_roll_joint",
+                "left_shoulder_yaw_joint",
+                "left_elbow_joint",
+                "left_wrist_roll_joint",
+                "left_wrist_pitch_joint",
+                "left_wrist_yaw_joint",
+                "left_hand_thumb_0_joint",
+                "left_hand_thumb_1_joint",
+                "left_hand_thumb_2_joint",
+                "left_hand_middle_0_joint",
+                "left_hand_middle_1_joint",
+                "left_hand_index_0_joint",
+                "left_hand_index_1_joint",
+                "right_shoulder_pitch_joint",
+                "right_shoulder_roll_joint",
+                "right_shoulder_yaw_joint",
+                "right_elbow_joint",
+                "right_wrist_roll_joint",
+                "right_wrist_pitch_joint",
+                "right_wrist_yaw_joint",
+                "right_hand_thumb_0_joint",
+                "right_hand_thumb_1_joint",
+                "right_hand_thumb_2_joint",
+                "right_hand_middle_0_joint",
+                "right_hand_middle_1_joint",
+                "right_hand_index_0_joint",
+                "right_hand_index_1_joint"
+            ]
+        },
+        "timestamp": {
+            "dtype": "float32",
+            "shape": [
+                1
+            ],
+            "names": null
+        },
+        "frame_index": {
+            "dtype": "int64",
+            "shape": [
+                1
+            ],
+            "names": null
+        },
+        "episode_index": {
+            "dtype": "int64",
+            "shape": [
+                1
+            ],
+            "names": null
+        },
+        "index": {
+            "dtype": "int64",
+            "shape": [
+                1
+            ],
+            "names": null
+        },
+        "task_index": {
+            "dtype": "int64",
+            "shape": [
+                1
+            ],
+            "names": null
+        }
+    }
+}

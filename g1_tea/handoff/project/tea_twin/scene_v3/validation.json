@@ -1,0 +1,2188 @@
+{
+  "appearance": {
+    "photorealism": "not_validated",
+    "solid_material_objects_checked": 395,
+    "status": "passed",
+    "texture_appearance": "not_validated"
+  },
+  "authoring_notes": [
+    "MANIFEST_GAP r20: the kitchen doorway is photographed (photos 2, 3) as an open black-lined opening with no leaf, hinge or track, and the brief requires it to stay open; it is built as a fixed frame, so no hinge body exists to test.",
+    "MANIFEST_GAP r6: the lone black cup in the middle of the counter was placed only for the recording; the creator asked for it to be left out.",
+    "MANIFEST_GAP r40: the motorcycle helmet on the bench was placed only for the recording; the creator asked for it to be left out.",
+    "MANIFEST_GAP r10: the desk telephone at the counter's wall end (photo 2 only) is not built - the creator froze the tea station and its movable props exactly as accepted, and that corner is the robot's working area.",
+    "MANIFEST_GAP r11: the round black lid / coaster beside the telephone (photo 2 only) is not built for the same reason as r10.",
+    "MANIFEST_GAP r34: the frosted-band glass door to the office shows no hinge, handle or swing in any photo; it stays the fixed panel the creator accepted, since the creator asked for the doors to be kept exactly as they are.",
+    "MANIFEST_GAP r49: copies 2 and 3 are the plain right and left boundary walls, which have no gate in any photo; the row's gate is on copy 1 (back wall) and is built as two working hinged leaves.",
+    "MANIFEST_GAP r7: the jar's screw lid is part of the jar's single free body; a threaded lid on a free body cannot be exported as its own joint.",
+    "MANIFEST_GAP r9: the kettle lid hinge is part of the lifted jug's single free body; a hinge nested on a free body cannot be exported as its own joint."
+  ],
+  "checks": {
+    "contact_geometry_resolved": "inconclusive",
+    "final_glb_solid_materials": "passed",
+    "finite_geometry": "passed",
+    "isaac_sim_runtime": "not_run",
+    "mechanism_audit": "passed",
+    "mechanism_push_test": "passed",
+    "mechanism_task_success": "not_run",
+    "mesh_count_matches": "passed",
+    "movable_bodies_exported": "passed",
+    "robot_control": "not_run",
+    "route_usability": "not_run",
+    "terrain_contact_test": "not_applicable",
+    "twin_inventory": "passed",
+    "units_and_axes": "passed",
+    "usd_reopens": "passed",
+    "visual_quality": "not_run"
+  },
+  "collider_count": 123,
+  "contact_geometry": {
+    "auto_pieces": 328,
+    "details": {
+      "end_wall": {
+        "components": 1,
+        "decomposed": 1,
+        "decomposition_failures": 0,
+        "dropped_small_pieces": 0,
+        "pieces": 2,
+        "source": "auto_convex_pieces"
+      },
+      "kitchen_walls": {
+        "components": 3,
+        "decomposed": 0,
+        "decomposition_failures": 0,
+        "dropped_small_pieces": 0,
+        "pieces": 3,
+        "source": "auto_convex_pieces"
+      },
+      "landing_edge_angle": {
+        "components": 2,
+        "decomposed": 0,
+        "decomposition_failures": 0,
+        "dropped_small_pieces": 0,
+        "pieces": 2,
+        "source": "auto_convex_pieces"
+      },
+      "landing_floor_slab": {
+        "components": 2,
+        "decomposed": 0,
+        "decomposition_failures": 0,
+        "dropped_small_pieces": 0,
+        "pieces": 2,
+        "source": "auto_convex_pieces"
+      },
+      "lower_storey_walls": {
+        "components": 3,
+        "decomposed": 0,
+        "decomposition_failures": 0,
+        "dropped_small_pieces": 0,
+        "pieces": 3,
+        "source": "auto_convex_pieces"
+      },
+      "office_ceiling_slab": {
+        "components": 2,
+        "decomposed": 0,
+        "decomposition_failures": 0,
+        "dropped_small_pieces": 0,
+        "pieces": 2,
+        "source": "auto_convex_pieces"
+      },
+      "office_chairs": {
+        "components": 416,
+        "decomposed": 0,
+        "decomposition_failures": 0,
+        "dropped_small_pieces": 0,
+        "pieces": 24,
+        "source": "auto_assembly_pieces"
+      },
+      "office_desks": {
+        "components": 24,
+        "decomposed": 0,
+        "decomposition_failures": 0,
+        "dropped_small_pieces": 0,
+        "pieces": 24,
+        "source": "auto_convex_pieces"
+      },
+      "office_floor": {
+        "components": 2,
+        "decomposed": 0,
+        "decomposition_failures": 0,
+        "dropped_small_pieces": 0,
+        "pieces": 2,
+        "source": "auto_convex_pieces"
+      },
+      "office_outer_walls": {
+        "components": 3,
+        "decomposed": 0,
+        "decomposition_failures": 0,
+        "dropped_small_pieces": 0,
+        "pieces": 3,
+        "source": "auto_convex_pieces"
+      },
+      "r14i1_valve_hose_and_hook": {
+        "components": 12,
+        "decomposed": 0,
+        "decomposition_failures": 0,
+        "dropped_small_pieces": 1,
+        "pieces": 11,
+        "source": "auto_convex_pieces"
+      },
+      "r1i1_glazing": {
+        "components": 10,
+        "decomposed": 0,
+        "decomposition_failures": 0,
+        "dropped_small_pieces": 0,
+        "pieces": 10,
+        "source": "auto_convex_pieces"
+      },
+      "r1i1_mullions_and_transom": {
+        "components": 21,
+        "decomposed": 0,
+        "decomposition_failures": 0,
+        "dropped_small_pieces": 0,
+        "pieces": 21,
+        "source": "auto_convex_pieces"
+      },
+      "r20i1_doorway_frame": {
+        "components": 10,
+        "decomposed": 0,
+        "decomposition_failures": 0,
+        "dropped_small_pieces": 0,
+        "pieces": 10,
+        "source": "auto_convex_pieces"
+      },
+      "r21i1_wall_tiling": {
+        "components": 3,
+        "decomposed": 0,
+        "decomposition_failures": 0,
+        "dropped_small_pieces": 0,
+        "pieces": 3,
+        "source": "auto_convex_pieces"
+      },
+      "r21i1_worktop": {
+        "components": 2,
+        "decomposed": 0,
+        "decomposition_failures": 0,
+        "dropped_small_pieces": 0,
+        "pieces": 2,
+        "source": "auto_convex_pieces"
+      },
+      "r21i1_worktop_base_units": {
+        "components": 4,
+        "decomposed": 0,
+        "decomposition_failures": 0,
+        "dropped_small_pieces": 0,
+        "pieces": 4,
+        "source": "auto_convex_pieces"
+      },
+      "r29i1_planter_pot": {
+        "components": 2,
+        "decomposed": 1,
+        "decomposition_failures": 0,
+        "dropped_small_pieces": 0,
+        "pieces": 13,
+        "source": "auto_convex_pieces"
+      },
+      "r34i1_glass_panel_frame": {
+        "components": 5,
+        "decomposed": 0,
+        "decomposition_failures": 0,
+        "dropped_small_pieces": 0,
+        "pieces": 5,
+        "source": "auto_convex_pieces"
+      },
+      "r35i1_partition_frame": {
+        "components": 9,
+        "decomposed": 1,
+        "decomposition_failures": 0,
+        "dropped_small_pieces": 6,
+        "pieces": 6,
+        "source": "auto_convex_pieces"
+      },
+      "r3i1_open_cabinet": {
+        "components": 70,
+        "decomposed": 0,
+        "decomposition_failures": 0,
+        "dropped_small_pieces": 0,
+        "pieces": 12,
+        "source": "auto_assembly_pieces"
+      },
+      "r42i1_skirting": {
+        "components": 10,
+        "decomposed": 0,
+        "decomposition_failures": 0,
+        "dropped_small_pieces": 4,
+        "pieces": 6,
+        "source": "auto_convex_pieces"
+      },
+      "r49i1_gate_leaf_left": {
+        "components": 17,
+        "decomposed": 0,
+        "decomposition_failures": 0,
+        "dropped_small_pieces": 2,
+        "pieces": 15,
+        "source": "auto_convex_pieces"
+      },
+      "r49i1_gate_leaf_right": {
+        "components": 16,
+        "decomposed": 0,
+        "decomposition_failures": 0,
+        "dropped_small_pieces": 0,
+        "pieces": 16,
+        "source": "auto_convex_pieces"
+      },
+      "r50i1_stair_box_door": {
+        "components": 4,
+        "decomposed": 0,
+        "decomposition_failures": 0,
+        "dropped_small_pieces": 0,
+        "pieces": 4,
+        "source": "auto_convex_pieces"
+      },
+      "r52i1_roller_shutter": {
+        "components": 25,
+        "decomposed": 0,
+        "decomposition_failures": 0,
+        "dropped_small_pieces": 0,
+        "pieces": 25,
+        "source": "auto_convex_pieces"
+      },
+      "r52i2_roller_shutter": {
+        "components": 25,
+        "decomposed": 0,
+        "decomposition_failures": 0,
+        "dropped_small_pieces": 0,
+        "pieces": 25,
+        "source": "auto_convex_pieces"
+      },
+      "r52i3_roller_shutter": {
+        "components": 25,
+        "decomposed": 0,
+        "decomposition_failures": 0,
+        "dropped_small_pieces": 0,
+        "pieces": 25,
+        "source": "auto_convex_pieces"
+      },
+      "restroom_vanity": {
+        "components": 2,
+        "decomposed": 0,
+        "decomposition_failures": 0,
+        "dropped_small_pieces": 0,
+        "pieces": 2,
+        "source": "auto_convex_pieces"
+      },
+      "restroom_walls": {
+        "components": 3,
+        "decomposed": 0,
+        "decomposition_failures": 0,
+        "dropped_small_pieces": 0,
+        "pieces": 3,
+        "source": "auto_convex_pieces"
+      },
+      "stair_half_landing_lower_frame": {
+        "components": 8,
+        "decomposed": 0,
+        "decomposition_failures": 0,
+        "dropped_small_pieces": 0,
+        "pieces": 8,
+        "source": "auto_convex_pieces"
+      },
+      "stair_half_landing_mid_frame": {
+        "components": 8,
+        "decomposed": 0,
+        "decomposition_failures": 0,
+        "dropped_small_pieces": 0,
+        "pieces": 8,
+        "source": "auto_convex_pieces"
+      },
+      "stair_half_landing_upper_frame": {
+        "components": 8,
+        "decomposed": 0,
+        "decomposition_failures": 0,
+        "dropped_small_pieces": 0,
+        "pieces": 8,
+        "source": "auto_convex_pieces"
+      },
+      "stair_wall_handrail": {
+        "components": 7,
+        "decomposed": 0,
+        "decomposition_failures": 0,
+        "dropped_small_pieces": 0,
+        "pieces": 7,
+        "source": "auto_convex_pieces"
+      },
+      "stairwell_partition_wall": {
+        "components": 1,
+        "decomposed": 1,
+        "decomposition_failures": 0,
+        "dropped_small_pieces": 0,
+        "pieces": 4,
+        "source": "auto_convex_pieces"
+      },
+      "upper_floor_slab": {
+        "components": 2,
+        "decomposed": 0,
+        "decomposition_failures": 0,
+        "dropped_small_pieces": 0,
+        "pieces": 2,
+        "source": "auto_convex_pieces"
+      },
+      "upper_storey_floor_slab": {
+        "components": 2,
+        "decomposed": 0,
+        "decomposition_failures": 0,
+        "dropped_small_pieces": 0,
+        "pieces": 2,
+        "source": "auto_convex_pieces"
+      },
+      "upper_storey_walls": {
+        "components": 4,
+        "decomposed": 0,
+        "decomposition_failures": 0,
+        "dropped_small_pieces": 0,
+        "pieces": 4,
+        "source": "auto_convex_pieces"
+      }
+    },
+    "objects_decomposed": 38
+  },
+  "controller": {
+    "note": null,
+    "requested": null,
+    "used": null
+  },
+  "engines": [
+    {
+      "detail": "Built and motion-tested here; the acceptance engine.",
+      "engine": "mujoco",
+      "label": "MuJoCo",
+      "robot_included": false,
+      "status": "tested_here"
+    },
+    {
+      "detail": "Loaded and motion-checked here as a compatibility opinion.",
+      "engine": "pybullet",
+      "label": "PyBullet",
+      "robot_included": false,
+      "status": "checked_here"
+    },
+    {
+      "detail": "Files exported; this engine was not run here.",
+      "engine": "isaac_sim",
+      "label": "Isaac Sim",
+      "robot_included": false,
+      "status": "exported_only"
+    },
+    {
+      "detail": "Files exported; this engine was not run here.",
+      "engine": "gazebo",
+      "label": "Gazebo",
+      "robot_included": false,
+      "status": "exported_only"
+    }
+  ],
+  "joint_count": 7,
+  "limitations": [
+    "Joint dry friction: approximated in PyBullet (zero-velocity motor capped at the friction force).",
+    "Joint dry friction: approximated in Isaac Sim (physxJoint:jointFriction, PhysX-specific).",
+    "Exact triangle contact for fixed parts: approximated in MuJoCo (fixed parts collide as convex pieces or hulls).",
+    "Isaac Sim: files exported, nothing was run here; open them in your own installation.",
+    "Gazebo: files exported, nothing was run here; open them in your own installation."
+  ],
+  "mechanism_test": {
+    "acceptance_engine": "mujoco",
+    "compatibility": {
+      "pybullet": {
+        "engine": "PyBullet 202010061",
+        "finite": true,
+        "mechanisms": [
+          {
+            "blocked_by": [],
+            "kind": "hinge",
+            "name": "r26i1_door_leaf",
+            "outcome": "opens_to_stop",
+            "push": 51.0,
+            "pushed": 1.5700000000000005,
+            "range": [
+              0.0,
+              1.57
+            ],
+            "rest": 0.0,
+            "touching_at_rest": {}
+          },
+          {
+            "blocked_by": [],
+            "kind": "hinge",
+            "name": "r49i1_gate_leaf_left",
+            "outcome": "opens_to_stop",
+            "push": 60.0,
+            "pushed": 1.4000000000000004,
+            "range": [
+              0.0,
+              1.4
+            ],
+            "rest": 0.0,
+            "touching_at_rest": {}
+          },
+          {
+            "blocked_by": [],
+            "kind": "hinge",
+            "name": "r49i1_gate_leaf_right",
+            "outcome": "opens_to_stop",
+            "push": 60.0,
+            "pushed": 1.4000000000000004,
+            "range": [
+              0.0,
+              1.4
+            ],
+            "rest": 0.0,
+            "touching_at_rest": {}
+          },
+          {
+            "blocked_by": [],
+            "kind": "hinge",
+            "name": "r50i1_stair_box_door",
+            "outcome": "opens_to_stop",
+            "push": 60.0,
+            "pushed": 1.5000000000000004,
+            "range": [
+              0.0,
+              1.5
+            ],
+            "rest": 0.0,
+            "touching_at_rest": {}
+          },
+          {
+            "blocked_by": [],
+            "kind": "slide",
+            "name": "r52i1_roller_shutter",
+            "outcome": "opens_to_stop",
+            "push": 37.5,
+            "pushed": 3.000000000000001,
+            "range": [
+              0.0,
+              3.0
+            ],
+            "rest": 0.0,
+            "touching_at_rest": {}
+          },
+          {
+            "blocked_by": [],
+            "kind": "slide",
+            "name": "r52i2_roller_shutter",
+            "outcome": "opens_to_stop",
+            "push": 37.5,
+            "pushed": 3.000000000000001,
+            "range": [
+              0.0,
+              3.0
+            ],
+            "rest": 0.0,
+            "touching_at_rest": {}
+          },
+          {
+            "blocked_by": [],
+            "kind": "slide",
+            "name": "r52i3_roller_shutter",
+            "outcome": "opens_to_stop",
+            "push": 37.5,
+            "pushed": 3.000000000000001,
+            "range": [
+              0.0,
+              3.0
+            ],
+            "rest": 0.0,
+            "touching_at_rest": {}
+          }
+        ],
+        "props": [
+          {
+            "after_push_displacement_m": 0.0,
+            "drift_m": 0.305,
+            "fall_m": -0.301,
+            "name": "r22i1_flat_mop",
+            "outcome": "settled",
+            "touching_at_rest": {}
+          },
+          {
+            "after_push_displacement_m": 0.0,
+            "drift_m": 0.097,
+            "fall_m": -0.096,
+            "name": "r9i1_kettle_jug",
+            "outcome": "rests",
+            "touching_at_rest": {}
+          },
+          {
+            "after_push_displacement_m": 0.0,
+            "drift_m": 0.021,
+            "fall_m": -0.021,
+            "name": "r8i1_sachet_tray",
+            "outcome": "rests",
+            "touching_at_rest": {}
+          },
+          {
+            "after_push_displacement_m": 0.0,
+            "drift_m": 0.018,
+            "fall_m": -0.018,
+            "name": "r8i1_tea_envelopes",
+            "outcome": "rests",
+            "touching_at_rest": {}
+          },
+          {
+            "after_push_displacement_m": 0.0,
+            "drift_m": 0.011,
+            "fall_m": -0.011,
+            "name": "r8i1_sugar_sticks",
+            "outcome": "rests",
+            "touching_at_rest": {}
+          },
+          {
+            "after_push_displacement_m": 0.0,
+            "drift_m": 0.011,
+            "fall_m": -0.011,
+            "name": "r8i1_stirrers_and_sticks",
+            "outcome": "rests",
+            "touching_at_rest": {}
+          },
+          {
+            "after_push_displacement_m": 0.0,
+            "drift_m": 0.018,
+            "fall_m": -0.018,
+            "name": "r8i1_green_tea_bags",
+            "outcome": "rests",
+            "touching_at_rest": {}
+          },
+          {
+            "after_push_displacement_m": 0.0,
+            "drift_m": 0.011,
+            "fall_m": -0.011,
+            "name": "r8i1_coffee_sticks",
+            "outcome": "rests",
+            "touching_at_rest": {}
+          },
+          {
+            "after_push_displacement_m": 0.0,
+            "drift_m": 0.018,
+            "fall_m": -0.018,
+            "name": "r8i1_tea_bags_loose",
+            "outcome": "rests",
+            "touching_at_rest": {}
+          },
+          {
+            "after_push_displacement_m": 0.0,
+            "drift_m": 0.025,
+            "fall_m": -0.025,
+            "name": "r8i1_tub_left",
+            "outcome": "rests",
+            "touching_at_rest": {}
+          },
+          {
+            "after_push_displacement_m": 0.0,
+            "drift_m": 0.025,
+            "fall_m": -0.025,
+            "name": "r8i1_tub_right",
+            "outcome": "rests",
+            "touching_at_rest": {}
+          },
+          {
+            "after_push_displacement_m": 0.0,
+            "drift_m": 0.02,
+            "fall_m": -0.02,
+            "name": "r8i1_snack_pack",
+            "outcome": "rests",
+            "touching_at_rest": {}
+          },
+          {
+            "after_push_displacement_m": 0.0,
+            "drift_m": 0.061,
+            "fall_m": -0.061,
+            "name": "r7i1_glass_jar",
+            "outcome": "rests",
+            "touching_at_rest": {}
+          },
+          {
+            "after_push_displacement_m": 0.0,
+            "drift_m": 0.135,
+            "fall_m": -0.131,
+            "name": "r4i1_mug_rack",
+            "outcome": "rests",
+            "touching_at_rest": {}
+          },
+          {
+            "after_push_displacement_m": 0.0,
+            "drift_m": 0.038,
+            "fall_m": -0.038,
+            "name": "r5i1_mug",
+            "outcome": "rests",
+            "touching_at_rest": {}
+          },
+          {
+            "after_push_displacement_m": 0.0,
+            "drift_m": 0.038,
+            "fall_m": -0.038,
+            "name": "r5i2_mug",
+            "outcome": "rests",
+            "touching_at_rest": {}
+          },
+          {
+            "after_push_displacement_m": 0.0,
+            "drift_m": 0.038,
+            "fall_m": -0.038,
+            "name": "r5i3_mug",
+            "outcome": "rests",
+            "touching_at_rest": {}
+          },
+          {
+            "after_push_displacement_m": 0.0,
+            "drift_m": 0.038,
+            "fall_m": -0.038,
+            "name": "r5i4_mug",
+            "outcome": "rests",
+            "touching_at_rest": {}
+          },
+          {
+            "after_push_displacement_m": 0.0,
+            "drift_m": 0.038,
+            "fall_m": -0.038,
+            "name": "r5i5_mug",
+            "outcome": "rests",
+            "touching_at_rest": {}
+          },
+          {
+            "after_push_displacement_m": 0.0,
+            "drift_m": 0.038,
+            "fall_m": -0.038,
+            "name": "r5i6_mug",
+            "outcome": "rests",
+            "touching_at_rest": {}
+          },
+          {
+            "after_push_displacement_m": 0.0,
+            "drift_m": 0.038,
+            "fall_m": -0.038,
+            "name": "r5i7_mug",
+            "outcome": "rests",
+            "touching_at_rest": {}
+          },
+          {
+            "after_push_displacement_m": 0.0,
+            "drift_m": 0.038,
+            "fall_m": -0.038,
+            "name": "r5i8_mug",
+            "outcome": "rests",
+            "touching_at_rest": {}
+          },
+          {
+            "after_push_displacement_m": 0.0,
+            "drift_m": 0.038,
+            "fall_m": -0.038,
+            "name": "r5i9_mug",
+            "outcome": "rests",
+            "touching_at_rest": {}
+          },
+          {
+            "after_push_displacement_m": 0.0,
+            "drift_m": 0.038,
+            "fall_m": -0.038,
+            "name": "r5i10_mug",
+            "outcome": "rests",
+            "touching_at_rest": {}
+          },
+          {
+            "after_push_displacement_m": 0.0,
+            "drift_m": 0.038,
+            "fall_m": -0.038,
+            "name": "r5i11_mug",
+            "outcome": "rests",
+            "touching_at_rest": {}
+          },
+          {
+            "after_push_displacement_m": 0.0,
+            "drift_m": 0.11,
+            "fall_m": -0.11,
+            "name": "r13i1_waste_bin",
+            "outcome": "rests",
+            "touching_at_rest": {}
+          },
+          {
+            "after_push_displacement_m": 0.0,
+            "drift_m": 0.21,
+            "fall_m": -0.21,
+            "name": "r31i1_spare_bottle",
+            "outcome": "rests",
+            "touching_at_rest": {}
+          },
+          {
+            "after_push_displacement_m": 0.0,
+            "drift_m": 0.21,
+            "fall_m": -0.21,
+            "name": "r31i2_spare_bottle",
+            "outcome": "rests",
+            "touching_at_rest": {}
+          }
+        ]
+      }
+    },
+    "compatibility_notes": [],
+    "coverage": {
+      "mujoco": {
+        "status": "measured"
+      },
+      "pybullet": {
+        "status": "measured"
+      }
+    },
+    "engines": [
+      "MuJoCo 3.13.0"
+    ],
+    "finite": true,
+    "mechanisms": [
+      {
+        "blocked_by": [],
+        "engines": {
+          "mujoco": "opens_to_stop",
+          "pybullet": "opens_to_stop"
+        },
+        "kind": "hinge",
+        "name": "r26i1_door_leaf",
+        "outcome": "opens_to_stop",
+        "push": 51.0,
+        "pushed": 1.5704519747080488,
+        "range": [
+          0.0,
+          1.57
+        ],
+        "rest": 0.0,
+        "touching_at_rest": {}
+      },
+      {
+        "blocked_by": [],
+        "engines": {
+          "mujoco": "opens_to_stop",
+          "pybullet": "opens_to_stop"
+        },
+        "kind": "hinge",
+        "name": "r49i1_gate_leaf_left",
+        "outcome": "opens_to_stop",
+        "push": 60.0,
+        "pushed": 1.4000361611799765,
+        "range": [
+          0.0,
+          1.4
+        ],
+        "rest": 0.0,
+        "touching_at_rest": {}
+      },
+      {
+        "blocked_by": [],
+        "engines": {
+          "mujoco": "opens_to_stop",
+          "pybullet": "opens_to_stop"
+        },
+        "kind": "hinge",
+        "name": "r49i1_gate_leaf_right",
+        "outcome": "opens_to_stop",
+        "push": 60.0,
+        "pushed": 1.4000361611799765,
+        "range": [
+          0.0,
+          1.4
+        ],
+        "rest": 0.0,
+        "touching_at_rest": {}
+      },
+      {
+        "blocked_by": [],
+        "engines": {
+          "mujoco": "opens_to_stop",
+          "pybullet": "opens_to_stop"
+        },
+        "kind": "hinge",
+        "name": "r50i1_stair_box_door",
+        "outcome": "opens_to_stop",
+        "push": 60.0,
+        "pushed": 1.5003352908763175,
+        "range": [
+          0.0,
+          1.5
+        ],
+        "rest": 0.0,
+        "touching_at_rest": {}
+      },
+      {
+        "blocked_by": [],
+        "engines": {
+          "mujoco": "opens_to_stop",
+          "pybullet": "opens_to_stop"
+        },
+        "kind": "slide",
+        "name": "r52i1_roller_shutter",
+        "outcome": "opens_to_stop",
+        "push": 37.5,
+        "pushed": 3.0002180056502277,
+        "range": [
+          0.0,
+          3.0
+        ],
+        "rest": -0.00036718184377965927,
+        "touching_at_rest": {}
+      },
+      {
+        "blocked_by": [],
+        "engines": {
+          "mujoco": "opens_to_stop",
+          "pybullet": "opens_to_stop"
+        },
+        "kind": "slide",
+        "name": "r52i2_roller_shutter",
+        "outcome": "opens_to_stop",
+        "push": 37.5,
+        "pushed": 3.0002180056502277,
+        "range": [
+          0.0,
+          3.0
+        ],
+        "rest": -0.00036718184377965927,
+        "touching_at_rest": {}
+      },
+      {
+        "blocked_by": [],
+        "engines": {
+          "mujoco": "opens_to_stop",
+          "pybullet": "opens_to_stop"
+        },
+        "kind": "slide",
+        "name": "r52i3_roller_shutter",
+        "outcome": "opens_to_stop",
+        "push": 37.5,
+        "pushed": 3.0002180056502277,
+        "range": [
+          0.0,
+          3.0
+        ],
+        "rest": -0.00036718184377965927,
+        "touching_at_rest": {}
+      }
+    ],
+    "props": [
+      {
+        "after_push_displacement_m": 0.0,
+        "drift_m": 0.0,
+        "engines": {
+          "mujoco": "rests",
+          "pybullet": "settled"
+        },
+        "fall_m": 0.0,
+        "name": "r22i1_flat_mop",
+        "outcome": "rests",
+        "touching_at_rest": {}
+      },
+      {
+        "after_push_displacement_m": 0.0,
+        "drift_m": 0.001,
+        "engines": {
+          "mujoco": "rests",
+          "pybullet": "rests"
+        },
+        "fall_m": 0.001,
+        "name": "r9i1_kettle_jug",
+        "outcome": "rests",
+        "touching_at_rest": {}
+      },
+      {
+        "after_push_displacement_m": 0.0,
+        "drift_m": 0.001,
+        "engines": {
+          "mujoco": "rests",
+          "pybullet": "rests"
+        },
+        "fall_m": 0.001,
+        "name": "r8i1_sachet_tray",
+        "outcome": "rests",
+        "touching_at_rest": {}
+      },
+      {
+        "after_push_displacement_m": 0.0,
+        "drift_m": 0.001,
+        "engines": {
+          "mujoco": "rests",
+          "pybullet": "rests"
+        },
+        "fall_m": 0.001,
+        "name": "r8i1_tea_envelopes",
+        "outcome": "rests",
+        "touching_at_rest": {}
+      },
+      {
+        "after_push_displacement_m": 0.0,
+        "drift_m": 0.001,
+        "engines": {
+          "mujoco": "rests",
+          "pybullet": "rests"
+        },
+        "fall_m": 0.001,
+        "name": "r8i1_sugar_sticks",
+        "outcome": "rests",
+        "touching_at_rest": {}
+      },
+      {
+        "after_push_displacement_m": 0.0,
+        "drift_m": 0.001,
+        "engines": {
+          "mujoco": "rests",
+          "pybullet": "rests"
+        },
+        "fall_m": 0.001,
+        "name": "r8i1_stirrers_and_sticks",
+        "outcome": "rests",
+        "touching_at_rest": {}
+      },
+      {
+        "after_push_displacement_m": 0.0,
+        "drift_m": 0.001,
+        "engines": {
+          "mujoco": "rests",
+          "pybullet": "rests"
+        },
+        "fall_m": 0.001,
+        "name": "r8i1_green_tea_bags",
+        "outcome": "rests",
+        "touching_at_rest": {}
+      },
+      {
+        "after_push_displacement_m": 0.0,
+        "drift_m": 0.001,
+        "engines": {
+          "mujoco": "rests",
+          "pybullet": "rests"
+        },
+        "fall_m": 0.001,
+        "name": "r8i1_coffee_sticks",
+        "outcome": "rests",
+        "touching_at_rest": {}
+      },
+      {
+        "after_push_displacement_m": 0.0,
+        "drift_m": 0.001,
+        "engines": {
+          "mujoco": "rests",
+          "pybullet": "rests"
+        },
+        "fall_m": 0.001,
+        "name": "r8i1_tea_bags_loose",
+        "outcome": "rests",
+        "touching_at_rest": {}
+      },
+      {
+        "after_push_displacement_m": 0.0,
+        "drift_m": 0.001,
+        "engines": {
+          "mujoco": "rests",
+          "pybullet": "rests"
+        },
+        "fall_m": 0.001,
+        "name": "r8i1_tub_left",
+        "outcome": "rests",
+        "touching_at_rest": {}
+      },
+      {
+        "after_push_displacement_m": 0.0,
+        "drift_m": 0.001,
+        "engines": {
+          "mujoco": "rests",
+          "pybullet": "rests"
+        },
+        "fall_m": 0.001,
+        "name": "r8i1_tub_right",
+        "outcome": "rests",
+        "touching_at_rest": {}
+      },
+      {
+        "after_push_displacement_m": 0.0,
+        "drift_m": 0.001,
+        "engines": {
+          "mujoco": "rests",
+          "pybullet": "rests"
+        },
+        "fall_m": 0.001,
+        "name": "r8i1_snack_pack",
+        "outcome": "rests",
+        "touching_at_rest": {}
+      },
+      {
+        "after_push_displacement_m": 0.0,
+        "drift_m": 0.001,
+        "engines": {
+          "mujoco": "rests",
+          "pybullet": "rests"
+        },
+        "fall_m": 0.001,
+        "name": "r7i1_glass_jar",
+        "outcome": "rests",
+        "touching_at_rest": {}
+      },
+      {
+        "after_push_displacement_m": 0.0,
+        "drift_m": 0.001,
+        "engines": {
+          "mujoco": "rests",
+          "pybullet": "rests"
+        },
+        "fall_m": 0.001,
+        "name": "r4i1_mug_rack",
+        "outcome": "rests",
+        "touching_at_rest": {}
+      },
+      {
+        "after_push_displacement_m": 0.0,
+        "drift_m": 0.001,
+        "engines": {
+          "mujoco": "rests",
+          "pybullet": "rests"
+        },
+        "fall_m": 0.001,
+        "name": "r5i1_mug",
+        "outcome": "rests",
+        "touching_at_rest": {}
+      },
+      {
+        "after_push_displacement_m": 0.0,
+        "drift_m": 0.001,
+        "engines": {
+          "mujoco": "rests",
+          "pybullet": "rests"
+        },
+        "fall_m": 0.001,
+        "name": "r5i2_mug",
+        "outcome": "rests",
+        "touching_at_rest": {}
+      },
+      {
+        "after_push_displacement_m": 0.0,
+        "drift_m": 0.001,
+        "engines": {
+          "mujoco": "rests",
+          "pybullet": "rests"
+        },
+        "fall_m": 0.001,
+        "name": "r5i3_mug",
+        "outcome": "rests",
+        "touching_at_rest": {}
+      },
+      {
+        "after_push_displacement_m": 0.0,
+        "drift_m": 0.001,
+        "engines": {
+          "mujoco": "rests",
+          "pybullet": "rests"
+        },
+        "fall_m": 0.001,
+        "name": "r5i4_mug",
+        "outcome": "rests",
+        "touching_at_rest": {}
+      },
+      {
+        "after_push_displacement_m": 0.0,
+        "drift_m": 0.001,
+        "engines": {
+          "mujoco": "rests",
+          "pybullet": "rests"
+        },
+        "fall_m": 0.001,
+        "name": "r5i5_mug",
+        "outcome": "rests",
+        "touching_at_rest": {}
+      },
+      {
+        "after_push_displacement_m": 0.0,
+        "drift_m": 0.001,
+        "engines": {
+          "mujoco": "rests",
+          "pybullet": "rests"
+        },
+        "fall_m": 0.001,
+        "name": "r5i6_mug",
+        "outcome": "rests",
+        "touching_at_rest": {}
+      },
+      {
+        "after_push_displacement_m": 0.0,
+        "drift_m": 0.001,
+        "engines": {
+          "mujoco": "rests",
+          "pybullet": "rests"
+        },
+        "fall_m": 0.001,
+        "name": "r5i7_mug",
+        "outcome": "rests",
+        "touching_at_rest": {}
+      },
+      {
+        "after_push_displacement_m": 0.0,
+        "drift_m": 0.001,
+        "engines": {
+          "mujoco": "rests",
+          "pybullet": "rests"
+        },
+        "fall_m": 0.001,
+        "name": "r5i8_mug",
+        "outcome": "rests",
+        "touching_at_rest": {}
+      },
+      {
+        "after_push_displacement_m": 0.0,
+        "drift_m": 0.001,
+        "engines": {
+          "mujoco": "rests",
+          "pybullet": "rests"
+        },
+        "fall_m": 0.001,
+        "name": "r5i9_mug",
+        "outcome": "rests",
+        "touching_at_rest": {}
+      },
+      {
+        "after_push_displacement_m": 0.0,
+        "drift_m": 0.001,
+        "engines": {
+          "mujoco": "rests",
+          "pybullet": "rests"
+        },
+        "fall_m": 0.001,
+        "name": "r5i10_mug",
+        "outcome": "rests",
+        "touching_at_rest": {}
+      },
+      {
+        "after_push_displacement_m": 0.0,
+        "drift_m": 0.001,
+        "engines": {
+          "mujoco": "rests",
+          "pybullet": "rests"
+        },
+        "fall_m": 0.001,
+        "name": "r5i11_mug",
+        "outcome": "rests",
+        "touching_at_rest": {}
+      },
+      {
+        "after_push_displacement_m": 0.0,
+        "drift_m": 0.001,
+        "engines": {
+          "mujoco": "rests",
+          "pybullet": "rests"
+        },
+        "fall_m": 0.001,
+        "name": "r13i1_waste_bin",
+        "outcome": "rests",
+        "touching_at_rest": {}
+      },
+      {
+        "after_push_displacement_m": 0.0,
+        "drift_m": 0.001,
+        "engines": {
+          "mujoco": "rests",
+          "pybullet": "rests"
+        },
+        "fall_m": 0.001,
+        "name": "r31i1_spare_bottle",
+        "outcome": "rests",
+        "touching_at_rest": {}
+      },
+      {
+        "after_push_displacement_m": 0.0,
+        "drift_m": 0.001,
+        "engines": {
+          "mujoco": "rests",
+          "pybullet": "rests"
+        },
+        "fall_m": 0.001,
+        "name": "r31i2_spare_bottle",
+        "outcome": "rests",
+        "touching_at_rest": {}
+      }
+    ],
+    "scope": "environment only, no robot: rest clearance, forced push in the allowed direction, free-prop displacement during passive settling before the push, water buoyancy and drag where declared. Support beyond the settle window is not certified. Not a task or controller test.",
+    "status": "passed",
+    "summary": {
+      "floating_props": 0,
+      "free_props": 28,
+      "jammed": 0,
+      "mechanisms": 7,
+      "opens_but_touching": 0,
+      "opens_partly": 0,
+      "opens_to_stop": 7,
+      "parts_interfering_at_rest": [],
+      "settled_props": 0,
+      "unsupported_props": 0
+    },
+    "warnings": 0
+  },
+  "mechanisms": {
+    "driven_bodies": 0,
+    "errors": [],
+    "free_bodies": 28,
+    "hinges": 4,
+    "kinematic_bodies": 0,
+    "movable_bodies": 35,
+    "sliders": 3,
+    "static_objects": 360,
+    "warnings": []
+  },
+  "mesh_count": 395,
+  "rigid_body_count": 35,
+  "robot_included": false,
+  "schema_version": "nova.robotics-validation/v1",
+  "scope": "environment_export",
+  "simulation": {
+    "engine": "mujoco",
+    "mode": "environment_export_only",
+    "native_load_check": "passed",
+    "reason": "Environment exported without a robot/controller session; environment mechanism checks are recorded separately in validation.json",
+    "robot_included": false,
+    "status": "not_run",
+    "training": "not_run"
+  },
+  "simulations": {
+    "gazebo": {
+      "engine": "gazebo",
+      "mode": "environment_export_only",
+      "native_load_check": "not_run",
+      "reason": "Environment exported without a robot/controller session; environment mechanism checks are recorded separately in validation.json",
+      "robot_included": false,
+      "status": "not_run",
+      "training": "not_run"
+    },
+    "isaac_sim": {
+      "engine": "isaac_sim",
+      "mode": "environment_export_only",
+      "native_load_check": "not_run",
+      "reason": "Environment exported without a robot/controller session; environment mechanism checks are recorded separately in validation.json",
+      "robot_included": false,
+      "status": "not_run",
+      "training": "not_run"
+    },
+    "mujoco": {
+      "engine": "mujoco",
+      "mode": "environment_export_only",
+      "native_load_check": "passed",
+      "reason": "Environment exported without a robot/controller session; environment mechanism checks are recorded separately in validation.json",
+      "robot_included": false,
+      "status": "not_run",
+      "training": "not_run"
+    },
+    "pybullet": {
+      "engine": "pybullet",
+      "mode": "environment_export_only",
+      "native_load_check": "not_run",
+      "reason": "Environment exported without a robot/controller session; environment mechanism checks are recorded separately in validation.json",
+      "robot_included": false,
+      "status": "not_run",
+      "training": "not_run"
+    }
+  },
+  "source_lines": 2988,
+  "status": "inconclusive",
+  "support": {
+    "engines": {
+      "gazebo": {
+        "exported": true,
+        "label": "Gazebo",
+        "measured": null
+      },
+      "isaac_sim": {
+        "exported": true,
+        "label": "Isaac Sim",
+        "measured": null
+      },
+      "mujoco": {
+        "exported": true,
+        "label": "MuJoCo",
+        "measured": "acceptance"
+      },
+      "pybullet": {
+        "exported": true,
+        "label": "PyBullet",
+        "measured": "compatibility"
+      }
+    },
+    "rows": [
+      {
+        "engines": {
+          "gazebo": {
+            "detail": "non-static model per movable object",
+            "status": "native"
+          },
+          "isaac_sim": {
+            "detail": "RigidBodyAPI + MassAPI",
+            "status": "native"
+          },
+          "mujoco": {
+            "detail": "body with inertial",
+            "status": "native"
+          },
+          "pybullet": {
+            "detail": "URDF body per movable object",
+            "status": "native"
+          }
+        },
+        "label": "Rigid bodies with mass and inertia",
+        "phenomenon": "rigid_bodies",
+        "used": true
+      },
+      {
+        "engines": {
+          "gazebo": {
+            "detail": "revolute/prismatic joint, hard limits",
+            "status": "native"
+          },
+          "isaac_sim": {
+            "detail": "Revolute/PrismaticJoint, hard limits",
+            "status": "native"
+          },
+          "mujoco": {
+            "detail": "hinge/slide joint, soft limits",
+            "status": "native"
+          },
+          "pybullet": {
+            "detail": "revolute/prismatic joint, hard limits",
+            "status": "native"
+          }
+        },
+        "label": "Hinges and sliders to the world",
+        "phenomenon": "passive_joints",
+        "used": true
+      },
+      {
+        "engines": {
+          "gazebo": {
+            "detail": "axis dynamics friction",
+            "status": "native"
+          },
+          "isaac_sim": {
+            "detail": "physxJoint:jointFriction, PhysX-specific",
+            "status": "approximated"
+          },
+          "mujoco": {
+            "detail": "frictionloss",
+            "status": "native"
+          },
+          "pybullet": {
+            "detail": "zero-velocity motor capped at the friction force",
+            "status": "approximated"
+          }
+        },
+        "label": "Joint dry friction",
+        "phenomenon": "joint_friction",
+        "used": true
+      },
+      {
+        "engines": {
+          "gazebo": {
+            "detail": "convex_hull optimization",
+            "status": "native"
+          },
+          "isaac_sim": {
+            "detail": "convexHull approximation",
+            "status": "native"
+          },
+          "mujoco": {
+            "detail": "convex pieces or hull",
+            "status": "native"
+          },
+          "pybullet": {
+            "detail": "convex pieces or hull",
+            "status": "native"
+          }
+        },
+        "label": "Convex contact for moving parts",
+        "phenomenon": "convex_contact",
+        "used": true
+      },
+      {
+        "engines": {
+          "gazebo": {
+            "detail": "triangle mesh collision",
+            "status": "native"
+          },
+          "isaac_sim": {
+            "detail": "MeshCollisionAPI approximation none",
+            "status": "native"
+          },
+          "mujoco": {
+            "detail": "fixed parts collide as convex pieces or hulls",
+            "status": "approximated"
+          },
+          "pybullet": {
+            "detail": "concave triangle mesh, or the authored pieces",
+            "status": "native"
+          }
+        },
+        "label": "Exact triangle contact for fixed parts",
+        "phenomenon": "static_mesh_contact",
+        "used": true
+      },
+      {
+        "engines": {
+          "gazebo": {
+            "detail": "bounce restitution_coefficient",
+            "status": "native"
+          },
+          "isaac_sim": {
+            "detail": "physics material restitution",
+            "status": "native"
+          },
+          "mujoco": {
+            "detail": "no restitution parameter; solver defaults apply",
+            "status": "unsupported"
+          },
+          "pybullet": {
+            "detail": "restitution",
+            "status": "native"
+          }
+        },
+        "label": "Bounce (restitution)",
+        "phenomenon": "restitution",
+        "used": false
+      },
+      {
+        "engines": {
+          "gazebo": {
+            "detail": "recorded in scene_spec.json only",
+            "status": "unsupported"
+          },
+          "isaac_sim": {
+            "detail": "recorded in scene_spec.json only",
+            "status": "unsupported"
+          },
+          "mujoco": {
+            "detail": "friction triple, condim 4/6",
+            "status": "native"
+          },
+          "pybullet": {
+            "detail": "spinning and rolling friction",
+            "status": "native"
+          }
+        },
+        "label": "Torsional and rolling friction",
+        "phenomenon": "rolling_friction",
+        "used": false
+      },
+      {
+        "engines": {
+          "gazebo": {
+            "detail": "kinematic links and unlimited joints; run_gazebo.py plays the program at simulation time",
+            "status": "approximated"
+          },
+          "isaac_sim": {
+            "detail": "time-sampled drive targets and kinematic-body transforms",
+            "status": "native"
+          },
+          "mujoco": {
+            "detail": "position/velocity actuators + mocap bodies; run_mujoco.py or the Studio preview evaluates the program at physics time",
+            "status": "approximated"
+          },
+          "pybullet": {
+            "detail": "run_pybullet.py plays joint drives and kinematic poses from the program at physics time",
+            "status": "approximated"
+          }
+        },
+        "label": "Prescribed kinematic motion (motion_program.json)",
+        "phenomenon": "prescribed_motion",
+        "used": false
+      },
+      {
+        "engines": {
+          "gazebo": {
+            "detail": "the grid triangulated, exact static mesh",
+            "status": "native"
+          },
+          "isaac_sim": {
+            "detail": "the grid triangulated, exact static mesh",
+            "status": "native"
+          },
+          "mujoco": {
+            "detail": "hfield geom",
+            "status": "native"
+          },
+          "pybullet": {
+            "detail": "GEOM_HEIGHTFIELD",
+            "status": "native"
+          }
+        },
+        "label": "Elevation-grid terrain",
+        "phenomenon": "terrain",
+        "used": false
+      },
+      {
+        "engines": {
+          "gazebo": {
+            "detail": "region recorded in scene_spec.json only",
+            "status": "unsupported"
+          },
+          "isaac_sim": {
+            "detail": "region recorded in USD custom data only",
+            "status": "unsupported"
+          },
+          "mujoco": {
+            "detail": "nova_water.py hook: displaced-weight lift + blunt drag",
+            "status": "approximated"
+          },
+          "pybullet": {
+            "detail": "nova_water.py hook in run_pybullet.py",
+            "status": "approximated"
+          }
+        },
+        "label": "Water buoyancy and drag",
+        "phenomenon": "water",
+        "used": false
+      },
+      {
+        "engines": {
+          "gazebo": {
+            "detail": "solid colours",
+            "status": "unsupported"
+          },
+          "isaac_sim": {
+            "detail": "UsdUVTexture",
+            "status": "native"
+          },
+          "mujoco": {
+            "detail": "solid colours",
+            "status": "unsupported"
+          },
+          "pybullet": {
+            "detail": "solid colours",
+            "status": "unsupported"
+          }
+        },
+        "label": "Image textures",
+        "phenomenon": "textures",
+        "used": false
+      },
+      {
+        "engines": {
+          "gazebo": {
+            "detail": "passive only",
+            "status": "unsupported"
+          },
+          "isaac_sim": {
+            "detail": "passive only",
+            "status": "unsupported"
+          },
+          "mujoco": {
+            "detail": "Go2 policy or scripted household mission",
+            "status": "native"
+          },
+          "pybullet": {
+            "detail": "passive only",
+            "status": "unsupported"
+          }
+        },
+        "label": "Bundled controllers",
+        "phenomenon": "controllers",
+        "used": false
+      },
+      {
+        "engines": {
+          "gazebo": {
+            "detail": "no solver",
+            "status": "unsupported"
+          },
+          "isaac_sim": {
+            "detail": "no solver",
+            "status": "unsupported"
+          },
+          "mujoco": {
+            "detail": "no solver",
+            "status": "unsupported"
+          },
+          "pybullet": {
+            "detail": "no solver",
+            "status": "unsupported"
+          }
+        },
+        "label": "Fluid dynamics",
+        "phenomenon": "fluids",
+        "used": false
+      },
+      {
+        "engines": {
+          "gazebo": {
+            "detail": "rigid stand-ins",
+            "status": "unsupported"
+          },
+          "isaac_sim": {
+            "detail": "rigid stand-ins",
+            "status": "unsupported"
+          },
+          "mujoco": {
+            "detail": "rigid stand-ins",
+            "status": "unsupported"
+          },
+          "pybullet": {
+            "detail": "rigid stand-ins",
+            "status": "unsupported"
+          }
+        },
+        "label": "Cloth and soft bodies",
+        "phenomenon": "deformables",
+        "used": false
+      },
+      {
+        "engines": {
+          "gazebo": {
+            "detail": "task values only",
+            "status": "unsupported"
+          },
+          "isaac_sim": {
+            "detail": "task values only",
+            "status": "unsupported"
+          },
+          "mujoco": {
+            "detail": "task values only",
+            "status": "unsupported"
+          },
+          "pybullet": {
+            "detail": "task values only",
+            "status": "unsupported"
+          }
+        },
+        "label": "Heat and temperature",
+        "phenomenon": "thermal",
+        "used": false
+      },
+      {
+        "engines": {
+          "gazebo": {
+            "detail": "not exported",
+            "status": "unsupported"
+          },
+          "isaac_sim": {
+            "detail": "not exported",
+            "status": "unsupported"
+          },
+          "mujoco": {
+            "detail": "not exported",
+            "status": "unsupported"
+          },
+          "pybullet": {
+            "detail": "not exported",
+            "status": "unsupported"
+          }
+        },
+        "label": "Sensor simulation",
+        "phenomenon": "sensors",
+        "used": false
+      }
+    ],
+    "schema_version": "nova.support-matrix/v1"
+  },
+  "terrain_test": {
+    "acceptance_engine": "mujoco",
+    "compatibility_notes": [],
+    "coverage": {},
+    "fields": [],
+    "overlaps": [],
+    "probe_radius_m": 0.03,
+    "schema_version": "nova.robotics-terrain-test/v2",
+    "status": "not_applicable",
+    "tolerance_m": 0.01
+  },
+  "twin_inventory": {
+    "lines": [
+      "TWIN_COUNT r1 \"Glazed curtain wall (window wall) with dark steel mullions a\" expected=1 built=1 ok",
+      "TWIN_COUNT r2 \"Black notices stuck on the glass (\"conserve\", small two-line\" expected=3 built=3 ok",
+      "TWIN_COUNT r3 \"Tea counter: wood-effect top over a dark open cubby shelf un\" expected=1 built=1 ok",
+      "TWIN_COUNT r4 \"Black tiered cup display riser\" expected=1 built=1 ok",
+      "TWIN_COUNT r5 \"Black ceramic cups on the riser\" expected=10 built=11 ok (+1 beyond the photo count: justify or remove)",
+      "TWIN_COUNT r6 \"Single black cup standing alone on the counter\" expected=1 built=0 GAP the lone black cup in the middle of the counter was placed only for the recording; the creator asked for it to be left out.",
+      "TWIN_COUNT r7 \"Glass jar with brushed-metal lid\" expected=1 built=1 GAP the jar's screw lid is part of the jar's single free body; a threaded lid on a free body cannot be exported as its own joint.",
+      "TWIN_COUNT r8 \"Black compartment organizer tray with sugar sachets, tea bag\" expected=1 built=1 ok",
+      "TWIN_COUNT r9 \"Black cordless electric kettle on base\" expected=1 built=1 GAP the kettle lid hinge is part of the lifted jug's single free body; a hinge nested on a free body cannot be exported as its own joint.",
+      "TWIN_COUNT r10 \"Black desk telephone\" expected=1 built=0 GAP the desk telephone at the counter's wall end (photo 2 only) is not built - the creator froze the tea station and its movable props exactly as accepted, and that",
+      "TWIN_COUNT r11 \"Round black lid / coaster\" expected=1 built=0 GAP the round black lid / coaster beside the telephone (photo 2 only) is not built for the same reason as r10.",
+      "TWIN_COUNT r12 \"White power extension socket board with plug\" expected=1 built=1 ok",
+      "TWIN_COUNT r13 \"Black waste bin with liner\" expected=1 built=1 ok",
+      "TWIN_COUNT r14 \"Red fire extinguisher on wall hook\" expected=1 built=1 ok",
+      "TWIN_COUNT r15 \"White extinguisher inspection record sheet\" expected=1 built=1 ok",
+      "TWIN_COUNT r16 \"White CCTV dome cameras\" expected=2 built=2 ok",
+      "TWIN_COUNT r17 \"Black perforated cable trays hung from the slab\" expected=3 built=3 ok",
+      "TWIN_COUNT r18 \"LED tube batten lights on the cable trays\" expected=7 built=7 ok",
+      "TWIN_COUNT r19 \"Thin black ceiling suspension rods for the trays\" expected=10 built=10 ok",
+      "TWIN_COUNT r20 \"Kitchen doorway (open, black-framed, no leaf visible)\" expected=1 built=1 GAP the kitchen doorway is photographed (photos 2, 3) as an open black-lined opening with no leaf, hinge or track, and the brief requires it to stay open; it is bui",
+      "TWIN_COUNT r21 \"Kitchen interior seen through the doorway: beige tiled walls\" expected=1 built=1 ok",
+      "TWIN_COUNT r22 \"Flat mop with long handle inside the kitchen\" expected=1 built=1 ok",
+      "TWIN_COUNT r23 \"Black KITCHEN wall sign with appliance icon\" expected=1 built=1 ok",
+      "TWIN_COUNT r24 \"White two-gang light switch plates\" expected=2 built=2 ok",
+      "TWIN_COUNT r25 \"Black FEMALE RESTROOM wall sign\" expected=1 built=1 ok",
+      "TWIN_COUNT r26 \"Female restroom door, black flush leaf\" expected=1 built=1 ok",
+      "TWIN_COUNT r27 \"Open steel stair with reclaimed-wood treads, black stringers\" expected=1 built=1 ok",
+      "TWIN_COUNT r28 \"Upper-floor wall mural of yellow and blue concentric circles\" expected=1 built=1 ok",
+      "TWIN_COUNT r29 \"Potted plant in a white pot at the stair half landing\" expected=1 built=1 ok",
+      "TWIN_COUNT r30 \"Water dispenser, black, with blue 19 L bottle\" expected=1 built=1 ok",
+      "TWIN_COUNT r31 \"Spare blue 19 L water bottles on the floor\" expected=2 built=2 ok",
+      "TWIN_COUNT r32 \"Framed poster of a red high-rise facade\" expected=1 built=1 ok",
+      "TWIN_COUNT r33 \"Small black wall plaque and white thermostat panel\" expected=2 built=2 ok",
+      "TWIN_COUNT r34 \"Frosted-band glass door to the office\" expected=1 built=1 GAP the frosted-band glass door to the office shows no hinge, handle or swing in any photo; it stays the fixed panel the creator accepted, since the creator asked f",
+      "TWIN_COUNT r35 \"Glazed opening under the stair into the open-plan office, wi\" expected=1 built=1 ok",
+      "TWIN_COUNT r36 \"Pink and white balloon cluster inside the office\" expected=1 built=1 ok",
+      "TWIN_COUNT r37 \"White oscillating wall fan\" expected=1 built=1 ok",
+      "TWIN_COUNT r38 \"Long black upholstered bench on a wedge-shaped plinth\" expected=1 built=1 ok",
+      "TWIN_COUNT r39 \"Black planter boxes with trailing ivy\" expected=2 built=2 ok",
+      "TWIN_COUNT r40 \"Motorcycle helmet (black, green and white graphics)\" expected=1 built=0 GAP the motorcycle helmet on the bench was placed only for the recording; the creator asked for it to be left out.",
+      "TWIN_COUNT r41 \"Green emergency exit sign (distant, over the lower floor cor\" expected=1 built=1 ok",
+      "TWIN_COUNT r42 \"Black skirting board\" expected=1 built=1 ok",
+      "TWIN_COUNT r43 \"Lower neighbouring building: flat grey roof with grey parape\" expected=1 built=1 ok",
+      "TWIN_COUNT r44 \"White split-AC outdoor units on the lower roof\" expected=5 built=5 ok",
+      "TWIN_COUNT r45 \"Grey wall with round black \"W\" logo sign\" expected=1 built=1 ok",
+      "TWIN_COUNT r46 \"Paved parking lot (light grey and cream interlocking pavers)\" expected=1 built=1 ok",
+      "TWIN_COUNT r47 \"Parked cars (white hatchbacks and SUVs, a grey sedan, a dark\" expected=9 built=9 ok",
+      "TWIN_COUNT r48 \"Motorbikes parked near the building\" expected=1 built=1 ok",
+      "TWIN_COUNT r49 \"Grey concrete-block boundary walls with metal gate\" expected=3 built=3 GAP copies 2 and 3 are the plain right and left boundary walls, which have no gate in any photo; the row's gate is on copy 1 (back wall) and is built as two working",
+      "TWIN_COUNT r50 \"Cream / pale-yellow three-storey building with balconies, da\" expected=1 built=1 ok",
+      "TWIN_COUNT r51 \"Taller five-storey grey-beige building with balconies\" expected=1 built=1 ok",
+      "TWIN_COUNT r52 \"Low industrial / workshop sheds with grey corrugated metal r\" expected=3 built=3 ok",
+      "TWIN_COUNT r53 \"Tan brick building with signboard\" expected=1 built=1 ok",
+      "TWIN_COUNT r54 \"Electric poles with sagging overhead wires\" expected=3 built=3 ok",
+      "TWIN_COUNT r55 \"Large neem / rain-tree type shade tree beside the right boun\" expected=1 built=1 ok",
+      "TWIN_COUNT r56 \"Row of shade trees behind the parking lot back wall\" expected=4 built=4 ok",
+      "TWIN_COUNT r57 \"Smaller round-crown trees between and beside the distant bui\" expected=5 built=5 ok",
+      "TWIN_COUNT r58 \"Hazy distant skyline of low rooftops and greenery\" expected=1 built=1 ok",
+      "TWIN_COUNT r59 \"Small white garden umbrella / canopy and a bench by the righ\" expected=2 built=2 ok",
+      "TWIN_COUNT r60 \"Grey container / trailer with yellow vehicle behind it, by t\" expected=1 built=1 ok",
+      "TWIN_COUNTS status=passed rows=60 complete=51 missing_rows=0 untagged_rows=0 gaps=9 mechanism_failures=0"
+    ],
+    "rows": [
+      {
+        "built": 1,
+        "expected": 1,
+        "n": 1,
+        "name": "Glazed curtain wall (window wall) with dark steel mullions a",
+        "status": "ok"
+      },
+      {
+        "built": 3,
+        "expected": 3,
+        "n": 2,
+        "name": "Black notices stuck on the glass (\"conserve\", small two-line",
+        "status": "ok"
+      },
+      {
+        "built": 1,
+        "expected": 1,
+        "n": 3,
+        "name": "Tea counter: wood-effect top over a dark open cubby shelf un",
+        "status": "ok"
+      },
+      {
+        "built": 1,
+        "expected": 1,
+        "n": 4,
+        "name": "Black tiered cup display riser",
+        "status": "ok"
+      },
+      {
+        "built": 11,
+        "expected": 10,
+        "n": 5,
+        "name": "Black ceramic cups on the riser",
+        "status": "ok"
+      },
+      {
+        "built": 0,
+        "expected": 1,
+        "gap": "the lone black cup in the middle of the counter was placed only for the recording; the creator asked for it to be left out.",
+        "n": 6,
+        "name": "Single black cup standing alone on the counter",
+        "status": "gap"
+      },
+      {
+        "built": 1,
+        "expected": 1,
+        "gap": "the jar's screw lid is part of the jar's single free body; a threaded lid on a free body cannot be exported as its own joint.",
+        "n": 7,
+        "name": "Glass jar with brushed-metal lid",
+        "status": "gap"
+      },
+      {
+        "built": 1,
+        "expected": 1,
+        "n": 8,
+        "name": "Black compartment organizer tray with sugar sachets, tea bag",
+        "status": "ok"
+      },
+      {
+        "built": 1,
+        "expected": 1,
+        "gap": "the kettle lid hinge is part of the lifted jug's single free body; a hinge nested on a free body cannot be exported as its own joint.",
+        "n": 9,
+        "name": "Black cordless electric kettle on base",
+        "status": "gap"
+      },
+      {
+        "built": 0,
+        "expected": 1,
+        "gap": "the desk telephone at the counter's wall end (photo 2 only) is not built - the creator froze the tea station and its movable props exactly as accepted, and that corner is the robot's working area.",
+        "n": 10,
+        "name": "Black desk telephone",
+        "status": "gap"
+      },
+      {
+        "built": 0,
+        "expected": 1,
+        "gap": "the round black lid / coaster beside the telephone (photo 2 only) is not built for the same reason as r10.",
+        "n": 11,
+        "name": "Round black lid / coaster",
+        "status": "gap"
+      },
+      {
+        "built": 1,
+        "expected": 1,
+        "n": 12,
+        "name": "White power extension socket board with plug",
+        "status": "ok"
+      },
+      {
+        "built": 1,
+        "expected": 1,
+        "n": 13,
+        "name": "Black waste bin with liner",
+        "status": "ok"
+      },
+      {
+        "built": 1,
+        "expected": 1,
+        "n": 14,
+        "name": "Red fire extinguisher on wall hook",
+        "status": "ok"
+      },
+      {
+        "built": 1,
+        "expected": 1,
+        "n": 15,
+        "name": "White extinguisher inspection record sheet",
+        "status": "ok"
+      },
+      {
+        "built": 2,
+        "expected": 2,
+        "n": 16,
+        "name": "White CCTV dome cameras",
+        "status": "ok"
+      },
+      {
+        "built": 3,
+        "expected": 3,
+        "n": 17,
+        "name": "Black perforated cable trays hung from the slab",
+        "status": "ok"
+      },
+      {
+        "built": 7,
+        "expected": 7,
+        "n": 18,
+        "name": "LED tube batten lights on the cable trays",
+        "status": "ok"
+      },
+      {
+        "built": 10,
+        "expected": 10,
+        "n": 19,
+        "name": "Thin black ceiling suspension rods for the trays",
+        "status": "ok"
+      },
+      {
+        "built": 1,
+        "expected": 1,
+        "gap": "the kitchen doorway is photographed (photos 2, 3) as an open black-lined opening with no leaf, hinge or track, and the brief requires it to stay open; it is built as a fixed frame, so no hinge body exists to test.",
+        "n": 20,
+        "name": "Kitchen doorway (open, black-framed, no leaf visible)",
+        "status": "gap"
+      },
+      {
+        "built": 1,
+        "expected": 1,
+        "n": 21,
+        "name": "Kitchen interior seen through the doorway: beige tiled walls",
+        "status": "ok"
+      },
+      {
+        "built": 1,
+        "expected": 1,
+        "n": 22,
+        "name": "Flat mop with long handle inside the kitchen",
+        "status": "ok"
+      },
+      {
+        "built": 1,
+        "expected": 1,
+        "n": 23,
+        "name": "Black KITCHEN wall sign with appliance icon",
+        "status": "ok"
+      },
+      {
+        "built": 2,
+        "expected": 2,
+        "n": 24,
+        "name": "White two-gang light switch plates",
+        "status": "ok"
+      },
+      {
+        "built": 1,
+        "expected": 1,
+        "n": 25,
+        "name": "Black FEMALE RESTROOM wall sign",
+        "status": "ok"
+      },
+      {
+        "built": 1,
+        "expected": 1,
+        "n": 26,
+        "name": "Female restroom door, black flush leaf",
+        "status": "ok"
+      },
+      {
+        "built": 1,
+        "expected": 1,
+        "n": 27,
+        "name": "Open steel stair with reclaimed-wood treads, black stringers",
+        "status": "ok"
+      },
+      {
+        "built": 1,
+        "expected": 1,
+        "n": 28,
+        "name": "Upper-floor wall mural of yellow and blue concentric circles",
+        "status": "ok"
+      },
+      {
+        "built": 1,
+        "expected": 1,
+        "n": 29,
+        "name": "Potted plant in a white pot at the stair half landing",
+        "status": "ok"
+      },
+      {
+        "built": 1,
+        "expected": 1,
+        "n": 30,
+        "name": "Water dispenser, black, with blue 19 L bottle",
+        "status": "ok"
+      },
+      {
+        "built": 2,
+        "expected": 2,
+        "n": 31,
+        "name": "Spare blue 19 L water bottles on the floor",
+        "status": "ok"
+      },
+      {
+        "built": 1,
+        "expected": 1,
+        "n": 32,
+        "name": "Framed poster of a red high-rise facade",
+        "status": "ok"
+      },
+      {
+        "built": 2,
+        "expected": 2,
+        "n": 33,
+        "name": "Small black wall plaque and white thermostat panel",
+        "status": "ok"
+      },
+      {
+        "built": 1,
+        "expected": 1,
+        "gap": "the frosted-band glass door to the office shows no hinge, handle or swing in any photo; it stays the fixed panel the creator accepted, since the creator asked for the doors to be kept exactly as they are.",
+        "n": 34,
+        "name": "Frosted-band glass door to the office",
+        "status": "gap"
+      },
+      {
+        "built": 1,
+        "expected": 1,
+        "n": 35,
+        "name": "Glazed opening under the stair into the open-plan office, wi",
+        "status": "ok"
+      },
+      {
+        "built": 1,
+        "expected": 1,
+        "n": 36,
+        "name": "Pink and white balloon cluster inside the office",
+        "status": "ok"
+      },
+      {
+        "built": 1,
+        "expected": 1,
+        "n": 37,
+        "name": "White oscillating wall fan",
+        "status": "ok"
+      },
+      {
+        "built": 1,
+        "expected": 1,
+        "n": 38,
+        "name": "Long black upholstered bench on a wedge-shaped plinth",
+        "status": "ok"
+      },
+      {
+        "built": 2,
+        "expected": 2,
+        "n": 39,
+        "name": "Black planter boxes with trailing ivy",
+        "status": "ok"
+      },
+      {
+        "built": 0,
+        "expected": 1,
+        "gap": "the motorcycle helmet on the bench was placed only for the recording; the creator asked for it to be left out.",
+        "n": 40,
+        "name": "Motorcycle helmet (black, green and white graphics)",
+        "status": "gap"
+      },
+      {
+        "built": 1,
+        "expected": 1,
+        "n": 41,
+        "name": "Green emergency exit sign (distant, over the lower floor cor",
+        "status": "ok"
+      },
+      {
+        "built": 1,
+        "expected": 1,
+        "n": 42,
+        "name": "Black skirting board",
+        "status": "ok"
+      },
+      {
+        "built": 1,
+        "expected": 1,
+        "n": 43,
+        "name": "Lower neighbouring building: flat grey roof with grey parape",
+        "status": "ok"
+      },
+      {
+        "built": 5,
+        "expected": 5,
+        "n": 44,
+        "name": "White split-AC outdoor units on the lower roof",
+        "status": "ok"
+      },
+      {
+        "built": 1,
+        "expected": 1,
+        "n": 45,
+        "name": "Grey wall with round black \"W\" logo sign",
+        "status": "ok"
+      },
+      {
+        "built": 1,
+        "expected": 1,
+        "n": 46,
+        "name": "Paved parking lot (light grey and cream interlocking pavers)",
+        "status": "ok"
+      },
+      {
+        "built": 9,
+        "expected": 9,
+        "n": 47,
+        "name": "Parked cars (white hatchbacks and SUVs, a grey sedan, a dark",
+        "status": "ok"
+      },
+      {
+        "built": 1,
+        "expected": 1,
+        "n": 48,
+        "name": "Motorbikes parked near the building",
+        "status": "ok"
+      },
+      {
+        "built": 3,
+        "expected": 3,
+        "gap": "copies 2 and 3 are the plain right and left boundary walls, which have no gate in any photo; the row's gate is on copy 1 (back wall) and is built as two working hinged leaves.",
+        "n": 49,
+        "name": "Grey concrete-block boundary walls with metal gate",
+        "status": "gap"
+      },
+      {
+        "built": 1,
+        "expected": 1,
+        "n": 50,
+        "name": "Cream / pale-yellow three-storey building with balconies, da",
+        "status": "ok"
+      },
+      {
+        "built": 1,
+        "expected": 1,
+        "n": 51,
+        "name": "Taller five-storey grey-beige building with balconies",
+        "status": "ok"
+      },
+      {
+        "built": 3,
+        "expected": 3,
+        "n": 52,
+        "name": "Low industrial / workshop sheds with grey corrugated metal r",
+        "status": "ok"
+      },
+      {
+        "built": 1,
+        "expected": 1,
+        "n": 53,
+        "name": "Tan brick building with signboard",
+        "status": "ok"
+      },
+      {
+        "built": 3,
+        "expected": 3,
+        "n": 54,
+        "name": "Electric poles with sagging overhead wires",
+        "status": "ok"
+      },
+      {
+        "built": 1,
+        "expected": 1,
+        "n": 55,
+        "name": "Large neem / rain-tree type shade tree beside the right boun",
+        "status": "ok"
+      },
+      {
+        "built": 4,
+        "expected": 4,
+        "n": 56,
+        "name": "Row of shade trees behind the parking lot back wall",
+        "status": "ok"
+      },
+      {
+        "built": 5,
+        "expected": 5,
+        "n": 57,
+        "name": "Smaller round-crown trees between and beside the distant bui",
+        "status": "ok"
+      },
+      {
+        "built": 1,
+        "expected": 1,
+        "n": 58,
+        "name": "Hazy distant skyline of low rooftops and greenery",
+        "status": "ok"
+      },
+      {
+        "built": 2,
+        "expected": 2,
+        "n": 59,
+        "name": "Small white garden umbrella / canopy and a bench by the righ",
+        "status": "ok"
+      },
+      {
+        "built": 1,
+        "expected": 1,
+        "n": 60,
+        "name": "Grey container / trailer with yellow vehicle behind it, by t",
+        "status": "ok"
+      }
+    ],
+    "status": "passed"
+  }
+}

@@ -1,0 +1,143 @@
+{
+ "legs": [
+  "left_hip_yaw",
+  "left_hip_roll",
+  "left_hip_pitch",
+  "left_knee",
+  "left_ankle",
+  "right_hip_yaw",
+  "right_hip_roll",
+  "right_hip_pitch",
+  "right_knee",
+  "right_ankle"
+ ],
+ "default": [
+  0.0,
+  0.0,
+  -0.1,
+  0.3,
+  -0.2,
+  0.0,
+  0.0,
+  -0.1,
+  0.3,
+  -0.2
+ ],
+ "kp": [
+  150,
+  150,
+  150,
+  200,
+  40,
+  150,
+  150,
+  150,
+  200,
+  40
+ ],
+ "kd": [
+  2,
+  2,
+  2,
+  4,
+  2,
+  2,
+  2,
+  2,
+  4,
+  2
+ ],
+ "action_scale": 0.25,
+ "obs": "lstm_phase",
+ "gait_period": 0.8,
+ "cmd_scale": [
+  2.0,
+  2.0,
+  0.25
+ ],
+ "vmax": [
+  0.7,
+  0.4,
+  0.9
+ ],
+ "hold_gains": [
+  [
+   "torso",
+   600,
+   10
+  ],
+  [
+   "shoulder",
+   200,
+   4
+  ],
+  [
+   "elbow",
+   150,
+   3
+  ],
+  [
+   "",
+   50,
+   1
+  ]
+ ],
+ "hold_pose": {
+  "left_shoulder_roll": 0.12,
+  "right_shoulder_roll": -0.12,
+  "left_elbow": 0.9,
+  "right_elbow": 0.9
+ },
+ "blend_s": 0.4,
+ "warm_s": 1.0,
+ "idle_s": 0.3,
+ "settle_s": 0.4,
+ "stand_kp": [
+  500,
+  600,
+  900,
+  1000,
+  700,
+  500,
+  600,
+  900,
+  1000,
+  700
+ ],
+ "stand_kd": [
+  8,
+  10,
+  12,
+  14,
+  6,
+  8,
+  10,
+  12,
+  14,
+  6
+ ],
+ "balance": [
+  1.0,
+  0.3,
+  0.0,
+  0.4
+ ],
+ "foot_cx": 0.05,
+ "ankle_pitch_idx": [
+  4,
+  9
+ ],
+ "hip_roll_idx": [
+  1,
+  6
+ ],
+ "leg_joint": {
+  "armature": 0.01,
+  "damping": 0.001,
+  "frictionloss": 0.1
+ },
+ "train_feet": {
+  "left_ankle_link": "h1_walk_v1/feet/left_ankle_link.STL",
+  "right_ankle_link": "h1_walk_v1/feet/right_ankle_link.STL"
+ }
+}

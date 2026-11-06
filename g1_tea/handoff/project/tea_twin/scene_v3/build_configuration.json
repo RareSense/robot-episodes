@@ -1,0 +1,31 @@
+{
+  "limits": {
+    "guidance": "Default to a medium-complexity, fully developed environment at the requested dimensions. Prioritize precise structure, materials and working interactions; not a small scene, rough blockout or maximum object count.",
+    "max_objects": 2000,
+    "max_triangles": 2000000
+  },
+  "object_count": 395,
+  "overrides_applied": {},
+  "requested": {
+    "complexity": "auto",
+    "controller": null,
+    "first_build_strategy": "usable_first",
+    "fixed_base": null,
+    "friction": null,
+    "gravity_m_s2": null,
+    "mode": "environment",
+    "overrides": {},
+    "restitution": null,
+    "robot_path": null,
+    "robot_upload_id": null,
+    "seed": 0,
+    "targets": [
+      "isaac_sim",
+      "mujoco",
+      "pybullet",
+      "gazebo"
+    ],
+    "task_description": ""
+  },
+  "triangle_count": 1003358
+}

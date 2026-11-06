@@ -1,0 +1,3557 @@
+{
+ "/World/Objects/object_0000": [
+  "landing_floor_slab",
+  "floor",
+  [
+   0.81,
+   0.69,
+   0.52
+  ]
+ ],
+ "/World/Objects/object_0001": [
+  "landing_floor_grout",
+  "floor_marking",
+  [
+   0.45,
+   0.37,
+   0.26
+  ]
+ ],
+ "/World/Objects/object_0002": [
+  "landing_edge_angle",
+  "structure",
+  [
+   0.01,
+   0.01,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0003": [
+  "upper_floor_slab",
+  "ceiling",
+  [
+   0.03,
+   0.02,
+   0.02
+  ]
+ ],
+ "/World/Objects/object_0004": [
+  "window_head_beam",
+  "beam",
+  [
+   0.03,
+   0.02,
+   0.02
+  ]
+ ],
+ "/World/Objects/object_0005": [
+  "lower_floor_slab",
+  "floor",
+  [
+   0.81,
+   0.69,
+   0.52
+  ]
+ ],
+ "/World/Objects/object_0006": [
+  "lower_storey_soffit_band",
+  "ceiling",
+  [
+   0.03,
+   0.02,
+   0.02
+  ]
+ ],
+ "/World/Objects/object_0007": [
+  "east_wall",
+  "wall",
+  [
+   0.85,
+   0.81,
+   0.73
+  ]
+ ],
+ "/World/Objects/object_0008": [
+  "stairwell_east_lower_wall",
+  "wall",
+  [
+   0.85,
+   0.81,
+   0.73
+  ]
+ ],
+ "/World/Objects/object_0009": [
+  "stairwell_east_upper_wall",
+  "wall",
+  [
+   0.85,
+   0.81,
+   0.73
+  ]
+ ],
+ "/World/Objects/object_0010": [
+  "corridor_end_wall",
+  "wall",
+  [
+   0.85,
+   0.81,
+   0.73
+  ]
+ ],
+ "/World/Objects/object_0011": [
+  "r42i1_skirting",
+  "trim",
+  [
+   0.01,
+   0.01,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0012": [
+  "r1i1_spandrel_wall",
+  "wall",
+  [
+   0.85,
+   0.81,
+   0.73
+  ]
+ ],
+ "/World/Objects/object_0013": [
+  "r1i1_mullions_and_transom",
+  "window_frame",
+  [
+   0.01,
+   0.01,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0014": [
+  "r1i1_glazing",
+  "glass",
+  [
+   0.52,
+   0.67,
+   0.79
+  ]
+ ],
+ "/World/Objects/object_0015": [
+  "window_corner_pier",
+  "column",
+  [
+   0.85,
+   0.81,
+   0.73
+  ]
+ ],
+ "/World/Objects/object_0016": [
+  "end_wall",
+  "wall",
+  [
+   0.85,
+   0.81,
+   0.73
+  ]
+ ],
+ "/World/Objects/object_0017": [
+  "end_return_wall",
+  "wall",
+  [
+   0.85,
+   0.81,
+   0.73
+  ]
+ ],
+ "/World/Objects/object_0018": [
+  "stairwell_partition_wall",
+  "wall",
+  [
+   0.85,
+   0.81,
+   0.73
+  ]
+ ],
+ "/World/Objects/object_0019": [
+  "r20i1_doorway_frame",
+  "door_frame",
+  [
+   0.01,
+   0.01,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0020": [
+  "r21i1_kitchen_floor",
+  "floor",
+  [
+   0.15,
+   0.06,
+   0.03
+  ]
+ ],
+ "/World/Objects/object_0021": [
+  "r21i1_plank_seams",
+  "floor_marking",
+  [
+   0.02,
+   0.02,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0022": [
+  "kitchen_walls",
+  "wall",
+  [
+   0.85,
+   0.81,
+   0.73
+  ]
+ ],
+ "/World/Objects/object_0023": [
+  "kitchen_false_ceiling",
+  "ceiling",
+  [
+   0.85,
+   0.81,
+   0.73
+  ]
+ ],
+ "/World/Objects/object_0024": [
+  "r21i1_wall_tiling",
+  "wall_finish",
+  [
+   0.49,
+   0.41,
+   0.28
+  ]
+ ],
+ "/World/Objects/object_0025": [
+  "r21i1_tile_joints",
+  "wall_finish",
+  [
+   0.45,
+   0.37,
+   0.26
+  ]
+ ],
+ "/World/Objects/object_0026": [
+  "r21i1_worktop",
+  "worktop",
+  [
+   0.02,
+   0.02,
+   0.02
+  ]
+ ],
+ "/World/Objects/object_0027": [
+  "r21i1_worktop_base_units",
+  "cabinet",
+  [
+   0.0,
+   0.0,
+   0.0
+  ]
+ ],
+ "/World/Objects/object_0028": [
+  "r21i1_base_unit_seams",
+  "trim",
+  [
+   0.01,
+   0.01,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0029": [
+  "r22i1_flat_mop",
+  "movable_prop",
+  [
+   0.02,
+   0.07,
+   0.15
+  ]
+ ],
+ "/World/Objects/object_0030": [
+  "restroom_floor",
+  "floor",
+  [
+   0.26,
+   0.25,
+   0.22
+  ]
+ ],
+ "/World/Objects/object_0031": [
+  "restroom_floor_grout",
+  "floor_marking",
+  [
+   0.45,
+   0.37,
+   0.26
+  ]
+ ],
+ "/World/Objects/object_0032": [
+  "restroom_walls",
+  "wall",
+  [
+   0.85,
+   0.81,
+   0.73
+  ]
+ ],
+ "/World/Objects/object_0033": [
+  "restroom_vanity",
+  "cabinet",
+  [
+   0.02,
+   0.02,
+   0.02
+  ]
+ ],
+ "/World/Objects/object_0034": [
+  "r26i1_door_frame",
+  "door_frame",
+  [
+   0.01,
+   0.01,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0035": [
+  "r26i1_door_leaf",
+  "door",
+  [
+   0.01,
+   0.01,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0036": [
+  "office_floor",
+  "floor",
+  [
+   0.6,
+   0.57,
+   0.51
+  ]
+ ],
+ "/World/Objects/object_0037": [
+  "office_ceiling_slab",
+  "ceiling",
+  [
+   0.03,
+   0.02,
+   0.02
+  ]
+ ],
+ "/World/Objects/object_0038": [
+  "office_outer_walls",
+  "wall",
+  [
+   0.85,
+   0.81,
+   0.73
+  ]
+ ],
+ "/World/Objects/object_0039": [
+  "office_desks",
+  "furniture",
+  [
+   0.45,
+   0.23,
+   0.09
+  ]
+ ],
+ "/World/Objects/object_0040": [
+  "office_chairs",
+  "furniture",
+  [
+   0.01,
+   0.01,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0041": [
+  "office_battens",
+  "light",
+  [
+   1.0,
+   0.89,
+   0.6
+  ]
+ ],
+ "/World/Objects/object_0042": [
+  "exterior_sky_backdrop",
+  "sky",
+  [
+   0.26,
+   0.52,
+   0.81
+  ]
+ ],
+ "/World/Objects/object_0043": [
+  "exterior_sky_haze_band",
+  "sky",
+  [
+   0.59,
+   0.62,
+   0.64
+  ]
+ ],
+ "/World/Objects/object_0044": [
+  "exterior_surrounding_ground",
+  "ground",
+  [
+   0.13,
+   0.12,
+   0.08
+  ]
+ ],
+ "/World/Objects/object_0045": [
+  "exterior_road_tarmac",
+  "ground",
+  [
+   0.15,
+   0.15,
+   0.14
+  ]
+ ],
+ "/World/Objects/object_0046": [
+  "exterior_back_lane",
+  "ground",
+  [
+   0.15,
+   0.15,
+   0.14
+  ]
+ ],
+ "/World/Objects/object_0047": [
+  "r43i1_building_shell",
+  "exterior",
+  [
+   0.27,
+   0.28,
+   0.27
+  ]
+ ],
+ "/World/Objects/object_0048": [
+  "r43i1_roof_slab",
+  "exterior",
+  [
+   0.48,
+   0.49,
+   0.46
+  ]
+ ],
+ "/World/Objects/object_0049": [
+  "r43i1_parapet",
+  "exterior",
+  [
+   0.26,
+   0.27,
+   0.28
+  ]
+ ],
+ "/World/Objects/object_0050": [
+  "r43i1_acp_fascia",
+  "exterior",
+  [
+   0.16,
+   0.17,
+   0.18
+  ]
+ ],
+ "/World/Objects/object_0051": [
+  "r43i1_facade_glass",
+  "exterior",
+  [
+   0.11,
+   0.15,
+   0.18
+  ]
+ ],
+ "/World/Objects/object_0052": [
+  "r43i1_facade_fins",
+  "exterior",
+  [
+   0.01,
+   0.01,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0053": [
+  "r44i1_ac_casing",
+  "exterior",
+  [
+   0.81,
+   0.81,
+   0.79
+  ]
+ ],
+ "/World/Objects/object_0054": [
+  "r44i1_ac_fan_grille",
+  "exterior",
+  [
+   0.01,
+   0.01,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0055": [
+  "r44i2_ac_casing",
+  "exterior",
+  [
+   0.81,
+   0.81,
+   0.79
+  ]
+ ],
+ "/World/Objects/object_0056": [
+  "r44i2_ac_fan_grille",
+  "exterior",
+  [
+   0.01,
+   0.01,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0057": [
+  "r44i3_ac_casing",
+  "exterior",
+  [
+   0.81,
+   0.81,
+   0.79
+  ]
+ ],
+ "/World/Objects/object_0058": [
+  "r44i3_ac_fan_grille",
+  "exterior",
+  [
+   0.01,
+   0.01,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0059": [
+  "r44i4_ac_casing",
+  "exterior",
+  [
+   0.81,
+   0.81,
+   0.79
+  ]
+ ],
+ "/World/Objects/object_0060": [
+  "r44i4_ac_fan_grille",
+  "exterior",
+  [
+   0.01,
+   0.01,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0061": [
+  "r44i5_ac_casing",
+  "exterior",
+  [
+   0.81,
+   0.81,
+   0.79
+  ]
+ ],
+ "/World/Objects/object_0062": [
+  "r44i5_ac_fan_grille",
+  "exterior",
+  [
+   0.01,
+   0.01,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0063": [
+  "r45i1_clad_wall",
+  "exterior",
+  [
+   0.1,
+   0.11,
+   0.11
+  ]
+ ],
+ "/World/Objects/object_0064": [
+  "r45i1_logo_disc",
+  "exterior",
+  [
+   0.01,
+   0.01,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0065": [
+  "r45i1_logo_letter",
+  "exterior",
+  [
+   0.81,
+   0.48,
+   0.03
+  ]
+ ],
+ "/World/Objects/object_0066": [
+  "r46i1_paver_field",
+  "ground",
+  [
+   0.39,
+   0.37,
+   0.31
+  ]
+ ],
+ "/World/Objects/object_0067": [
+  "r46i1_cream_bands",
+  "ground",
+  [
+   0.51,
+   0.45,
+   0.34
+  ]
+ ],
+ "/World/Objects/object_0068": [
+  "r46i1_paver_joints",
+  "ground",
+  [
+   0.23,
+   0.21,
+   0.18
+  ]
+ ],
+ "/World/Objects/object_0069": [
+  "r46i1_drain_channel",
+  "ground",
+  [
+   0.01,
+   0.01,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0070": [
+  "r47i1_body",
+  "exterior",
+  [
+   0.81,
+   0.71,
+   0.73
+  ]
+ ],
+ "/World/Objects/object_0071": [
+  "r47i1_glazing",
+  "exterior",
+  [
+   0.02,
+   0.02,
+   0.02
+  ]
+ ],
+ "/World/Objects/object_0072": [
+  "r47i1_tyres_and_trim",
+  "exterior",
+  [
+   0.0,
+   0.0,
+   0.0
+  ]
+ ],
+ "/World/Objects/object_0073": [
+  "r47i1_wheels_and_lamps",
+  "exterior",
+  [
+   0.39,
+   0.39,
+   0.39
+  ]
+ ],
+ "/World/Objects/object_0074": [
+  "r47i2_body",
+  "exterior",
+  [
+   0.83,
+   0.83,
+   0.83
+  ]
+ ],
+ "/World/Objects/object_0075": [
+  "r47i2_glazing",
+  "exterior",
+  [
+   0.02,
+   0.02,
+   0.02
+  ]
+ ],
+ "/World/Objects/object_0076": [
+  "r47i2_tyres_and_trim",
+  "exterior",
+  [
+   0.0,
+   0.0,
+   0.0
+  ]
+ ],
+ "/World/Objects/object_0077": [
+  "r47i2_wheels_and_lamps",
+  "exterior",
+  [
+   0.39,
+   0.39,
+   0.39
+  ]
+ ],
+ "/World/Objects/object_0078": [
+  "r47i3_body",
+  "exterior",
+  [
+   0.1,
+   0.11,
+   0.12
+  ]
+ ],
+ "/World/Objects/object_0079": [
+  "r47i3_glazing",
+  "exterior",
+  [
+   0.02,
+   0.02,
+   0.02
+  ]
+ ],
+ "/World/Objects/object_0080": [
+  "r47i3_tyres_and_trim",
+  "exterior",
+  [
+   0.0,
+   0.0,
+   0.0
+  ]
+ ],
+ "/World/Objects/object_0081": [
+  "r47i3_wheels_and_lamps",
+  "exterior",
+  [
+   0.39,
+   0.39,
+   0.39
+  ]
+ ],
+ "/World/Objects/object_0082": [
+  "r47i4_body",
+  "exterior",
+  [
+   0.83,
+   0.83,
+   0.83
+  ]
+ ],
+ "/World/Objects/object_0083": [
+  "r47i4_glazing",
+  "exterior",
+  [
+   0.02,
+   0.02,
+   0.02
+  ]
+ ],
+ "/World/Objects/object_0084": [
+  "r47i4_tyres_and_trim",
+  "exterior",
+  [
+   0.0,
+   0.0,
+   0.0
+  ]
+ ],
+ "/World/Objects/object_0085": [
+  "r47i4_wheels_and_lamps",
+  "exterior",
+  [
+   0.39,
+   0.39,
+   0.39
+  ]
+ ],
+ "/World/Objects/object_0086": [
+  "r47i5_body",
+  "exterior",
+  [
+   0.01,
+   0.02,
+   0.02
+  ]
+ ],
+ "/World/Objects/object_0087": [
+  "r47i5_glazing",
+  "exterior",
+  [
+   0.02,
+   0.02,
+   0.02
+  ]
+ ],
+ "/World/Objects/object_0088": [
+  "r47i5_tyres_and_trim",
+  "exterior",
+  [
+   0.0,
+   0.0,
+   0.0
+  ]
+ ],
+ "/World/Objects/object_0089": [
+  "r47i5_wheels_and_lamps",
+  "exterior",
+  [
+   0.39,
+   0.39,
+   0.39
+  ]
+ ],
+ "/World/Objects/object_0090": [
+  "r47i6_body",
+  "exterior",
+  [
+   0.83,
+   0.83,
+   0.83
+  ]
+ ],
+ "/World/Objects/object_0091": [
+  "r47i6_glazing",
+  "exterior",
+  [
+   0.02,
+   0.02,
+   0.02
+  ]
+ ],
+ "/World/Objects/object_0092": [
+  "r47i6_tyres_and_trim",
+  "exterior",
+  [
+   0.0,
+   0.0,
+   0.0
+  ]
+ ],
+ "/World/Objects/object_0093": [
+  "r47i6_wheels_and_lamps",
+  "exterior",
+  [
+   0.39,
+   0.39,
+   0.39
+  ]
+ ],
+ "/World/Objects/object_0094": [
+  "r47i7_body",
+  "exterior",
+  [
+   0.83,
+   0.83,
+   0.83
+  ]
+ ],
+ "/World/Objects/object_0095": [
+  "r47i7_glazing",
+  "exterior",
+  [
+   0.02,
+   0.02,
+   0.02
+  ]
+ ],
+ "/World/Objects/object_0096": [
+  "r47i7_tyres_and_trim",
+  "exterior",
+  [
+   0.0,
+   0.0,
+   0.0
+  ]
+ ],
+ "/World/Objects/object_0097": [
+  "r47i7_wheels_and_lamps",
+  "exterior",
+  [
+   0.39,
+   0.39,
+   0.39
+  ]
+ ],
+ "/World/Objects/object_0098": [
+  "r47i8_body",
+  "exterior",
+  [
+   0.01,
+   0.02,
+   0.02
+  ]
+ ],
+ "/World/Objects/object_0099": [
+  "r47i8_glazing",
+  "exterior",
+  [
+   0.02,
+   0.02,
+   0.02
+  ]
+ ],
+ "/World/Objects/object_0100": [
+  "r47i8_tyres_and_trim",
+  "exterior",
+  [
+   0.0,
+   0.0,
+   0.0
+  ]
+ ],
+ "/World/Objects/object_0101": [
+  "r47i8_wheels_and_lamps",
+  "exterior",
+  [
+   0.39,
+   0.39,
+   0.39
+  ]
+ ],
+ "/World/Objects/object_0102": [
+  "r47i9_body",
+  "exterior",
+  [
+   0.83,
+   0.83,
+   0.83
+  ]
+ ],
+ "/World/Objects/object_0103": [
+  "r47i9_glazing",
+  "exterior",
+  [
+   0.02,
+   0.02,
+   0.02
+  ]
+ ],
+ "/World/Objects/object_0104": [
+  "r47i9_tyres_and_trim",
+  "exterior",
+  [
+   0.0,
+   0.0,
+   0.0
+  ]
+ ],
+ "/World/Objects/object_0105": [
+  "r47i9_wheels_and_lamps",
+  "exterior",
+  [
+   0.39,
+   0.39,
+   0.39
+  ]
+ ],
+ "/World/Objects/object_0106": [
+  "r48i1_motorbikes_frames",
+  "exterior",
+  [
+   0.0,
+   0.0,
+   0.0
+  ]
+ ],
+ "/World/Objects/object_0107": [
+  "r48i1_motorbikes_chrome",
+  "exterior",
+  [
+   0.39,
+   0.39,
+   0.39
+  ]
+ ],
+ "/World/Objects/object_0108": [
+  "r49i1_wall_panels",
+  "exterior",
+  [
+   0.39,
+   0.39,
+   0.37
+  ]
+ ],
+ "/World/Objects/object_0109": [
+  "r49i1_piers",
+  "exterior",
+  [
+   0.3,
+   0.3,
+   0.27
+  ]
+ ],
+ "/World/Objects/object_0110": [
+  "r49i1_coping",
+  "exterior",
+  [
+   0.48,
+   0.48,
+   0.45
+  ]
+ ],
+ "/World/Objects/object_0111": [
+  "r49i2_wall_panels",
+  "exterior",
+  [
+   0.39,
+   0.39,
+   0.37
+  ]
+ ],
+ "/World/Objects/object_0112": [
+  "r49i2_piers",
+  "exterior",
+  [
+   0.3,
+   0.3,
+   0.27
+  ]
+ ],
+ "/World/Objects/object_0113": [
+  "r49i2_coping",
+  "exterior",
+  [
+   0.48,
+   0.48,
+   0.45
+  ]
+ ],
+ "/World/Objects/object_0114": [
+  "r49i3_wall_panels",
+  "exterior",
+  [
+   0.39,
+   0.39,
+   0.37
+  ]
+ ],
+ "/World/Objects/object_0115": [
+  "r49i3_piers",
+  "exterior",
+  [
+   0.3,
+   0.3,
+   0.27
+  ]
+ ],
+ "/World/Objects/object_0116": [
+  "r49i3_coping",
+  "exterior",
+  [
+   0.48,
+   0.48,
+   0.45
+  ]
+ ],
+ "/World/Objects/object_0117": [
+  "r49i1_gate_post_frame",
+  "exterior",
+  [
+   0.19,
+   0.2,
+   0.21
+  ]
+ ],
+ "/World/Objects/object_0118": [
+  "r49i1_gate_leaf_left",
+  "gate",
+  [
+   0.19,
+   0.2,
+   0.21
+  ]
+ ],
+ "/World/Objects/object_0119": [
+  "r49i1_gate_leaf_right",
+  "gate",
+  [
+   0.19,
+   0.2,
+   0.21
+  ]
+ ],
+ "/World/Objects/object_0120": [
+  "r50i1_main_block",
+  "exterior",
+  [
+   0.77,
+   0.62,
+   0.25
+  ]
+ ],
+ "/World/Objects/object_0121": [
+  "r50i1_frame_columns",
+  "exterior",
+  [
+   0.25,
+   0.2,
+   0.08
+  ]
+ ],
+ "/World/Objects/object_0122": [
+  "r50i1_balcony_slabs",
+  "exterior",
+  [
+   0.77,
+   0.62,
+   0.25
+  ]
+ ],
+ "/World/Objects/object_0123": [
+  "r50i1_window_bands",
+  "exterior",
+  [
+   0.03,
+   0.04,
+   0.04
+  ]
+ ],
+ "/World/Objects/object_0124": [
+  "r50i1_side_windows",
+  "exterior",
+  [
+   0.03,
+   0.04,
+   0.04
+  ]
+ ],
+ "/World/Objects/object_0125": [
+  "r50i1_rooftop_stair_box",
+  "exterior",
+  [
+   0.25,
+   0.2,
+   0.08
+  ]
+ ],
+ "/World/Objects/object_0126": [
+  "r50i1_stair_box_door",
+  "door",
+  [
+   0.03,
+   0.04,
+   0.04
+  ]
+ ],
+ "/World/Objects/object_0127": [
+  "r50i1_roof_water_tanks",
+  "exterior",
+  [
+   0.01,
+   0.01,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0128": [
+  "r51i1_main_block",
+  "exterior",
+  [
+   0.37,
+   0.33,
+   0.26
+  ]
+ ],
+ "/World/Objects/object_0129": [
+  "r51i1_frame_columns",
+  "exterior",
+  [
+   0.15,
+   0.13,
+   0.1
+  ]
+ ],
+ "/World/Objects/object_0130": [
+  "r51i1_balcony_slabs",
+  "exterior",
+  [
+   0.37,
+   0.33,
+   0.26
+  ]
+ ],
+ "/World/Objects/object_0131": [
+  "r51i1_window_bands",
+  "exterior",
+  [
+   0.03,
+   0.04,
+   0.04
+  ]
+ ],
+ "/World/Objects/object_0132": [
+  "r51i1_roof_structures",
+  "exterior",
+  [
+   0.15,
+   0.13,
+   0.1
+  ]
+ ],
+ "/World/Objects/object_0133": [
+  "r52i1_walls",
+  "exterior",
+  [
+   0.39,
+   0.39,
+   0.37
+  ]
+ ],
+ "/World/Objects/object_0134": [
+  "r52i1_roof_sheets",
+  "exterior",
+  [
+   0.32,
+   0.35,
+   0.37
+  ]
+ ],
+ "/World/Objects/object_0135": [
+  "r52i1_roof_ribs",
+  "exterior",
+  [
+   0.21,
+   0.24,
+   0.25
+  ]
+ ],
+ "/World/Objects/object_0136": [
+  "r52i1_shutter_guide_frame",
+  "exterior",
+  [
+   0.23,
+   0.25,
+   0.26
+  ]
+ ],
+ "/World/Objects/object_0137": [
+  "r52i1_roller_shutter",
+  "door",
+  [
+   0.23,
+   0.25,
+   0.26
+  ]
+ ],
+ "/World/Objects/object_0138": [
+  "r52i1_blue_roof_strip",
+  "exterior",
+  [
+   0.03,
+   0.16,
+   0.64
+  ]
+ ],
+ "/World/Objects/object_0139": [
+  "r52i2_walls",
+  "exterior",
+  [
+   0.39,
+   0.39,
+   0.37
+  ]
+ ],
+ "/World/Objects/object_0140": [
+  "r52i2_roof_sheets",
+  "exterior",
+  [
+   0.32,
+   0.35,
+   0.37
+  ]
+ ],
+ "/World/Objects/object_0141": [
+  "r52i2_roof_ribs",
+  "exterior",
+  [
+   0.21,
+   0.24,
+   0.25
+  ]
+ ],
+ "/World/Objects/object_0142": [
+  "r52i2_shutter_guide_frame",
+  "exterior",
+  [
+   0.23,
+   0.25,
+   0.26
+  ]
+ ],
+ "/World/Objects/object_0143": [
+  "r52i2_roller_shutter",
+  "door",
+  [
+   0.23,
+   0.25,
+   0.26
+  ]
+ ],
+ "/World/Objects/object_0144": [
+  "r52i3_walls",
+  "exterior",
+  [
+   0.39,
+   0.39,
+   0.37
+  ]
+ ],
+ "/World/Objects/object_0145": [
+  "r52i3_roof_sheets",
+  "exterior",
+  [
+   0.32,
+   0.35,
+   0.37
+  ]
+ ],
+ "/World/Objects/object_0146": [
+  "r52i3_roof_ribs",
+  "exterior",
+  [
+   0.21,
+   0.24,
+   0.25
+  ]
+ ],
+ "/World/Objects/object_0147": [
+  "r52i3_shutter_guide_frame",
+  "exterior",
+  [
+   0.23,
+   0.25,
+   0.26
+  ]
+ ],
+ "/World/Objects/object_0148": [
+  "r52i3_roller_shutter",
+  "door",
+  [
+   0.23,
+   0.25,
+   0.26
+  ]
+ ],
+ "/World/Objects/object_0149": [
+  "r53i1_main_block",
+  "exterior",
+  [
+   0.57,
+   0.37,
+   0.15
+  ]
+ ],
+ "/World/Objects/object_0150": [
+  "r53i1_roof_parapet",
+  "exterior",
+  [
+   0.34,
+   0.21,
+   0.09
+  ]
+ ],
+ "/World/Objects/object_0151": [
+  "r53i1_brick_courses",
+  "exterior",
+  [
+   0.34,
+   0.21,
+   0.09
+  ]
+ ],
+ "/World/Objects/object_0152": [
+  "r53i1_signboard",
+  "exterior",
+  [
+   0.01,
+   0.01,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0153": [
+  "r53i1_sign_lettering",
+  "exterior",
+  [
+   0.81,
+   0.48,
+   0.03
+  ]
+ ],
+ "/World/Objects/object_0154": [
+  "r53i1_windows",
+  "exterior",
+  [
+   0.03,
+   0.04,
+   0.04
+  ]
+ ],
+ "/World/Objects/object_0155": [
+  "r54i1_pole",
+  "exterior",
+  [
+   0.33,
+   0.33,
+   0.31
+  ]
+ ],
+ "/World/Objects/object_0156": [
+  "r54i1_crossarms",
+  "exterior",
+  [
+   0.01,
+   0.01,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0157": [
+  "r54i1_insulators",
+  "exterior",
+  [
+   0.81,
+   0.81,
+   0.79
+  ]
+ ],
+ "/World/Objects/object_0158": [
+  "r54i2_pole",
+  "exterior",
+  [
+   0.33,
+   0.33,
+   0.31
+  ]
+ ],
+ "/World/Objects/object_0159": [
+  "r54i2_crossarms",
+  "exterior",
+  [
+   0.01,
+   0.01,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0160": [
+  "r54i2_insulators",
+  "exterior",
+  [
+   0.81,
+   0.81,
+   0.79
+  ]
+ ],
+ "/World/Objects/object_0161": [
+  "r54i3_pole",
+  "exterior",
+  [
+   0.33,
+   0.33,
+   0.31
+  ]
+ ],
+ "/World/Objects/object_0162": [
+  "r54i3_crossarms",
+  "exterior",
+  [
+   0.01,
+   0.01,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0163": [
+  "r54i3_insulators",
+  "exterior",
+  [
+   0.81,
+   0.81,
+   0.79
+  ]
+ ],
+ "/World/Objects/object_0164": [
+  "r54i1_overhead_wires",
+  "exterior",
+  [
+   0.01,
+   0.01,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0165": [
+  "r55i1_rain_tree_wood",
+  "tree",
+  [
+   0.09,
+   0.06,
+   0.04
+  ]
+ ],
+ "/World/Objects/object_0166": [
+  "r55i1_rain_tree_sun",
+  "foliage",
+  [
+   0.13,
+   0.3,
+   0.05
+  ]
+ ],
+ "/World/Objects/object_0167": [
+  "r55i1_rain_tree_shade",
+  "foliage",
+  [
+   0.04,
+   0.12,
+   0.02
+  ]
+ ],
+ "/World/Objects/object_0168": [
+  "r56i1_shade_tree_wood",
+  "tree",
+  [
+   0.09,
+   0.06,
+   0.04
+  ]
+ ],
+ "/World/Objects/object_0169": [
+  "r56i1_shade_tree_sun",
+  "foliage",
+  [
+   0.13,
+   0.27,
+   0.05
+  ]
+ ],
+ "/World/Objects/object_0170": [
+  "r56i1_shade_tree_shade",
+  "foliage",
+  [
+   0.04,
+   0.12,
+   0.02
+  ]
+ ],
+ "/World/Objects/object_0171": [
+  "r56i2_shade_tree_wood",
+  "tree",
+  [
+   0.09,
+   0.06,
+   0.04
+  ]
+ ],
+ "/World/Objects/object_0172": [
+  "r56i2_shade_tree_sun",
+  "foliage",
+  [
+   0.15,
+   0.27,
+   0.05
+  ]
+ ],
+ "/World/Objects/object_0173": [
+  "r56i2_shade_tree_shade",
+  "foliage",
+  [
+   0.04,
+   0.12,
+   0.02
+  ]
+ ],
+ "/World/Objects/object_0174": [
+  "r56i3_shade_tree_wood",
+  "tree",
+  [
+   0.09,
+   0.06,
+   0.04
+  ]
+ ],
+ "/World/Objects/object_0175": [
+  "r56i3_shade_tree_sun",
+  "foliage",
+  [
+   0.16,
+   0.27,
+   0.05
+  ]
+ ],
+ "/World/Objects/object_0176": [
+  "r56i3_shade_tree_shade",
+  "foliage",
+  [
+   0.04,
+   0.12,
+   0.02
+  ]
+ ],
+ "/World/Objects/object_0177": [
+  "r56i4_shade_tree_wood",
+  "tree",
+  [
+   0.09,
+   0.06,
+   0.04
+  ]
+ ],
+ "/World/Objects/object_0178": [
+  "r56i4_shade_tree_sun",
+  "foliage",
+  [
+   0.18,
+   0.27,
+   0.05
+  ]
+ ],
+ "/World/Objects/object_0179": [
+  "r56i4_shade_tree_shade",
+  "foliage",
+  [
+   0.04,
+   0.12,
+   0.02
+  ]
+ ],
+ "/World/Objects/object_0180": [
+  "r57i1_round_tree_wood",
+  "tree",
+  [
+   0.09,
+   0.06,
+   0.04
+  ]
+ ],
+ "/World/Objects/object_0181": [
+  "r57i1_round_tree_sun",
+  "foliage",
+  [
+   0.15,
+   0.3,
+   0.07
+  ]
+ ],
+ "/World/Objects/object_0182": [
+  "r57i1_round_tree_shade",
+  "foliage",
+  [
+   0.05,
+   0.13,
+   0.03
+  ]
+ ],
+ "/World/Objects/object_0183": [
+  "r57i2_round_tree_wood",
+  "tree",
+  [
+   0.09,
+   0.06,
+   0.04
+  ]
+ ],
+ "/World/Objects/object_0184": [
+  "r57i2_round_tree_sun",
+  "foliage",
+  [
+   0.15,
+   0.3,
+   0.07
+  ]
+ ],
+ "/World/Objects/object_0185": [
+  "r57i2_round_tree_shade",
+  "foliage",
+  [
+   0.05,
+   0.13,
+   0.03
+  ]
+ ],
+ "/World/Objects/object_0186": [
+  "r57i3_round_tree_wood",
+  "tree",
+  [
+   0.09,
+   0.06,
+   0.04
+  ]
+ ],
+ "/World/Objects/object_0187": [
+  "r57i3_round_tree_sun",
+  "foliage",
+  [
+   0.15,
+   0.3,
+   0.07
+  ]
+ ],
+ "/World/Objects/object_0188": [
+  "r57i3_round_tree_shade",
+  "foliage",
+  [
+   0.05,
+   0.13,
+   0.03
+  ]
+ ],
+ "/World/Objects/object_0189": [
+  "r57i4_round_tree_wood",
+  "tree",
+  [
+   0.09,
+   0.06,
+   0.04
+  ]
+ ],
+ "/World/Objects/object_0190": [
+  "r57i4_round_tree_sun",
+  "foliage",
+  [
+   0.15,
+   0.3,
+   0.07
+  ]
+ ],
+ "/World/Objects/object_0191": [
+  "r57i4_round_tree_shade",
+  "foliage",
+  [
+   0.05,
+   0.13,
+   0.03
+  ]
+ ],
+ "/World/Objects/object_0192": [
+  "r57i5_round_tree_wood",
+  "tree",
+  [
+   0.09,
+   0.06,
+   0.04
+  ]
+ ],
+ "/World/Objects/object_0193": [
+  "r57i5_round_tree_sun",
+  "foliage",
+  [
+   0.15,
+   0.3,
+   0.07
+  ]
+ ],
+ "/World/Objects/object_0194": [
+  "r57i5_round_tree_shade",
+  "foliage",
+  [
+   0.05,
+   0.13,
+   0.03
+  ]
+ ],
+ "/World/Objects/object_0195": [
+  "r58i1_skyline_near_rooftops",
+  "exterior",
+  [
+   0.49,
+   0.48,
+   0.41
+  ]
+ ],
+ "/World/Objects/object_0196": [
+  "r58i1_skyline_far_rooftops",
+  "exterior",
+  [
+   0.59,
+   0.6,
+   0.59
+  ]
+ ],
+ "/World/Objects/object_0197": [
+  "r58i1_skyline_water_tanks",
+  "exterior",
+  [
+   0.17,
+   0.18,
+   0.18
+  ]
+ ],
+ "/World/Objects/object_0198": [
+  "r58i1_distant_tree_1_wood",
+  "tree",
+  [
+   0.09,
+   0.06,
+   0.04
+  ]
+ ],
+ "/World/Objects/object_0199": [
+  "r58i1_distant_tree_1_sun",
+  "foliage",
+  [
+   0.21,
+   0.32,
+   0.15
+  ]
+ ],
+ "/World/Objects/object_0200": [
+  "r58i1_distant_tree_1_shade",
+  "foliage",
+  [
+   0.11,
+   0.17,
+   0.08
+  ]
+ ],
+ "/World/Objects/object_0201": [
+  "r58i1_distant_tree_2_wood",
+  "tree",
+  [
+   0.09,
+   0.06,
+   0.04
+  ]
+ ],
+ "/World/Objects/object_0202": [
+  "r58i1_distant_tree_2_sun",
+  "foliage",
+  [
+   0.21,
+   0.32,
+   0.15
+  ]
+ ],
+ "/World/Objects/object_0203": [
+  "r58i1_distant_tree_2_shade",
+  "foliage",
+  [
+   0.11,
+   0.17,
+   0.08
+  ]
+ ],
+ "/World/Objects/object_0204": [
+  "r58i1_distant_tree_3_wood",
+  "tree",
+  [
+   0.09,
+   0.06,
+   0.04
+  ]
+ ],
+ "/World/Objects/object_0205": [
+  "r58i1_distant_tree_3_sun",
+  "foliage",
+  [
+   0.21,
+   0.32,
+   0.15
+  ]
+ ],
+ "/World/Objects/object_0206": [
+  "r58i1_distant_tree_3_shade",
+  "foliage",
+  [
+   0.11,
+   0.17,
+   0.08
+  ]
+ ],
+ "/World/Objects/object_0207": [
+  "r58i1_distant_tree_4_wood",
+  "tree",
+  [
+   0.09,
+   0.06,
+   0.04
+  ]
+ ],
+ "/World/Objects/object_0208": [
+  "r58i1_distant_tree_4_sun",
+  "foliage",
+  [
+   0.21,
+   0.32,
+   0.15
+  ]
+ ],
+ "/World/Objects/object_0209": [
+  "r58i1_distant_tree_4_shade",
+  "foliage",
+  [
+   0.11,
+   0.17,
+   0.08
+  ]
+ ],
+ "/World/Objects/object_0210": [
+  "r58i1_distant_tree_5_wood",
+  "tree",
+  [
+   0.09,
+   0.06,
+   0.04
+  ]
+ ],
+ "/World/Objects/object_0211": [
+  "r58i1_distant_tree_5_sun",
+  "foliage",
+  [
+   0.21,
+   0.32,
+   0.15
+  ]
+ ],
+ "/World/Objects/object_0212": [
+  "r58i1_distant_tree_5_shade",
+  "foliage",
+  [
+   0.11,
+   0.17,
+   0.08
+  ]
+ ],
+ "/World/Objects/object_0213": [
+  "r58i1_distant_tree_6_wood",
+  "tree",
+  [
+   0.09,
+   0.06,
+   0.04
+  ]
+ ],
+ "/World/Objects/object_0214": [
+  "r58i1_distant_tree_6_sun",
+  "foliage",
+  [
+   0.21,
+   0.32,
+   0.15
+  ]
+ ],
+ "/World/Objects/object_0215": [
+  "r58i1_distant_tree_6_shade",
+  "foliage",
+  [
+   0.11,
+   0.17,
+   0.08
+  ]
+ ],
+ "/World/Objects/object_0216": [
+  "r59i1_umbrella_canopy",
+  "exterior",
+  [
+   0.81,
+   0.81,
+   0.79
+  ]
+ ],
+ "/World/Objects/object_0217": [
+  "r59i1_umbrella_pole_and_base",
+  "exterior",
+  [
+   0.01,
+   0.01,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0218": [
+  "r59i2_bench_slats",
+  "exterior",
+  [
+   0.1,
+   0.07,
+   0.04
+  ]
+ ],
+ "/World/Objects/object_0219": [
+  "r59i2_bench_frame",
+  "exterior",
+  [
+   0.01,
+   0.01,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0220": [
+  "r60i1_container_shell",
+  "exterior",
+  [
+   0.32,
+   0.33,
+   0.32
+  ]
+ ],
+ "/World/Objects/object_0221": [
+  "r60i1_container_doors_and_skids",
+  "exterior",
+  [
+   0.01,
+   0.01,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0222": [
+  "r60i1_yellow_vehicle",
+  "exterior",
+  [
+   0.69,
+   0.48,
+   0.03
+  ]
+ ],
+ "/World/Objects/object_0223": [
+  "r60i1_vehicle_wheels",
+  "exterior",
+  [
+   0.0,
+   0.0,
+   0.0
+  ]
+ ],
+ "/World/Objects/object_0224": [
+  "r41i1_exit_sign_box",
+  "sign",
+  [
+   0.79,
+   0.77,
+   0.71
+  ]
+ ],
+ "/World/Objects/object_0225": [
+  "r41i1_exit_sign_face",
+  "sign",
+  [
+   0.03,
+   0.38,
+   0.07
+  ]
+ ],
+ "/World/Objects/object_0226": [
+  "r41i1_exit_sign_pictogram",
+  "sign",
+  [
+   0.93,
+   0.93,
+   0.93
+  ]
+ ],
+ "/World/Objects/object_0227": [
+  "r27i1_up_flight_treads",
+  "stair_step",
+  [
+   0.25,
+   0.13,
+   0.05
+  ]
+ ],
+ "/World/Objects/object_0228": [
+  "r27i1_up_flight_structure",
+  "stair",
+  [
+   0.01,
+   0.01,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0229": [
+  "r27i1_up_flight_handrail_lo",
+  "railing",
+  [
+   0.01,
+   0.01,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0230": [
+  "r27i1_up_flight_handrail_hi",
+  "railing",
+  [
+   0.01,
+   0.01,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0231": [
+  "r27i1_down_flight_treads",
+  "stair_step",
+  [
+   0.25,
+   0.13,
+   0.05
+  ]
+ ],
+ "/World/Objects/object_0232": [
+  "r27i1_down_flight_structure",
+  "stair",
+  [
+   0.01,
+   0.01,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0233": [
+  "r27i1_down_flight_handrail_hi",
+  "railing",
+  [
+   0.01,
+   0.01,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0234": [
+  "r27i1_upper_flight_treads",
+  "stair_step",
+  [
+   0.25,
+   0.13,
+   0.05
+  ]
+ ],
+ "/World/Objects/object_0235": [
+  "r27i1_upper_flight_structure",
+  "stair",
+  [
+   0.01,
+   0.01,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0236": [
+  "r27i1_upper_flight_handrail_hi",
+  "railing",
+  [
+   0.01,
+   0.01,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0237": [
+  "stair_flight_lower_treads",
+  "stair_step",
+  [
+   0.25,
+   0.13,
+   0.05
+  ]
+ ],
+ "/World/Objects/object_0238": [
+  "stair_flight_lower_structure",
+  "stair",
+  [
+   0.01,
+   0.01,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0239": [
+  "stair_flight_lower_handrail_lo",
+  "railing",
+  [
+   0.01,
+   0.01,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0240": [
+  "stair_flight_upper_a_treads",
+  "stair_step",
+  [
+   0.25,
+   0.13,
+   0.05
+  ]
+ ],
+ "/World/Objects/object_0241": [
+  "stair_flight_upper_a_structure",
+  "stair",
+  [
+   0.01,
+   0.01,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0242": [
+  "stair_flight_upper_a_handrail_lo",
+  "railing",
+  [
+   0.01,
+   0.01,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0243": [
+  "stair_flight_upper_b_treads",
+  "stair_step",
+  [
+   0.25,
+   0.13,
+   0.05
+  ]
+ ],
+ "/World/Objects/object_0244": [
+  "stair_flight_upper_b_structure",
+  "stair",
+  [
+   0.01,
+   0.01,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0245": [
+  "stair_flight_upper_b_handrail_hi",
+  "railing",
+  [
+   0.01,
+   0.01,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0246": [
+  "stair_half_landing_mid_deck",
+  "floor",
+  [
+   0.25,
+   0.13,
+   0.05
+  ]
+ ],
+ "/World/Objects/object_0247": [
+  "stair_half_landing_mid_frame",
+  "stair",
+  [
+   0.01,
+   0.01,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0248": [
+  "r27i1_half_landing_balustrade",
+  "railing",
+  [
+   0.01,
+   0.01,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0249": [
+  "stair_half_landing_lower_deck",
+  "floor",
+  [
+   0.25,
+   0.13,
+   0.05
+  ]
+ ],
+ "/World/Objects/object_0250": [
+  "stair_half_landing_lower_frame",
+  "stair",
+  [
+   0.01,
+   0.01,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0251": [
+  "stair_half_landing_lower_railing",
+  "railing",
+  [
+   0.01,
+   0.01,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0252": [
+  "stair_half_landing_upper_deck",
+  "floor",
+  [
+   0.25,
+   0.13,
+   0.05
+  ]
+ ],
+ "/World/Objects/object_0253": [
+  "stair_half_landing_upper_frame",
+  "stair",
+  [
+   0.01,
+   0.01,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0254": [
+  "stair_half_landing_upper_railing",
+  "railing",
+  [
+   0.01,
+   0.01,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0255": [
+  "r27i1_landing_edge_balustrade",
+  "railing",
+  [
+   0.01,
+   0.01,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0256": [
+  "stair_upper_floor_balustrade",
+  "railing",
+  [
+   0.01,
+   0.01,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0257": [
+  "stair_corridor_guard",
+  "railing",
+  [
+   0.01,
+   0.01,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0258": [
+  "stair_well_column",
+  "column",
+  [
+   0.01,
+   0.01,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0259": [
+  "stair_wall_handrail",
+  "railing",
+  [
+   0.01,
+   0.01,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0260": [
+  "stairwell_back_wall",
+  "wall",
+  [
+   0.85,
+   0.81,
+   0.73
+  ]
+ ],
+ "/World/Objects/object_0261": [
+  "stairwell_roof_slab",
+  "ceiling",
+  [
+   0.03,
+   0.02,
+   0.02
+  ]
+ ],
+ "/World/Objects/object_0262": [
+  "upper_storey_floor_slab",
+  "ceiling",
+  [
+   0.03,
+   0.02,
+   0.02
+  ]
+ ],
+ "/World/Objects/object_0263": [
+  "upper_storey_walls",
+  "wall",
+  [
+   0.85,
+   0.81,
+   0.73
+  ]
+ ],
+ "/World/Objects/object_0264": [
+  "stair_second_floor_balustrade",
+  "railing",
+  [
+   0.01,
+   0.01,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0265": [
+  "lower_storey_walls",
+  "wall",
+  [
+   0.85,
+   0.81,
+   0.73
+  ]
+ ],
+ "/World/Objects/object_0266": [
+  "r28i1_mural_yellow",
+  "paint",
+  [
+   0.89,
+   0.46,
+   0.03
+  ]
+ ],
+ "/World/Objects/object_0267": [
+  "r28i1_mural_blue",
+  "paint",
+  [
+   0.01,
+   0.27,
+   0.46
+  ]
+ ],
+ "/World/Objects/object_0268": [
+  "stair_arc_relief",
+  "paint",
+  [
+   0.2,
+   0.25,
+   0.27
+  ]
+ ],
+ "/World/Objects/object_0269": [
+  "r29i1_planter_pot",
+  "planter",
+  [
+   0.87,
+   0.87,
+   0.85
+  ]
+ ],
+ "/World/Objects/object_0270": [
+  "r29i1_plant_stems",
+  "plant",
+  [
+   0.07,
+   0.11,
+   0.02
+  ]
+ ],
+ "/World/Objects/object_0271": [
+  "r29i1_plant_leaves",
+  "plant",
+  [
+   0.06,
+   0.18,
+   0.03
+  ]
+ ],
+ "/World/Objects/object_0272": [
+  "r35i1_partition_frame",
+  "window_frame",
+  [
+   0.01,
+   0.01,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0273": [
+  "r35i1_partition_glass",
+  "glass",
+  [
+   0.52,
+   0.67,
+   0.79
+  ]
+ ],
+ "/World/Objects/object_0274": [
+  "r35i1_frosted_band",
+  "glass",
+  [
+   0.71,
+   0.77,
+   0.75
+  ]
+ ],
+ "/World/Objects/object_0275": [
+  "r34i1_glass_panel_frame",
+  "window_frame",
+  [
+   0.01,
+   0.01,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0276": [
+  "r34i1_glass_pane",
+  "glass",
+  [
+   0.52,
+   0.67,
+   0.79
+  ]
+ ],
+ "/World/Objects/object_0277": [
+  "r34i1_frosted_band",
+  "glass",
+  [
+   0.71,
+   0.77,
+   0.75
+  ]
+ ],
+ "/World/Objects/object_0278": [
+  "r3i1_counter_top",
+  "worktop",
+  [
+   0.49,
+   0.23,
+   0.07
+  ]
+ ],
+ "/World/Objects/object_0279": [
+  "r3i1_counter_edge_band",
+  "trim",
+  [
+   0.02,
+   0.02,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0280": [
+  "r3i1_open_cabinet",
+  "cabinet",
+  [
+   0.02,
+   0.02,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0281": [
+  "r3i1_end_unit",
+  "cabinet",
+  [
+   0.0,
+   0.0,
+   0.0
+  ]
+ ],
+ "/World/Objects/object_0282": [
+  "r38i1_bench_base",
+  "furniture",
+  [
+   0.0,
+   0.0,
+   0.0
+  ]
+ ],
+ "/World/Objects/object_0283": [
+  "r38i1_bench_cushions",
+  "furniture",
+  [
+   0.02,
+   0.02,
+   0.02
+  ]
+ ],
+ "/World/Objects/object_0284": [
+  "r38i1_bench_piping",
+  "trim",
+  [
+   0.01,
+   0.01,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0285": [
+  "r39i2_planter_box",
+  "planter",
+  [
+   0.01,
+   0.01,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0286": [
+  "r39i2_soil",
+  "planter",
+  [
+   0.03,
+   0.02,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0287": [
+  "r39i2_plant_stems",
+  "plant",
+  [
+   0.07,
+   0.11,
+   0.02
+  ]
+ ],
+ "/World/Objects/object_0288": [
+  "r39i2_plant_leaves",
+  "plant",
+  [
+   0.06,
+   0.18,
+   0.03
+  ]
+ ],
+ "/World/Objects/object_0289": [
+  "r39i2_plant_broad_leaves",
+  "plant",
+  [
+   0.06,
+   0.18,
+   0.03
+  ]
+ ],
+ "/World/Objects/object_0290": [
+  "r39i1_planter_box",
+  "planter",
+  [
+   0.01,
+   0.01,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0291": [
+  "r39i1_soil",
+  "planter",
+  [
+   0.03,
+   0.02,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0292": [
+  "r39i1_plant_stems",
+  "plant",
+  [
+   0.07,
+   0.11,
+   0.02
+  ]
+ ],
+ "/World/Objects/object_0293": [
+  "r39i1_plant_leaves",
+  "plant",
+  [
+   0.12,
+   0.3,
+   0.05
+  ]
+ ],
+ "/World/Objects/object_0294": [
+  "r9i1_kettle_base",
+  "appliance",
+  [
+   0.0,
+   0.0,
+   0.0
+  ]
+ ],
+ "/World/Objects/object_0295": [
+  "r9i1_kettle_jug",
+  "movable_prop",
+  [
+   0.0,
+   0.0,
+   0.0
+  ]
+ ],
+ "/World/Objects/object_0296": [
+  "r12i1_wall_socket",
+  "fixture",
+  [
+   0.79,
+   0.77,
+   0.71
+  ]
+ ],
+ "/World/Objects/object_0297": [
+  "r12i1_plugs",
+  "fixture",
+  [
+   0.01,
+   0.01,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0298": [
+  "r12i1_power_cords",
+  "cable",
+  [
+   0.0,
+   0.0,
+   0.0
+  ]
+ ],
+ "/World/Objects/object_0299": [
+  "r8i1_sachet_tray",
+  "movable_prop",
+  [
+   0.01,
+   0.01,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0300": [
+  "r8i1_tea_envelopes",
+  "movable_prop",
+  [
+   0.81,
+   0.75,
+   0.6
+  ]
+ ],
+ "/World/Objects/object_0301": [
+  "r8i1_sugar_sticks",
+  "movable_prop",
+  [
+   0.81,
+   0.75,
+   0.6
+  ]
+ ],
+ "/World/Objects/object_0302": [
+  "r8i1_stirrers_and_sticks",
+  "movable_prop",
+  [
+   0.2,
+   0.1,
+   0.04
+  ]
+ ],
+ "/World/Objects/object_0303": [
+  "r8i1_green_tea_bags",
+  "movable_prop",
+  [
+   0.81,
+   0.75,
+   0.6
+  ]
+ ],
+ "/World/Objects/object_0304": [
+  "r8i1_coffee_sticks",
+  "movable_prop",
+  [
+   0.2,
+   0.1,
+   0.04
+  ]
+ ],
+ "/World/Objects/object_0305": [
+  "r8i1_tea_bags_loose",
+  "movable_prop",
+  [
+   0.81,
+   0.75,
+   0.6
+  ]
+ ],
+ "/World/Objects/object_0306": [
+  "r8i1_tub_left",
+  "movable_prop",
+  [
+   0.81,
+   0.75,
+   0.6
+  ]
+ ],
+ "/World/Objects/object_0307": [
+  "r8i1_tub_right",
+  "movable_prop",
+  [
+   0.81,
+   0.75,
+   0.6
+  ]
+ ],
+ "/World/Objects/object_0308": [
+  "r8i1_snack_pack",
+  "movable_prop",
+  [
+   0.57,
+   0.03,
+   0.05
+  ]
+ ],
+ "/World/Objects/object_0309": [
+  "r7i1_glass_jar",
+  "movable_prop",
+  [
+   0.79,
+   0.75,
+   0.64
+  ]
+ ],
+ "/World/Objects/object_0310": [
+  "r4i1_mug_rack",
+  "movable_prop",
+  [
+   0.01,
+   0.01,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0311": [
+  "r5i1_mug",
+  "movable_prop",
+  [
+   0.01,
+   0.01,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0312": [
+  "r5i2_mug",
+  "movable_prop",
+  [
+   0.01,
+   0.01,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0313": [
+  "r5i3_mug",
+  "movable_prop",
+  [
+   0.01,
+   0.01,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0314": [
+  "r5i4_mug",
+  "movable_prop",
+  [
+   0.01,
+   0.01,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0315": [
+  "r5i5_mug",
+  "movable_prop",
+  [
+   0.01,
+   0.01,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0316": [
+  "r5i6_mug",
+  "movable_prop",
+  [
+   0.01,
+   0.01,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0317": [
+  "r5i7_mug",
+  "movable_prop",
+  [
+   0.01,
+   0.01,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0318": [
+  "r5i8_mug",
+  "movable_prop",
+  [
+   0.01,
+   0.01,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0319": [
+  "r5i9_mug",
+  "movable_prop",
+  [
+   0.01,
+   0.01,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0320": [
+  "r5i10_mug",
+  "movable_prop",
+  [
+   0.01,
+   0.01,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0321": [
+  "r5i11_mug",
+  "movable_prop",
+  [
+   0.01,
+   0.01,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0322": [
+  "r13i1_waste_bin",
+  "movable_prop",
+  [
+   0.01,
+   0.01,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0323": [
+  "r14i1_cylinder",
+  "fixture",
+  [
+   0.38,
+   0.01,
+   0.02
+  ]
+ ],
+ "/World/Objects/object_0324": [
+  "r14i1_valve_hose_and_hook",
+  "fixture",
+  [
+   0.01,
+   0.01,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0325": [
+  "r15i1_inspection_card",
+  "sign",
+  [
+   0.89,
+   0.89,
+   0.85
+  ]
+ ],
+ "/World/Objects/object_0326": [
+  "r15i1_card_print",
+  "sign",
+  [
+   0.01,
+   0.01,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0327": [
+  "r23i1_kitchen_sign_plaque",
+  "sign",
+  [
+   0.01,
+   0.01,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0328": [
+  "r23i1_kitchen_sign_lettering",
+  "sign",
+  [
+   0.93,
+   0.93,
+   0.93
+  ]
+ ],
+ "/World/Objects/object_0329": [
+  "r23i1_kitchen_sign_asterisk",
+  "sign",
+  [
+   0.81,
+   0.48,
+   0.03
+  ]
+ ],
+ "/World/Objects/object_0330": [
+  "r25i1_restroom_sign_plaque",
+  "sign",
+  [
+   0.01,
+   0.01,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0331": [
+  "r25i1_restroom_sign_lettering",
+  "sign",
+  [
+   0.93,
+   0.93,
+   0.93
+  ]
+ ],
+ "/World/Objects/object_0332": [
+  "r25i1_restroom_sign_asterisk",
+  "sign",
+  [
+   0.81,
+   0.48,
+   0.03
+  ]
+ ],
+ "/World/Objects/object_0333": [
+  "r24i1_kitchen_switch_plate",
+  "switch",
+  [
+   0.79,
+   0.77,
+   0.71
+  ]
+ ],
+ "/World/Objects/object_0334": [
+  "r24i1_kitchen_switch_rocker_marks",
+  "switch",
+  [
+   0.01,
+   0.01,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0335": [
+  "r24i2_restroom_switch_plate",
+  "switch",
+  [
+   0.79,
+   0.77,
+   0.71
+  ]
+ ],
+ "/World/Objects/object_0336": [
+  "r24i2_restroom_switch_rocker_marks",
+  "switch",
+  [
+   0.01,
+   0.01,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0337": [
+  "r2i1_notice_card",
+  "sign",
+  [
+   0.01,
+   0.01,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0338": [
+  "r2i1_notice_print",
+  "sign",
+  [
+   0.93,
+   0.93,
+   0.93
+  ]
+ ],
+ "/World/Objects/object_0339": [
+  "r2i2_notice_card",
+  "sign",
+  [
+   0.01,
+   0.01,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0340": [
+  "r2i2_notice_print",
+  "sign",
+  [
+   0.93,
+   0.93,
+   0.93
+  ]
+ ],
+ "/World/Objects/object_0341": [
+  "r2i3_notice_card",
+  "sign",
+  [
+   0.01,
+   0.01,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0342": [
+  "r2i3_notice_print",
+  "sign",
+  [
+   0.93,
+   0.93,
+   0.93
+  ]
+ ],
+ "/World/Objects/object_0343": [
+  "r32i1_poster_frame",
+  "sign",
+  [
+   0.01,
+   0.01,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0344": [
+  "r32i1_poster_mount",
+  "sign",
+  [
+   0.69,
+   0.71,
+   0.75
+  ]
+ ],
+ "/World/Objects/object_0345": [
+  "r32i1_poster_print_tower",
+  "sign",
+  [
+   0.55,
+   0.05,
+   0.07
+  ]
+ ],
+ "/World/Objects/object_0346": [
+  "r32i1_poster_print_lines",
+  "sign",
+  [
+   0.01,
+   0.01,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0347": [
+  "r33i1_wall_sign",
+  "sign",
+  [
+   0.01,
+   0.01,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0348": [
+  "r33i1_sign_text",
+  "sign",
+  [
+   0.93,
+   0.93,
+   0.93
+  ]
+ ],
+ "/World/Objects/object_0349": [
+  "r33i2_thermostat",
+  "fixture",
+  [
+   0.79,
+   0.77,
+   0.71
+  ]
+ ],
+ "/World/Objects/object_0350": [
+  "r37i1_wall_fan",
+  "fixture",
+  [
+   0.79,
+   0.77,
+   0.71
+  ]
+ ],
+ "/World/Objects/object_0351": [
+  "r30i1_water_dispenser",
+  "appliance",
+  [
+   0.01,
+   0.01,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0352": [
+  "r30i1_bottle_on_dispenser",
+  "container",
+  [
+   0.11,
+   0.34,
+   0.67
+  ]
+ ],
+ "/World/Objects/object_0353": [
+  "r31i1_spare_bottle",
+  "movable_prop",
+  [
+   0.11,
+   0.34,
+   0.67
+  ]
+ ],
+ "/World/Objects/object_0354": [
+  "r31i2_spare_bottle",
+  "movable_prop",
+  [
+   0.11,
+   0.34,
+   0.67
+  ]
+ ],
+ "/World/Objects/object_0355": [
+  "r17i1_cable_tray",
+  "cable_tray",
+  [
+   0.02,
+   0.02,
+   0.02
+  ]
+ ],
+ "/World/Objects/object_0356": [
+  "r17i1_tray_hangers",
+  "cable_tray",
+  [
+   0.01,
+   0.01,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0357": [
+  "r17i2_cable_tray",
+  "cable_tray",
+  [
+   0.02,
+   0.02,
+   0.02
+  ]
+ ],
+ "/World/Objects/object_0358": [
+  "r17i2_tray_hangers",
+  "cable_tray",
+  [
+   0.01,
+   0.01,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0359": [
+  "r17i3_cable_tray",
+  "cable_tray",
+  [
+   0.02,
+   0.02,
+   0.02
+  ]
+ ],
+ "/World/Objects/object_0360": [
+  "r17i3_tray_hangers",
+  "cable_tray",
+  [
+   0.01,
+   0.01,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0361": [
+  "r19i1_threaded_rod",
+  "cable_tray",
+  [
+   0.01,
+   0.01,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0362": [
+  "r19i2_threaded_rod",
+  "cable_tray",
+  [
+   0.01,
+   0.01,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0363": [
+  "r19i3_threaded_rod",
+  "cable_tray",
+  [
+   0.01,
+   0.01,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0364": [
+  "r19i4_threaded_rod",
+  "cable_tray",
+  [
+   0.01,
+   0.01,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0365": [
+  "r19i5_threaded_rod",
+  "cable_tray",
+  [
+   0.01,
+   0.01,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0366": [
+  "r19i6_threaded_rod",
+  "cable_tray",
+  [
+   0.01,
+   0.01,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0367": [
+  "r19i7_threaded_rod",
+  "cable_tray",
+  [
+   0.01,
+   0.01,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0368": [
+  "r19i8_threaded_rod",
+  "cable_tray",
+  [
+   0.01,
+   0.01,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0369": [
+  "r19i9_threaded_rod",
+  "cable_tray",
+  [
+   0.01,
+   0.01,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0370": [
+  "r19i10_threaded_rod",
+  "cable_tray",
+  [
+   0.01,
+   0.01,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0371": [
+  "r18i1_led_housing",
+  "light",
+  [
+   0.69,
+   0.69,
+   0.66
+  ]
+ ],
+ "/World/Objects/object_0372": [
+  "r18i1_led_diffuser",
+  "light",
+  [
+   1.0,
+   0.89,
+   0.6
+  ]
+ ],
+ "/World/Objects/object_0373": [
+  "r18i2_led_housing",
+  "light",
+  [
+   0.69,
+   0.69,
+   0.66
+  ]
+ ],
+ "/World/Objects/object_0374": [
+  "r18i2_led_diffuser",
+  "light",
+  [
+   1.0,
+   0.89,
+   0.6
+  ]
+ ],
+ "/World/Objects/object_0375": [
+  "r18i3_led_housing",
+  "light",
+  [
+   0.69,
+   0.69,
+   0.66
+  ]
+ ],
+ "/World/Objects/object_0376": [
+  "r18i3_led_diffuser",
+  "light",
+  [
+   1.0,
+   0.89,
+   0.6
+  ]
+ ],
+ "/World/Objects/object_0377": [
+  "r18i4_led_housing",
+  "light",
+  [
+   0.69,
+   0.69,
+   0.66
+  ]
+ ],
+ "/World/Objects/object_0378": [
+  "r18i4_led_diffuser",
+  "light",
+  [
+   1.0,
+   0.89,
+   0.6
+  ]
+ ],
+ "/World/Objects/object_0379": [
+  "r18i5_led_housing",
+  "light",
+  [
+   0.69,
+   0.69,
+   0.66
+  ]
+ ],
+ "/World/Objects/object_0380": [
+  "r18i5_led_diffuser",
+  "light",
+  [
+   1.0,
+   0.89,
+   0.6
+  ]
+ ],
+ "/World/Objects/object_0381": [
+  "r18i6_led_housing",
+  "light",
+  [
+   0.69,
+   0.69,
+   0.66
+  ]
+ ],
+ "/World/Objects/object_0382": [
+  "r18i6_led_diffuser",
+  "light",
+  [
+   1.0,
+   0.89,
+   0.6
+  ]
+ ],
+ "/World/Objects/object_0383": [
+  "r18i7_led_housing",
+  "light",
+  [
+   0.69,
+   0.69,
+   0.66
+  ]
+ ],
+ "/World/Objects/object_0384": [
+  "r18i7_led_diffuser",
+  "light",
+  [
+   1.0,
+   0.89,
+   0.6
+  ]
+ ],
+ "/World/Objects/object_0385": [
+  "r16i1_cctv_housing",
+  "fixture",
+  [
+   0.79,
+   0.77,
+   0.71
+  ]
+ ],
+ "/World/Objects/object_0386": [
+  "r16i1_cctv_lens_dome",
+  "fixture",
+  [
+   0.01,
+   0.01,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0387": [
+  "r16i2_cctv_housing",
+  "fixture",
+  [
+   0.79,
+   0.77,
+   0.71
+  ]
+ ],
+ "/World/Objects/object_0388": [
+  "r16i2_cctv_lens_dome",
+  "fixture",
+  [
+   0.01,
+   0.01,
+   0.01
+  ]
+ ],
+ "/World/Objects/object_0389": [
+  "r36i1_balloons_pink_1",
+  "decoration",
+  [
+   0.87,
+   0.38,
+   0.46
+  ]
+ ],
+ "/World/Objects/object_0390": [
+  "r36i1_balloons_white_1",
+  "decoration",
+  [
+   0.91,
+   0.91,
+   0.91
+  ]
+ ],
+ "/World/Objects/object_0391": [
+  "r36i1_ribbons_and_weight_1",
+  "decoration",
+  [
+   0.87,
+   0.87,
+   0.85
+  ]
+ ],
+ "/World/Objects/object_0392": [
+  "r36i1_balloons_pink_2",
+  "decoration",
+  [
+   0.87,
+   0.38,
+   0.46
+  ]
+ ],
+ "/World/Objects/object_0393": [
+  "r36i1_balloons_white_2",
+  "decoration",
+  [
+   0.91,
+   0.91,
+   0.91
+  ]
+ ],
+ "/World/Objects/object_0394": [
+  "r36i1_ribbons_and_weight_2",
+  "decoration",
+  [
+   0.87,
+   0.87,
+   0.85
+  ]
+ ]
+}

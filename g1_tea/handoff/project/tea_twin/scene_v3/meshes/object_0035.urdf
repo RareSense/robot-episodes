@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Nova movable environment body for the bundled PyBullet launcher. SI metres/kg/radians. Loaded at its body origin; hinge/slider bodies use a fixed world_anchor base with one passive joint. Inertia is about COM. -->
+<robot name="nova_environment_object_0035">
+  <link name="world_anchor">
+    <inertial>
+      <mass value="0" />
+      <inertia ixx="0" iyy="0" izz="0" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+  </link>
+  <joint name="joint" type="revolute">
+    <parent link="world_anchor" />
+    <child link="body" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <axis xyz="0 0 -1" />
+    <limit lower="0" upper="1.57" effort="1000" velocity="10" />
+    <dynamics damping="0.6" friction="0.3" />
+  </joint>
+  <link name="body">
+    <inertial>
+      <origin xyz="-0.026 0.4 0" rpy="0 0 0" />
+      <mass value="18" />
+      <inertia ixx="7.4647695" iyy="6.5357535" izz="0.933816" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="object_0035.obj" />
+      </geometry>
+      <material name="surface">
+        <color rgba="0.07 0.07 0.07 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="object_0035_collision_00.obj" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="object_0035_collision_01.obj" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="object_0035_collision_02.obj" />
+      </geometry>
+    </collision>
+  </link>
+</robot>
