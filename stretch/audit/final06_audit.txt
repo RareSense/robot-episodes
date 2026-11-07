@@ -1,0 +1,13 @@
+links with surfaces 31
+0 of 2499
+500 of 2499
+1000 of 2499
+1500 of 2499
+2000 of 2499
+('gripper / knobs', 'col') {'mm': 3.3, 't': 878.53, 'sample': 26340, 'link': 'link_gripper_finger_left', 'part': 'link_SG3_gripper_left_finger_0', 'first': 840.03, 'n': 10}
+('gripper / knobs', 'vis') {'mm': 3.2, 't': 878.53, 'sample': 26340, 'link': 'link_gripper_finger_left', 'part': 'link_SG3_gripper_left_finger_0', 'first': 839.53, 'n': 16}
+('gripper / door panel', 'vis') {'mm': 0.9, 't': 755.53, 'sample': 22650, 'link': 'rubber_tip_left', 'part': 'link_SG3_gripper_left_fingertip', 'first': 319.53, 'n': 45}
+('gripper / plate COLLIDER', 'vis') {'mm': 0.8, 't': 627.03, 'sample': 18795, 'link': 'rubber_tip_right', 'part': 'link_SG3_gripper_right_fingertip', 'first': 28.53, 'n': 328}
+('gripper / plate VISUAL', 'vis') {'mm': 0.3, 't': 467.03, 'sample': 13995, 'link': 'rubber_tip_left', 'part': 'link_SG3_gripper_left_fingertip', 'first': 28.53, 'n': 182}
+('gripper / door panel', 'col') {'mm': 0.2, 't': 322.53, 'sample': 9660, 'link': 'link_gripper_finger_left', 'part': 'link_SG3_gripper_left_finger_0', 'first': 320.53, 'n': 4}
+END audit

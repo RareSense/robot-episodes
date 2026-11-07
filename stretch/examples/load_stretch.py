@@ -1,10 +1,10 @@
 """Load the Stretch pizza recording and print a summary.
-usage: python examples/load_stretch.py [data/pz_final03_rec.npz]"""
+usage: python examples/load_stretch.py [data/pz_final06_rec.npz]"""
 import sys
 
 import numpy as np
 
-path = sys.argv[1] if len(sys.argv) > 1 else "data/pz_final03_rec.npz"
+path = sys.argv[1] if len(sys.argv) > 1 else "data/pz_final06_rec.npz"
 d = dict(np.load(path))                     # one read: indexing an npz directly decompresses the array each time
 names = [str(n) for n in d["names"]]
 t, q = d["t"], d["q"]

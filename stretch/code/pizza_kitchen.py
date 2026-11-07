@@ -21,12 +21,12 @@ SL_X, SL_Z0, SL_TRAVEL = (-.29, .29), .625, .07
 BTN_X, BTN_Z = -.215, .665
 T_H = .635
 TABLE_XY = (2.55, .28)
-PLATE_XY, COUNTER_Z = (1.67, 2.15), .86
-SET_XY = (.86, 2.15)                 # where the plate is put down on the counter
+PLATE_XY, COUNTER_Z = (1.67, 2.12), .86
+SET_XY = (.86, 2.12)                 # where the plate is put down on the counter
 BODY = "/World/oven/body"
 PLATE, PIZZA = "/World/pz_plate", "/World/pz_pizza"
 GRP = "wall_oven_grp/wall_oven_trans_grp"
-PLATE_R, FOOT_H, WELL_Z, RIM_Z = .066, .012, .016, .036     # pz_kit08: pads rest on a 150 mm rim, real gap at full open is about 152 mm, not the 174 mm of pad_gap.py
+PLATE_R, FOOT_H, WELL_Z, RIM_Z = .066, .012, .016, .032     # pz_kit08: pads rest on a 150 mm rim, real gap at full open is about 152 mm, not the 174 mm of pad_gap.py
 PIZZA_R = .0505
 PS = PLATE_R / .075
 PIZZA_TEX = ASSETS + "/pizza2/"
@@ -264,7 +264,7 @@ def plate_pizza(st):
         q.AddRotateZOp().Set(a)
         q.AddScaleOp().Set(Gf.Vec3f(.007, .0185, RIM_Z - FOOT_H))
         hide(c)
-    prof = [(0, WELL_Z), (.060, WELL_Z), (.064, WELL_Z + .002), (.070, RIM_Z - .006), (.0735, RIM_Z - .001), (.0748, RIM_Z - .0005), (.0752, RIM_Z - .002), (.0745, RIM_Z - .005),
+    prof = [(0, WELL_Z), (.0665, WELL_Z), (.0684, WELL_Z + .002), (.0716, RIM_Z - .006), (.0735, RIM_Z - .001), (.0748, RIM_Z - .0005), (.0752, RIM_Z - .002), (.0745, RIM_Z - .005),
             (.066, WELL_Z - .0005), (.052, FOOT_H - .002), (.049, .002), (.047, 0), (.044, 0), (.043, .002), (0, .003)]
     revolve(st, PLATE + "/look", [(r * PS, z) for r, z in prof], white, n=128)
     rbody(st, PIZZA, (x, y, COUNTER_Z + WELL_Z), .15, yaw=0)
@@ -290,8 +290,63 @@ def fill(st):
     x.AddRotateXYZOp().Set(Gf.Vec3f(0.0, -55.0, 0.0))
 
 
+def finger_strips(st):
+    """The robot model's inner finger strips are visual only, so in pz_final03 they went through the plate rim with nothing to stop them. Same shape as real colliders: a chain of thin boxes along each strip, on the finger link."""
+    import numpy as np
+    from pxr import Usd
+    pm = phys(st, "pz_strip", .5)
+    look_ = mat(st, "pz_strip_col", (.5, .5, .5))
+    xc = UsdGeom.XformCache()
+    n = 0
+    for p in list(Usd.PrimRange(st.GetPrimAtPath("/World/stretch"), Usd.TraverseInstanceProxies())):
+        if p.GetName() not in ("link_gripper_finger_left", "link_gripper_finger_right"):
+            continue
+        strip = [q for q in Usd.PrimRange(p, Usd.TraverseInstanceProxies()) if q.GetTypeName() == "Mesh" and "inner" in q.GetName()]
+        if not strip:
+            continue
+        M = np.array(xc.GetLocalToWorldTransform(strip[0]), float) @ np.linalg.inv(np.array(xc.GetLocalToWorldTransform(p), float))
+        v = np.array(UsdGeom.Mesh(strip[0]).GetPointsAttr().Get(), float)
+        v = (np.c_[v, np.ones(len(v))] @ M)[:, :3]
+        o = np.argsort(v[:, 0])
+        edges = np.linspace(v[:, 0].min(), v[:, 0].max(), 11)
+        mid = list(zip(edges, np.interp(edges, v[o, 0], v[o, 2])))
+        yc, hw = (v[:, 1].max() + v[:, 1].min()) / 2, (v[:, 1].max() - v[:, 1].min()) / 2
+        for k in range(10):
+            (x0, z0), (x1, z1) = mid[k], mid[k + 1]
+            c = box(st, f"{p.GetPath()}/pz_strip{k}", (0, 0, 0), (1, 1, 1), look_, pm)
+            q = UsdGeom.Xformable(c)
+            q.ClearXformOpOrder()
+            q.AddTranslateOp().Set(Gf.Vec3d((x0 + x1) / 2, yc, (z0 + z1) / 2))
+            q.AddRotateYOp().Set(-math.degrees(math.atan2(z1 - z0, x1 - x0)))
+            q.AddScaleOp().Set(Gf.Vec3f(math.hypot(x1 - x0, z1 - z0) + .002, 2 * hw, .004))
+            hide(c)
+            n += 1
+    print("finger strip colliders", n, flush=True)
+    # pads: the model's collider is a flat 40 x 40 x 20 mm box, 3.3 mm prouder than the visible dome, so contact and picture differ. Collide with the dome's own shape instead
+    for p in list(Usd.PrimRange(st.GetPrimAtPath("/World/stretch"), Usd.TraverseInstanceProxies())):
+        if p.GetName() in ("rubber_tip_left", "rubber_tip_right"):
+            bx = [q for q in p.GetFilteredChildren(Usd.TraverseInstanceProxies()) if q.GetTypeName() == "Cube"]
+            ms = [q for q in Usd.PrimRange(p, Usd.TraverseInstanceProxies()) if q.GetTypeName() == "Mesh"]
+            M = np.array(xc.GetLocalToWorldTransform(ms[0]), float) @ np.linalg.inv(np.array(xc.GetLocalToWorldTransform(p), float))
+            v = np.array(UsdGeom.Mesh(ms[0]).GetPointsAttr().Get(), float)
+            v = (np.c_[v, np.ones(len(v))] @ M)[:, :3]
+            mat_ = UsdShade.MaterialBindingAPI(bx[0]).ComputeBoundMaterial("physics")[0]
+            UsdPhysics.CollisionAPI(bx[0]).CreateCollisionEnabledAttr().Set(False)
+            d = UsdGeom.Mesh.Define(st, f"{p.GetPath()}/pz_dome")
+            d.CreatePointsAttr([Gf.Vec3f(*map(float, q)) for q in v])
+            d.CreateFaceVertexCountsAttr(list(UsdGeom.Mesh(ms[0]).GetFaceVertexCountsAttr().Get()))
+            d.CreateFaceVertexIndicesAttr(list(UsdGeom.Mesh(ms[0]).GetFaceVertexIndicesAttr().Get()))
+            UsdPhysics.CollisionAPI.Apply(d.GetPrim())
+            UsdPhysics.MeshCollisionAPI.Apply(d.GetPrim()).CreateApproximationAttr().Set("convexHull")
+            if mat_:
+                UsdShade.MaterialBindingAPI.Apply(d.GetPrim()).Bind(mat_, UsdShade.Tokens.weakerThanDescendants, "physics")
+            hide(d)
+            print("pad collider is now the dome", p.GetName(), len(v), bool(mat_), flush=True)
+
+
 def build(st):
     import pizza_oven
+    finger_strips(st)
     fill(st)
     pizza_oven.oven(st)
     plate_pizza(st)

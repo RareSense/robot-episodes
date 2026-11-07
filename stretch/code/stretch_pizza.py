@@ -29,8 +29,8 @@ START = os.environ.get("PZ_START", "plate")
 if START in ("door", "insert"):         # test starts: plate already on its set-down spot. Not a task result
     K.PLATE_XY = K.SET_XY
 if START == "takeout":                 # test start: plate on the rack, door at its stop, pizza baked. Not a task result
-    K.PLATE_XY, K.COUNTER_Z = (1.188, 2.2747), .9995
-s = C.Sim(app, xy={"plate": (1.649, 1.70), "door": (1.169, 1.40), "insert": (.841, 1.70), "takeout": (1.169, 1.40)}[START], q={"joint_lift": 1.05, "joint_gripper_slide": .04}, pre=[K.build], add_props=False, gpu=GPU, room=K.stage_file())
+    K.PLATE_XY, K.COUNTER_Z = (1.1796, 2.2641), .9995
+s = C.Sim(app, xy={"plate": (1.649, 1.675), "door": (1.169, 1.40), "insert": (.841, 1.70), "takeout": (1.169, 1.40)}[START], q={"joint_lift": 1.05, "joint_gripper_slide": .04}, pre=[K.build], add_props=False, gpu=GPU, room=K.stage_file())
 import pz
 
 pz.oven_setup(s)

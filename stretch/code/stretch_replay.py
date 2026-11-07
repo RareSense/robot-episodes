@@ -1,5 +1,5 @@
 """Renders a recorded Stretch pizza take from its recording. REPLAY: recorded poses only, physics is off, nothing is simulated here. Labelled so in every output.
-Two views, one frame per recorded sample (30 Hz of sim time), frame number = sample number: wrist (link d405_cam), fixed (one fixed camera, no cuts).
+Three views, frame file name = sample number: wrist (link d405_cam), head (link realsense), fixed (one fixed camera, no cuts).
 Resumes from the frames already on disk. usage (through stretch_launch.py): stretch_replay.py <tag> <rec tag>   env RP_MAX (stop after n samples, for a check), RP_STRIDE (default 1)."""
 import json
 import math
@@ -33,7 +33,7 @@ for k, v in {"/rtx/rendermode": "RaytracedLighting", "/rtx/post/aa/op": 3, "/rtx
 D = os.environ.get("RP_DIR", f"E:/stretch_assets/data/{REC}_views")
 LOOP = os.environ.get("RP_LOOP", "rep")
 UPD = int(os.environ.get("RP_UPD", 2))
-VIEWS = {"wrist": ("d405_cam", 87.0)}
+VIEWS = {"wrist": ("d405_cam", 87.0), "head": ("realsense", 75.0)}
 THIRD = (58.0, (2.45, .80, 1.72), (1.22, 2.20, .92))
 S = np.load(f"E:/stretch_assets/data/{REC}_rec.npz")
 LINKN = [str(x) for x in S["links"]]
@@ -115,7 +115,9 @@ def cam(path, hfov):
 
 
 cops = {k: (LINKN.index(v[0]), cam("/World/rp_" + k, v[1])) for k, v in VIEWS.items()}
-cam("/World/rp_fixed", THIRD[0]).Set(Gf.Matrix4d().SetLookAt(Gf.Vec3d(*THIRD[1]), Gf.Vec3d(*THIRD[2]), Gf.Vec3d(0, 0, 1)).GetInverse())
+FOLLOW = [float(x) for x in os.environ["RP_FOLLOW"].split(",")] if os.environ.get("RP_FOLLOW") else None
+cam_fixed = cam("/World/rp_fixed", float(os.environ.get("RP_HFOV", THIRD[0])))
+cam_fixed.Set(Gf.Matrix4d().SetLookAt(Gf.Vec3d(*THIRD[1]), Gf.Vec3d(*THIRD[2]), Gf.Vec3d(0, 0, 1)).GetInverse())
 last = {}
 
 
@@ -133,6 +135,10 @@ def frame(f):
     for i, o in enumerate(op_knob):
         o.Set(Gf.Matrix4d().SetRotate(Gf.Rotation(Gf.Vec3d(0, 1, 0), math.degrees(float(OV[f, 1 + i])))) * T_KNOB[i] * MB)
     op_plate.Set(mat(PL[f]))
+    if FOLLOW:                                # check frames only: fixed camera near the plate
+        e = PL[f][:3] + np.array(FOLLOW[:3])
+        tg = PL[f][:3] + np.array(FOLLOW[3:6])
+        cam_fixed.Set(Gf.Matrix4d().SetLookAt(Gf.Vec3d(*map(float, e)), Gf.Vec3d(*map(float, tg)), Gf.Vec3d(0, 0, 1)).GetInverse())
     op_pizza.Set(mat(PI[f]))
     for k, (i, o) in cops.items():
         o.Set(RCAM[k] * mat(L[i]))
@@ -145,7 +151,7 @@ def frame(f):
 
 rep.orchestrator.set_capture_on_play(False)
 ann = {}
-for k in ("wrist", "fixed"):
+for k in ("wrist", "fixed", "head"):
     os.makedirs(f"{D}/{k}", exist_ok=True)
     rp = rep.create.render_product("/World/rp_" + k, (W, H))
     a = rep.AnnotatorRegistry.get_annotator("rgb")
@@ -164,7 +170,7 @@ if os.environ.get("RP_PICK"):            # check frames only
         for _ in range(3):
             rep.orchestrator.step(rt_subframes=2, pause_timeline=False)
         for k, a in ann.items():
-            Image.fromarray(np.asarray(a.get_data())[:, :, :3]).save(f"D:/tea_robot/stretch/previews/pz/rp_{f}_{k}.jpg", quality=85)
+            Image.fromarray(np.asarray(a.get_data())[:, :, :3]).save(f"E:/stretch_assets/audit/{os.environ.get('RP_NAME', 'rp')}_{f}_{k}.jpg", quality=85)
         print("picked", f, flush=True)
     print("END status PICK DONE", flush=True)
     os._exit(0)
@@ -176,7 +182,7 @@ def save(im, p):
 
 
 EVERY = int(os.environ.get("RP_EVERY", 1))
-todo = [f for f in range(0, N, EVERY) if not (os.path.exists(f"{D}/wrist/{f:06d}.jpg") and os.path.exists(f"{D}/fixed/{f:06d}.jpg"))]
+todo = [f for f in range(0, N, EVERY) if not all(os.path.exists(f"{D}/{k}/{f:06d}.jpg") for k in ann)]
 print("to render", len(todo), "of", len(range(0, N, EVERY)), flush=True)
 t0 = time.time()
 for n, f in enumerate(todo):

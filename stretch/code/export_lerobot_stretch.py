@@ -17,6 +17,9 @@ def main():
     d = dict(np.load(REC))                 # one read: indexing an npz directly decompresses the array every time
     names = [str(x) for x in d["names"]]
     POSE = ["x", "y", "z", "qx", "qy", "qz", "qw"]
+    act = np.c_[d["qd"], d["vd"]].astype("float32")                    # commanded position and velocity targets
+    act_names = [f"pos_target_{n}" for n in names] + [f"vel_target_{n}" for n in names]
+    keep = act.std(0) > 1e-7                                         # drop targets that never change in this take
     f32 = "float32"
     features = {
         "observation.state": {"dtype": f32, "shape": (len(names),), "names": names},
@@ -24,7 +27,7 @@ def main():
         "observation.base_pose": {"dtype": f32, "shape": (7,), "names": POSE},
         "observation.oven_joints": {"dtype": f32, "shape": (d["oven"].shape[1],), "names": ["door"] + [f"knob{i}" for i in range(d["oven"].shape[1] - 1)]},
         "observation.environment_state": {"dtype": f32, "shape": (14,), "names": [f"{o}_{k}" for o in ("plate", "pizza") for k in POSE]},
-        "action": {"dtype": f32, "shape": (2 * len(names),), "names": [f"pos_target_{n}" for n in names] + [f"vel_target_{n}" for n in names]},
+        "action": {"dtype": f32, "shape": (int(keep.sum()),), "names": [x for x, k in zip(act_names, keep) if k]},
     }
     cams = []
     if VIEWS:
@@ -41,7 +44,7 @@ def main():
             "observation.base_pose": d["root"][f].astype(f32),
             "observation.oven_joints": d["oven"][f].astype(f32),
             "observation.environment_state": np.r_[d["plate"][f], d["pizza"][f]].astype(f32),
-            "action": np.r_[d["qd"][f], d["vd"][f]].astype(f32),
+            "action": act[f][keep],
             "task": TASK,
         }
         for c in cams:
