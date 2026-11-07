@@ -24,7 +24,7 @@ Status: PARTLY DONE. Take sgB2, GPU PhysX, 600 Hz, one continuous run from t 15.
 ## Frames read
 - stir_B_film.mp4 at video t 22, 28.8, 34 (recording t 37.5, 44.3, 49.5) next to 5_stir_closeup.mp4 at the same recording times: frames\sheet2.jpg. Hands, spoon and rim lean match closely. Isaac mug empty, and it sits about 1 cm further to the left of the frame.
 - From this camera the hands cover the spoon during the stir, as in the clip. The stir itself is measured, not seen: NOT SEEN in frames.
-- stir_B_eye.mp4 at video t 12 and 33: hands at the mug during the stir, then the spoon left on the rim and the right hand over the tray.
+- stir_B_eye.mp4 at video t 15 (recording t 30.5) next to 5_stir_eye.mp4 at the same time: frames\sheet_eye.jpg. Close match. Isaac mug empty.
 
 ## Files
 stir_B_rec.npz (30 Hz), stir_B_film.mp4 (fixed camera, same view as the clip, real speed), stir_B_eye.mp4 (head camera), metrics_B.json, match_pair_B_mujoco_left_isaac_right.png. Earlier take: takes\sgB1.

@@ -33,7 +33,7 @@ Status: PARTLY DONE. GPU PhysX, 600 Hz. Two separate takes, not one episode.
 - mug_A_film.mp4 at t 6, 10, 12.5, 13.4 next to 1_mug_film.mp4: frames\sheetA.jpg. Close match.
 - mug_B_film.mp4 at clip t 18.5 and 22 next to the same clip: frames\sheetB.jpg. Close match.
 - Live stills during the rack work (m1 to m5) and of the fall (mgF1 at t 14.3 to 15.2).
-- Head camera: mug_A_eye.mp4 at t 9 next to 1_mug_eye.mp4: frames\sheet_eye.jpg. The view matches, but the robot's own black head shows at the bottom of the Isaac frame, which the clip hides. That is a render defect in both eye videos, not a physics one. mug_B_eye.mp4: NOT SEEN.
+- Head camera, re-rendered: mug_A_eye.mp4 at t 9 and mug_B_eye.mp4 at t 3 next to 1_mug_eye.mp4: frames\sheet_eye2.jpg. The rack view matches at t 9. The set-down view is close, compared by eye at slightly different moments. The robot's head no longer shows.
 - NOT SEEN: all other frames. The exact cause of the fall is not known. Frames at t 14.3 to 15.2 show the legs matching until t 14.9, then the right leg spreads. Pelvis height jumps 27 mm at t 14.5.
 
 ## Files
