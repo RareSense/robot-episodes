@@ -1,0 +1,118 @@
+{
+ "task": "stir",
+ "take": "sgB2",
+ "frames": 2088,
+ "duration_s": 34.8,
+ "physics": "Isaac Sim PhysX, AI-operated",
+ "max_joint_diff_rad_body": 0.1581,
+ "joint_worst_body": "right_elbow_joint",
+ "max_joint_diff_rad_fingers": 0.0793,
+ "rms_joint_diff_rad_body": 0.00456,
+ "left_hand_diff_mm_max": 4.3,
+ "left_hand_diff_mm_mean": 0.9,
+ "left_hand_diff_worst_t": 15.8,
+ "right_hand_diff_mm_max": 19.1,
+ "right_hand_diff_mm_mean": 1.5,
+ "right_hand_diff_worst_t": 43.68,
+ "pelvis_diff_mm_max": 4.5,
+ "pelvis_diff_mm_end": 0.7,
+ "kettle_diff_mm_max": 0.0,
+ "kettle_diff_mm_end": 0.0,
+ "kettle_end": [
+  2.569999933242798,
+  2.359999895095825,
+  0.8849999904632568
+ ],
+ "kettle_rec_end": [
+  2.57,
+  2.36,
+  0.885
+ ],
+ "milk_powder_jar_diff_mm_max": 0.0,
+ "milk_powder_jar_diff_mm_end": 0.0,
+ "milk_powder_jar_end": [
+  1.899999976158142,
+  2.359999895095825,
+  0.8600000143051147
+ ],
+ "milk_powder_jar_rec_end": [
+  1.9,
+  2.36,
+  0.86
+ ],
+ "mug_diff_mm_max": 10.8,
+ "mug_diff_mm_end": 10.5,
+ "mug_end": [
+  1.7347999811172485,
+  2.2385001182556152,
+  0.8600000143051147
+ ],
+ "mug_rec_end": [
+  1.7249,
+  2.2419,
+  0.86
+ ],
+ "peak_joint_force_over_limit_top5": [
+  [
+   "right_hand_middle_0_joint",
+   0.612
+  ],
+  [
+   "right_hand_thumb_1_joint",
+   0.56
+  ],
+  [
+   "right_hand_middle_1_joint",
+   0.476
+  ],
+  [
+   "left_ankle_pitch_joint",
+   0.438
+  ],
+  [
+   "right_hand_index_0_joint",
+   0.359
+  ]
+ ],
+ "pelvis_min_z": 0.789,
+ "motor_saturation": {
+  "frames": 2088,
+  "saturated_frame_share": {
+   "left_ankle_pitch_joint": 0.1504,
+   "left_hand_thumb_1_joint": 0.001
+  },
+  "any_joint_saturated_share": 0.1513
+ },
+ "spoon": {
+  "spoon_diff_mm_max": 14.2,
+  "spoon_diff_mm_mean": 5.6,
+  "spoon_diff_worst_t": 43.87,
+  "spoon_end": [
+   1.7502,
+   2.2338,
+   0.869
+  ],
+  "spoon_rec_end": [
+   1.737,
+   2.2383,
+   0.869
+  ],
+  "spoon_axis_angle_vs_rec_deg_max": 3.6,
+  "spoon_axis_angle_vs_rec_deg_end": 3.6,
+  "spoon_tilt_end_deg": 11.7,
+  "spoon_rec_tilt_end_deg": 15.4,
+  "bowl_turns_isaac": 3.19,
+  "bowl_radius_mm_isaac": 6.1,
+  "bowl_turns_rec": 2.21,
+  "bowl_radius_mm_rec": 5.8
+ },
+ "object_in_hand": {
+  "slip_mm_max": 19.4,
+  "slip_mm_end": 12.7,
+  "tilt_deg_max": 1.0,
+  "window": [
+   20.0,
+   43.0
+  ]
+ }
+}
