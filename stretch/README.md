@@ -23,6 +23,12 @@ A Stretch 3 takes a plate with a pizza, carries it past the oven and sets it dow
 
 [All Stretch videos](videos/README.md)
 
+### Also: the same skill in 30 generated rooms
+
+<a href="rooms/README.md"><img src="rooms/previews/sheet_top_start.jpg" width="100%" alt="30 generated rooms from above"></a>
+
+30 rooms generated in code, each with its own size, counter position and angle, furniture, oven and plate placement and robot start. The Stretch drives a planned route to the counter and puts the plate on the rack: 30 of 30 pass, recorded in full. Isaac Lab, GPU PhysX. [Details, data and videos](rooms/README.md).
+
 ---
 
 ## Data
