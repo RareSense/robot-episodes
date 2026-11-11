@@ -1,0 +1,121 @@
+{
+ "task": "pour",
+ "take": "pcL1",
+ "frames": 840,
+ "duration_s": 14.0,
+ "physics": "Isaac Sim PhysX, AI-operated",
+ "max_joint_diff_rad_body": 0.0118,
+ "joint_worst_body": "right_shoulder_pitch_joint",
+ "max_joint_diff_rad_fingers": 0.0635,
+ "rms_joint_diff_rad_body": 0.00112,
+ "left_hand_diff_mm_max": 2.6,
+ "left_hand_diff_mm_mean": 0.9,
+ "left_hand_diff_worst_t": 19.28,
+ "right_hand_diff_mm_max": 7.8,
+ "right_hand_diff_mm_mean": 1.8,
+ "right_hand_diff_worst_t": 18.92,
+ "pelvis_diff_mm_max": 1.9,
+ "pelvis_diff_mm_end": 0.5,
+ "kettle_diff_mm_max": 41.6,
+ "kettle_diff_mm_end": 22.3,
+ "kettle_end": [
+  2.5660998821258545,
+  2.1175999641418457,
+  1.0686999559402466
+ ],
+ "kettle_rec_end": [
+  2.5451,
+  2.1195,
+  1.0761
+ ],
+ "milk_powder_jar_diff_mm_max": 0.0,
+ "milk_powder_jar_diff_mm_end": 0.0,
+ "milk_powder_jar_end": [
+  1.899999976158142,
+  2.359999895095825,
+  0.8600000143051147
+ ],
+ "milk_powder_jar_rec_end": [
+  1.9,
+  2.36,
+  0.86
+ ],
+ "mug_diff_mm_max": 0.0,
+ "mug_diff_mm_end": 0.0,
+ "mug_end": [
+  1.7200000286102295,
+  2.240000009536743,
+  0.8600000143051147
+ ],
+ "mug_rec_end": [
+  1.72,
+  2.24,
+  0.86
+ ],
+ "peak_joint_force_over_limit_top5": [
+  [
+   "right_hand_middle_1_joint",
+   2.531
+  ],
+  [
+   "right_hand_middle_0_joint",
+   2.216
+  ],
+  [
+   "right_hand_index_0_joint",
+   1.884
+  ],
+  [
+   "right_hand_thumb_1_joint",
+   1.678
+  ],
+  [
+   "right_hand_index_1_joint",
+   1.483
+  ]
+ ],
+ "pelvis_min_z": 0.788,
+ "motor_saturation": {
+  "frames": 840,
+  "saturated_frame_share": {
+   "right_ankle_pitch_joint": 0.044,
+   "right_hand_thumb_1_joint": 0.0274,
+   "right_hand_index_0_joint": 0.0131,
+   "right_hand_index_1_joint": 0.0048,
+   "right_hand_middle_0_joint": 0.0024,
+   "right_hand_thumb_2_joint": 0.0012
+  },
+  "any_joint_saturated_share": 0.0774
+ },
+ "physx": "CPU",
+ "stage": "kettle lift from its base, standing, t 9.0 to 23.0",
+ "task_check": {
+  "kettle_leaves_base_t": 18.33,
+  "kettle_end": [
+   2.5661,
+   2.1176,
+   1.0687
+  ],
+  "kettle_rec_end": [
+   2.5451,
+   2.1195,
+   1.0761
+  ],
+  "lift_mm": 184.0,
+  "tilt_end_deg": 29.9,
+  "tilt_rec_end_deg": 24.7,
+  "fallen": false
+ },
+ "object_in_hand": {
+  "object": "kettle",
+  "frame": "right_wrist_yaw_link",
+  "note": "the kettle swings in the hook grip in the recording too, so this is the offset against the recorded in-hand pose, not travel",
+  "offset_vs_recording_mm_max": 41.2,
+  "offset_vs_recording_mm_end": 24.0,
+  "window": [
+   18.4,
+   23.0
+  ],
+  "in_hand_travel_mm_isaac": 94.5
+ }
+}

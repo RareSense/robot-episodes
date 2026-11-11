@@ -4,7 +4,7 @@ Status: PARTLY DONE. Take pgW4, GPU PhysX with real particle water, 600 Hz, one 
 
 - DONE (seen in frames): from its stance beside the mug, the robot brings the kettle over the mug, tilts it to 92 deg, pours real water into the mug and tilts back.
 - FAIL: the spill. 10.1 ml left the stream around the mug during the pour, against 1.9 ml in the recording.
-- NOT DONE: t 0.5 to 31.5, which is the walk to the kettle, the lift off its base and the carry walk back. The take starts from the recorded state at t 31.5 with the kettle already in the hand, then nothing writes state.
+- NOT DONE in this take: t 0.5 to 31.5, which is the walk to the kettle, the lift off its base and the carry walk back. The lift alone, t 9 to 23, is a separate take on CPU PhysX, described at the end of this file. The take starts from the recorded state at t 31.5 with the kettle already in the hand, then nothing writes state.
 - That first walk FAILS. Take pgA1 fell at t 4.66, and pgA2 with the ankle balance fell at t 4.79. Seen in frames\stageA_fall.jpg: at t 3.5 the robot is 62 mm behind the recording as it side-steps along the counter, and at t 4.5 it tips sideways. So the kettle lift (t 18 to 22) and the carry were never reached in a take.
 
 ## Water
@@ -48,3 +48,38 @@ See metrics_C.json for all numbers.
 
 ## Files
 pour_C_rec.npz (30 Hz), pour_C_film.mp4 (fixed camera, same view as the clip, real speed), pour_C_eye.mp4 (head camera), metrics_C.json, water_log.json (water volumes at 10 Hz). The particle positions (water.f32, 72 MB) are not in the repo.
+
+# Kettle lift from its base. Isaac Sim PhysX, AI-operated
+
+Status: lift DONE on CPU PhysX for this stage. The motor-limit check is NOT passed as measured: see Motors and hand. Take pcL1, CPU PhysX, 600 Hz, one continuous run from t 9.0 to 23.0 (14 s). It starts from the recorded state at t 9.0, standing at the kettle with the kettle on its base, then nothing writes state.
+
+- DONE (seen in frames): the right hand goes to the handle, closes round it, lifts the kettle off its base and brings it in front of the body. The robot stands the whole time.
+- Kettle leaves the base at t 18.33 (recording 18.2). At t 23.0 it is 184 mm above its start, at (2.566, 2.118, 1.069). Recording (2.545, 2.120, 1.076), 22 mm apart. Tilt 29.9 deg, recording 24.7.
+- Kettle in the hand, t 18.4 to 23.0, against where the recording has it in the hand: 41 mm at most (t 20.9), 24 mm at the end. The kettle swings in the hook grip in the recording too (111 mm of travel in the hand frame from t 20 to 23, 95 mm here).
+- Mug and jar not moved. No fall, pelvis lowest 0.788 m.
+- No water in this take. The kettle is one rigid 1.25 kg mass, which includes 0.4 kg for the water.
+- NOT DONE: the side-step walk to the kettle before it, t 0.5 to 9, and the carry walk back after it, t 23.5 to 31.5. Both fall on CPU PhysX as well as GPU. Tried live on CPU from the first frame: the robot fell at t 4.2; with the stance-leg pelvis servo at 0.1 and 0.2, sole friction 1.0 and 1.5, and ankle balance gains 0, 1 and 2 it fell between t 3.6 and 4.6. The trace shows it tracking within 15 mm until t 2.7, then the pelvis falls to the left during the second left-foot swing (41 mm behind the recording at t 3.0, 122 mm at t 3.5). Seen in a frame at t 3.2 from behind: the body leans left while the right foot is in the air. Continuing this take past t 23 into the carry walk: fell at t 25.5, kettle lost.
+
+## Differs from the MuJoCo version
+- The kettle's switch lever and its light are not simulated here. The renderer draws them from the MuJoCo recording, so the lever and light in the videos are not a result of this take.
+- Robot self-collision is off.
+- The stage starts at t 9.0 and ends at t 23.0. It is not joined to the pour take pgW4, which starts at t 31.5 on GPU PhysX with water.
+
+## Live fixes
+1. Everything in cup\RESULT.md.
+2. Stance-ankle balance, gains 1.0 / 0.1, as in the mug take (tools\fix_pour.py).
+
+## Motors and hand
+- Body joints max 0.012 rad, fingers max 0.064 rad. Left hand max 2.6 mm, right hand max 7.8 mm. Pelvis max 1.9 mm.
+- The drive asked for more than the limit in 7.7 % of frames: right ankle pitch 4.4 %, right thumb_1 2.7 %, right index_0 1.3 %. The drive is capped at the limit.
+- Peak projected joint force over the motor limit: right middle_1 2.53, middle_0 2.22, index_0 1.88, thumb_1 1.68, index_1 1.48. These are PhysX projected joint forces, which include joint-limit and other constraint loads as well as the motor drive, and I have not separated the parts. So the finger joints carry more load than the motors alone could hold. Read this as NOT shown to be within the motor limits.
+- No contact-depth check was run.
+
+## Frames read
+- Live, rendered inside the sim process, at t 12, 17, 18.5, 19.5, 20.0, 23.0. At t 20.0 and 23.0 the kettle is off its base with the hand on the handle. A second live camera was inside a wall and showed nothing; it was not used.
+- pour_L_film.mp4 at recording t 10, 12, 17.5, 19, 20.5, 23: frames\sheet_L.jpg. Hand closes on the handle at t 17.5, kettle off the base at t 19, in the air at t 20.5, in front of the body and tilted at t 23. The robot's head and shoulder cover part of this view.
+- pour_L_eye.mp4 at recording t 17.6 and 20.0: frames\sheet_L_eye.jpg. Hand round the handle, then the kettle lifted.
+- NOT SEEN: every frame between those times. No MuJoCo clip exists for this part, so there is no side-by-side pair.
+
+## Files
+pour_L_rec.npz (30 Hz), pour_L_film.mp4 (fixed camera chosen for this stage, real speed), pour_L_eye.mp4 (head camera), metrics_L.json.
