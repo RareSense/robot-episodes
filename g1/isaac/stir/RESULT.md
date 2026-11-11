@@ -5,6 +5,7 @@ Status: PARTLY DONE. Take sgB2, GPU PhysX, 600 Hz, one continuous run from t 15.
 - DONE (motion seen in frames, except the part the hands hide): spoon carried to the mug, lowered in, stirred, released leaning on the rim, right hand withdrawn. Left hand steadies the mug.
 - NOT DONE: taking the spoon from the tub, t 0.5 to 15.5. The take starts from the recorded state at t 15.5 with the spoon already in the hand, then nothing writes state.
 - Why the pick fails: the thumb touches the spoon first, the spoon rolls about its long axis about 10 deg more than in MuJoCo, and it escapes sideways out of the pinch. About 30 live variants on GPU and CPU (grip strength, grip timing, finger lead, hand offsets). Hand offsets of 8 to 12 mm lifted the spoon a few times, but it dropped again by t 14 and the result did not repeat from run to run.
+- Pick re-checked on 10 Nov, live on CPU PhysX from the first frame with finger torque x1.5: FAILS again. The spoon rises with the hand at t 10 (12 mm from the recording), hangs bowl-down from the fingers at t 11 (seen in a frame; 53 mm off), is 146 mm off at t 12 and is back in the tub by t 13. One run, no variants.
 - NO LIQUID in this take. The Isaac mug is empty, black inside. The MuJoCo clip's grey surface was a separate water pass. No water was simulated here, so the stir moves no tea.
 
 ## Difference from the MuJoCo recording
