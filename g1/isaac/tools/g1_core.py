@@ -78,117 +78,28 @@ def add_spoon(sim, st):
 
 
 def add_teabag(sim, st):
-    """Bag, 20-segment string and tag as in the recording (props_teabag sizes and masses, recorded start poses). One small free articulation, spherical joints, held by nothing but contacts."""
+    """Bag and tag as free bodies with props_teabag sizes and masses, at the recorded poses, joined by a limp 12 cm distance joint (no string geometry, as the H1-2 props).
+    The recorded 20-segment string went NaN at 5 mg per segment on GPU PhysX and stood stiff at 20 mg, levering the bag in the pinch. The string drawn in the video is a render-only curve between staple and tag."""
     import props
     P = sim.rec.prop0
     UsdGeom.Xform.Define(st, props.ROOT)
     paper = props._material(st, "bag_paper", 0.6, (0.93, 0.90, 0.82), rough=0.9)
     card = props._material(st, "tag_card", 0.9, (0.85, 0.12, 0.10), rough=0.7)
-    thread = props._material(st, "thread", 0.5, (0.96, 0.96, 0.94), rough=0.9)
-    names = sim.rec.prop_names
-    paths = []
-    for i, n in enumerate(names):
-        path = props.ROOT + "/" + n.replace("env/", "")
-        pos, q = P["pos"][i], P["quat"][i]
-        if n.endswith("bag"):
-            b = props._body(st, path, pos, Gf.Quatd(*map(float, q)).GetNormalized(), .002)
-            props._box(st, path + "/geom", (0, 0, 0), props.BAGF_HALF, paper)
-        elif n.endswith("tag"):
-            b = props._body(st, path, pos, Gf.Quatd(*map(float, q)).GetNormalized(), .0005)
-            props._box(st, path + "/geom", props.TAG_CENTRE, props.TAG_HALF, card)
-        else:
-            b = props._body(st, path, pos, Gf.Quatd(*map(float, q)).GetNormalized(), 5e-6)
-            UsdPhysics.MassAPI(b).CreateDiagonalInertiaAttr().Set(Gf.Vec3f(2e-9, 2e-9, 2e-9))
-            nxt = P["pos"][i + 1]
-            L = float(np.linalg.norm(nxt - pos))
-            c = UsdGeom.Capsule.Define(st, path + "/geom")
-            c.CreateAxisAttr("X"); c.CreateRadiusAttr(.0004); c.CreateHeightAttr(L)
-            c.AddTranslateOp().Set(Gf.Vec3d(L / 2, 0, 0))
-            props._collider(c.GetPrim())
-            props._bind(c.GetPrim(), thread)
-        paths.append(path)
-    UsdPhysics.ArticulationRootAPI.Apply(st.GetPrimAtPath(paths[0]))
-    pa = PhysxSchema.PhysxArticulationAPI.Apply(st.GetPrimAtPath(paths[0]))
-    pa.CreateSolverPositionIterationCountAttr(16)
-    pa.CreateEnabledSelfCollisionsAttr(False)
-    for i in range(1, len(paths)):
-        qa, qb = P["quat"][i - 1], P["quat"][i]
-        Ra = rmat(np.r_[qa[1:], qa[0]])
-        lp = Ra.T @ (P["pos"][i] - P["pos"][i - 1])
-        Qa, Qb = Gf.Quatd(*map(float, qa)).GetNormalized(), Gf.Quatd(*map(float, qb)).GetNormalized()
-        rel = (Qa.GetInverse() * Qb)
-        j = UsdPhysics.SphericalJoint.Define(st, paths[i] + "/j")
-        j.CreateBody0Rel().SetTargets([paths[i - 1]]); j.CreateBody1Rel().SetTargets([paths[i]])
-        j.CreateLocalPos0Attr(Gf.Vec3f(*map(float, lp))); j.CreateLocalPos1Attr(Gf.Vec3f(0, 0, 0))
-        j.CreateLocalRot0Attr(Gf.Quatf(rel)); j.CreateLocalRot1Attr(Gf.Quatf(1, 0, 0, 0))
-    sim.prop_paths = paths
-
-
-def add_spoon(sim, st):
-    """The stir spoon as in the recording: props_spoon sizes and mass, at the recorded rest pose (session layer)."""
-    import props
-    P = sim.rec.prop0
-    UsdGeom.Xform.Define(st, props.ROOT)
-    steel = props._material(st, "steel", 0.4, (0.78, 0.79, 0.81), metallic=1.0, rough=0.3)
-    p = props.ROOT + "/stir_spoon"
-    handle_mass = sum((x1 - x0) * 2 * hw * 2 * props.HT for _, x0, x1, hw in props.SEGMENTS) * props.STEEL
-    pos, q = P["pos"][0], P["quat"][0]
-    props._body(st, p, pos, Gf.Quatd(*map(float, q)).GetNormalized(), props.BOWL_MASS + handle_mass)
-    props._ellipsoid_mesh(st, p + "/bowl", (0.0175, 0, 0), (0.0175, 0.0125, 0.0040), steel)
-    props._handle(st, p, steel)
-    sim.prop_paths = [p]
-
-
-def add_teabag(sim, st):
-    """Bag, 20-segment string and tag as in the recording (props_teabag sizes and masses, recorded start poses). One small free articulation, spherical joints, held by nothing but contacts."""
-    import props
-    P = sim.rec.prop0
-    UsdGeom.Xform.Define(st, props.ROOT)
-    paper = props._material(st, "bag_paper", 0.6, (0.93, 0.90, 0.82), rough=0.9)
-    card = props._material(st, "tag_card", 0.9, (0.85, 0.12, 0.10), rough=0.7)
-    thread = props._material(st, "thread", 0.5, (0.96, 0.96, 0.94), rough=0.9)
-    names = sim.rec.prop_names
-    paths = []
-    for i, n in enumerate(names):
-        path = props.ROOT + "/" + n.replace("env/", "")
-        pos, q = P["pos"][i], P["quat"][i]
-        Q = Gf.Quatd(*map(float, q)).GetNormalized()
-        if n.endswith("bag"):
-            b = props._body(st, path, pos, Q, .002)
-            props._box(st, path + "/geom", (0, 0, 0), props.BAGF_HALF, paper)
-        elif n.endswith("tag"):
-            b = props._body(st, path, pos, Q, .0005)
-            props._box(st, path + "/geom", props.TAG_CENTRE, props.TAG_HALF, card)
-        else:
-            b = props._body(st, path, pos, Q, 5e-6)
-            UsdPhysics.MassAPI(b).CreateDiagonalInertiaAttr().Set(Gf.Vec3f(2e-9, 2e-9, 2e-9))
-            L = float(np.linalg.norm(P["pos"][i + 1] - pos))
-            c = UsdGeom.Capsule.Define(st, path + "/geom")
-            c.CreateAxisAttr("X")
-            c.CreateRadiusAttr(.0004)
-            c.CreateHeightAttr(L)
-            c.AddTranslateOp().Set(Gf.Vec3d(L / 2, 0, 0))
-            props._collider(c.GetPrim())
-            props._bind(c.GetPrim(), thread)
-        paths.append(path)
-    UsdPhysics.ArticulationRootAPI.Apply(st.GetPrimAtPath(paths[0]))
-    pa = PhysxSchema.PhysxArticulationAPI.Apply(st.GetPrimAtPath(paths[0]))
-    pa.CreateSolverPositionIterationCountAttr(16)
-    pa.CreateEnabledSelfCollisionsAttr(False)
-    for i in range(1, len(paths)):
-        qa, qb = P["quat"][i - 1], P["quat"][i]
-        Ra = rmat(np.r_[qa[1:], qa[0]])
-        lp = Ra.T @ (P["pos"][i] - P["pos"][i - 1])
-        Qa, Qb = Gf.Quatd(*map(float, qa)).GetNormalized(), Gf.Quatd(*map(float, qb)).GetNormalized()
-        rel = Qa.GetInverse() * Qb
-        j = UsdPhysics.SphericalJoint.Define(st, paths[i] + "/j")
-        j.CreateBody0Rel().SetTargets([paths[i - 1]])
-        j.CreateBody1Rel().SetTargets([paths[i]])
-        j.CreateLocalPos0Attr(Gf.Vec3f(*map(float, lp)))
-        j.CreateLocalPos1Attr(Gf.Vec3f(0, 0, 0))
-        j.CreateLocalRot0Attr(Gf.Quatf(rel))
-        j.CreateLocalRot1Attr(Gf.Quatf(1, 0, 0, 0))
-    sim.prop_paths = paths
+    pb, pt = props.ROOT + "/prop_teabag_bag", props.ROOT + "/prop_teabag_tag"
+    props._body(st, pb, P["pos"][0], Gf.Quatd(*map(float, P["quat"][0])).GetNormalized(), .00205)
+    props._box(st, pb + "/geom", (0, 0, 0), props.BAGF_HALF, paper)
+    props._body(st, pt, P["pos"][-1], Gf.Quatd(*map(float, P["quat"][-1])).GetNormalized(), .00055)
+    props._box(st, pt + "/geom", props.TAG_CENTRE, props.TAG_HALF, card)
+    qa = P["quat"][0]
+    sim.staple = rmat(np.r_[qa[1:], qa[0]]).T @ (P["pos"][1] - P["pos"][0])
+    j = UsdPhysics.DistanceJoint.Define(st, props.ROOT + "/teabag_string")
+    j.CreateBody0Rel().SetTargets([pb])
+    j.CreateBody1Rel().SetTargets([pt])
+    j.CreateLocalPos0Attr(Gf.Vec3f(*map(float, sim.staple)))
+    j.CreateLocalPos1Attr(Gf.Vec3f(0, 0, 0))
+    j.CreateMinDistanceAttr(-1.0)
+    j.CreateMaxDistanceAttr(.12)
+    sim.prop_paths = [pb, pt]
 
 
 def add_water(sim, st):
@@ -196,6 +107,22 @@ def add_water(sim, st):
     sys.path.insert(0, "D:/tea_robot/isaac_delivery/fluids")
     import fluids
     sim.F = fluids.Fluids(fill_ml=float(os.environ.get("WATER_ML", "400")))
+    if os.environ.get("WATER_LEVEL"):
+        # The take starts with the kettle already tilted. The tool fills it as if upright, so the first second poured 20.9 ml out of the spout. Here the same lattice is cut level with gravity at the start tilt.
+        wl = fluids.wl
+        orig = wl.WaterLayer._fill_points
+        R_ = sim.rec
+        q = R_.obj[sim.i0, R_.on.index("kettle"), 3:7]
+        Rk = rmat(np.r_[q[1:], q[0]])
+
+        def level(self_, ml):
+            pts = orig(self_, float(os.environ.get("WATER_LATTICE", "900")))
+            n = int(round(ml * 1e-6 / self_.vp))
+            zw = pts @ Rk[2]
+            keep = np.argsort(zw)[:n]
+            print("[water] level fill", n, "of", len(pts), "lattice points; top in world", round(float(zw[keep].max()), 3), flush=True)
+            return pts[keep]
+        wl.WaterLayer._fill_points = level
     sim.F.pre_physics(st, sim.scene)
 
 
@@ -389,11 +316,55 @@ class Sim:
 
     def props(self):
         """(n,7) x y z qx qy qz qw in recorded prop order"""
-        return np.asarray(self.prop_view.get_transforms())[self.prop_order].astype(float) if self.prop_view is not None else np.zeros((0, 7))
+        if self.prop_view is None:
+            return np.zeros((0, 7))
+        A = np.asarray(self.prop_view.get_transforms())[self.prop_order].astype(float)
+        if self.task != "teabag":
+            return A
+        b, g = A[0], A[1]                                   # 20 string pieces for drawing only: a sagging curve from staple to tag, no physics
+        a = b[:3] + rmat(b[3:7]) @ self.staple
+        c = g[:3]
+        n = 20
+        L = float(np.linalg.norm(c - a))
+        sag = .5 * math.sqrt(max(0., .12 ** 2 - L ** 2))
+        out = [b]
+        pts = [a + (c - a) * (k / n) - np.array([0, 0, sag * 4 * (k / n) * (1 - k / n)]) for k in range(n + 1)]
+        for k in range(n):
+            d = pts[k + 1] - pts[k]
+            d = d / max(1e-9, np.linalg.norm(d))
+            ax = np.cross([1., 0, 0], d)
+            w = 1 + d[0]
+            q = np.r_[ax, w]
+            q = q / max(1e-9, np.linalg.norm(q))
+            out.append(np.r_[pts[k], q])
+        out.append(g)
+        return np.array(out)
 
     def props(self):
         """(n,7) x y z qx qy qz qw in recorded prop order"""
-        return np.asarray(self.prop_view.get_transforms())[self.prop_order].astype(float) if self.prop_view is not None else np.zeros((0, 7))
+        if self.prop_view is None:
+            return np.zeros((0, 7))
+        A = np.asarray(self.prop_view.get_transforms())[self.prop_order].astype(float)
+        if self.task != "teabag":
+            return A
+        b, g = A[0], A[1]                                   # 20 string pieces for drawing only: a sagging curve from staple to tag, no physics
+        a = b[:3] + rmat(b[3:7]) @ self.staple
+        c = g[:3]
+        n = 20
+        L = float(np.linalg.norm(c - a))
+        sag = .5 * math.sqrt(max(0., .12 ** 2 - L ** 2))
+        out = [b]
+        pts = [a + (c - a) * (k / n) - np.array([0, 0, sag * 4 * (k / n) * (1 - k / n)]) for k in range(n + 1)]
+        for k in range(n):
+            d = pts[k + 1] - pts[k]
+            d = d / max(1e-9, np.linalg.norm(d))
+            ax = np.cross([1., 0, 0], d)
+            w = 1 + d[0]
+            q = np.r_[ax, w]
+            q = q / max(1e-9, np.linalg.norm(q))
+            out.append(np.r_[pts[k], q])
+        out.append(g)
+        return np.array(out)
 
     def step(self):
         self.art.set_dof_position_targets(self.f(self.qd + self.off), self.idx)

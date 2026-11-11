@@ -48,7 +48,6 @@ def sample():
     FR["link"].append(s.link_poses().astype(np.float32))
     FR["obj"].append(np.array([s.obj(k) for k in OBJK], np.float32))
     FR["prop"].append(s.props().astype(np.float32))
-    FR["prop"].append(s.props().astype(np.float32))
 
 
 def advance(n=1, speed=1.0):
@@ -85,9 +84,6 @@ def status(tag=""):
     fp = [round(math.degrees(C.rpy(L[s.links.index(f), 3:7])[1]), 1) for f in FEET]
     print(tag, f"tr {s.tr:.2f} pelvis {rt[:3].round(3).tolist()} rec {b[:3].round(3).tolist()} rpy {round(math.degrees(r),1)} {round(math.degrees(p),1)} {round(math.degrees(y),1)} qerr body {qa.max():.3f} {s.names[wa]} hand {qe[w]:.3f} {s.names[w]} handerr mm {hd[0]*1000:.0f} {hd[1]*1000:.0f} feet {ft} footpitch {fp}")
     print("   obj", o, "rec", ro)
-    if s.prop_view is not None:
-        Pp = s.props()
-        print("   prop0", Pp[0, :3].round(3).tolist(), "rec", np.array(R.prop_xpos[i, 0]).round(3).tolist(), "last", Pp[-1, :3].round(3).tolist(), "rec", np.array(R.prop_xpos[i, -1]).round(3).tolist())
     if s.prop_view is not None:
         Pp = s.props()
         print("   prop0", Pp[0, :3].round(3).tolist(), "rec", np.array(R.prop_xpos[i, 0]).round(3).tolist(), "last", Pp[-1, :3].round(3).tolist(), "rec", np.array(R.prop_xpos[i, -1]).round(3).tolist())

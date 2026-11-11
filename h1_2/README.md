@@ -111,7 +111,29 @@ file is several GB and is hosted apart, with its hash in `particles.ref.json`. F
 ## Results
 
 <!-- RESULTS:BEGIN -->
-Results so far are from the saved runs in [data/README.md](data/README.md). Final results will be added.
+The episode is the chain `final08`, `f11`, `f13`, `f17`, `f20`: five saved runs, each restarted from the saved state of the run before it. It is not one continuous run, and `full_episode_passed` is false in the result files. Per-run detail and files: [data/README.md](data/README.md). Joins, live corrections and the collision audit: [DISCLOSURES.md](DISCLOSURES.md), "Final chain".
+
+| Step | Run | Result in the run's own report or log |
+|---|---|---|
+| Walk in, mug from rack, tea bag | `final08` | Tea bag in the mug, mug moved 0.0 mm: task check PASS. Strict status FAIL, slip 13.1 mm |
+| Kettle pour | `f11` | 102.3 ml in the mug, 1.1 ml spilled, kettle released on a surface: task check PASS, strict status FAIL |
+| Milk powder | `f13` | 35 grains counted in the mug, 265 left in the jar, none elsewhere: PASS |
+| Stir | `f17` | Spoon lifted, 2.4 full turns at the bowl, mug moved 0.0 mm. The run's own stir check reads FAIL, because the spoon was not yet back on the counter |
+| Spoon on the counter | `f20` | Spoon released on the counter, mug moved 0.01 mm: PASS for the put-down only |
+| Carry away | `f20` | Cup step task check PASS: cup carried to the exit, 102.3 ml in the mug, 0.0 ml lost in the carry, no fall |
+
+Strict physics gates of `f20` ([data/f20/f20_gates.json](data/f20/f20_gates.json)), overall **FAIL**:
+
+| Gate | Status | Value | Limit |
+|---|---|---|---|
+| Fall | PASS | Lowest pelvis height 0.886 m, largest tilt 5.1 deg | At least 0.6 m, at most 55 deg |
+| Torque | **FAIL** | Worst ratio 2.96 (left ankle pitch, 177.4 N m against 60), 99 steps over, longest run 2 steps | At most 1.0 |
+| Penetration | PASS | 0.33 mm deepest | At most 2.0 mm |
+| Slip | **FAIL** | 18.26 mm of the mug in the hand frame | At most 5.0 mm |
+| Moved | PASS | 0.006 mm worst object | Under 5.0 mm |
+| Spill | PASS | 1.1 ml | At most 3.0 ml |
+
+Gates were not reported for every run in the chain.
 <!-- RESULTS:END -->
 
 ## Earlier isolated tests: NOT the final run
@@ -126,7 +148,7 @@ These are test setups, each started part way through the episode or stopped earl
 | Stir | `s_gpu05` | GPU, 32 iterations, stage `s2`, 85 ml authored in the mug | **FAIL** | Hand 253.5 mm and 78.3 deg off at the spoon |
 | Milk powder | `p2_gr3` | GPU, stage `p2x`, new scoop, spill not measured | **FAIL** | Lid off and on the counter, then tool lost at step `d1_out`, 50 mm off |
 
-No run has yet completed the whole episode. Six earlier attempts (`final01` to `final06`) were stopped or lost before their end, and none of them wrote a final report.
+No single run has completed the whole episode: the result above is a chain of five runs. Six earlier attempts (`final01` to `final06`) were stopped or lost before their end, and none of them wrote a final report.
 
 ## Licence
 

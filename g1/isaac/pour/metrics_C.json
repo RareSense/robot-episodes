@@ -1,0 +1,99 @@
+{
+ "task": "pour",
+ "take": "pgW4",
+ "frames": 842,
+ "duration_s": 14.03,
+ "physics": "Isaac Sim PhysX, AI-operated",
+ "max_joint_diff_rad_body": 0.2179,
+ "joint_worst_body": "right_shoulder_roll_joint",
+ "max_joint_diff_rad_fingers": 0.2296,
+ "rms_joint_diff_rad_body": 0.02059,
+ "left_hand_diff_mm_max": 6.7,
+ "left_hand_diff_mm_mean": 0.9,
+ "left_hand_diff_worst_t": 31.78,
+ "right_hand_diff_mm_max": 27.8,
+ "right_hand_diff_mm_mean": 7.1,
+ "right_hand_diff_worst_t": 44.1,
+ "pelvis_diff_mm_max": 6.7,
+ "pelvis_diff_mm_end": 0.7,
+ "kettle_diff_mm_max": 77.4,
+ "kettle_diff_mm_end": 61.7,
+ "kettle_end": [
+  1.9622000455856323,
+  2.229300022125244,
+  1.0069999694824219
+ ],
+ "kettle_rec_end": [
+  1.917,
+  2.1901,
+  0.992
+ ],
+ "milk_powder_jar_diff_mm_max": 15.3,
+ "milk_powder_jar_diff_mm_end": 13.5,
+ "milk_powder_jar_end": [
+  1.8986999988555908,
+  2.3733999729156494,
+  0.8600000143051147
+ ],
+ "milk_powder_jar_rec_end": [
+  1.9,
+  2.36,
+  0.86
+ ],
+ "mug_diff_mm_max": 0.0,
+ "mug_diff_mm_end": 0.0,
+ "mug_end": [
+  1.7200000286102295,
+  2.240000009536743,
+  0.8600000143051147
+ ],
+ "mug_rec_end": [
+  1.72,
+  2.24,
+  0.86
+ ],
+ "peak_joint_force_over_limit_top5": [
+  [
+   "right_hand_thumb_1_joint",
+   14.63
+  ],
+  [
+   "right_hand_middle_0_joint",
+   7.073
+  ],
+  [
+   "right_hand_thumb_0_joint",
+   5.276
+  ],
+  [
+   "right_wrist_yaw_joint",
+   2.739
+  ],
+  [
+   "right_hand_thumb_2_joint",
+   1.364
+  ]
+ ],
+ "pelvis_min_z": 0.79,
+ "motor_saturation": {
+  "frames": 842,
+  "saturated_frame_share": {
+   "right_hand_middle_0_joint": 1.0,
+   "right_hand_thumb_1_joint": 0.1556,
+   "right_hand_thumb_0_joint": 0.0558,
+   "right_ankle_pitch_joint": 0.0214,
+   "right_hand_middle_1_joint": 0.0048,
+   "right_wrist_yaw_joint": 0.0024
+  },
+  "any_joint_saturated_share": 1.0
+ },
+ "object_in_hand": {
+  "slip_mm_max": 13.5,
+  "slip_mm_end": 9.2,
+  "tilt_deg_max": 93.3,
+  "window": [
+   32.0,
+   44.5
+  ]
+ }
+}

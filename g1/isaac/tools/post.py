@@ -2,6 +2,7 @@
 import json, math, os, shutil, sys
 import numpy as np
 task, tag = sys.argv[1:3]
+SUF = sys.argv[3] if len(sys.argv) > 3 else ""
 SH = "D:/tea_robot/work/isaac/shots/"
 TASKS = {"mug": ("step1_mug", SH + "step1"), "teabag": ("step2_teabag", SH + "tb8h"), "pour": ("step3_pour", "D:/tea_robot/work/agents/kettle/shots/pour35"), "stir": ("step4_stir", SH + "stir34h"), "cup": ("step5_cup", SH + "cupg2h")}
 VIEW = {"pour": ((1.40, 2.20, 1.10), (1.72, 2.24, 1.00), 65.0), "stir": ((1.72, 2.40, 1.12), (1.72, 2.22, .94), 70.0)}
@@ -15,7 +16,9 @@ F = len(Z["t"])
 idx = np.clip(np.round((Z["tr"] - M["t"][0]) * 60).astype(int), 0, len(M["t"]) - 1)
 e = slice(0, None, 2)      # 60 Hz sampled -> 30 Hz
 PROP = Z["prop"] if "prop" in Z.files else np.zeros((F, 0, 7), np.float32)
-np.savez_compressed(f"{OUT}/{task}_rec.npz", t=Z["t"][e], tr=Z["tr"][e], names=Z["names"], links=Z["links"], video_frame=np.arange(F)[e], steps_per_sample=20, q=Z["q"][e], dq=Z["dq"][e], qd=Z["qd"][e], vd=Z["vd"][e], root=Z["root"][e], link=Z["link"][e], prop=PROP[e], object_names=Z["objects"], objects=Z["obj"][e], physics="Isaac Sim PhysX, AI-operated")
+if len(PROP) == 2 * F:      # takes before the fix logged each prop sample twice
+    PROP = PROP[::2]
+np.savez_compressed(f"{OUT}/{task}{SUF}_rec.npz", t=Z["t"][e], tr=Z["tr"][e], names=Z["names"], links=Z["links"], video_frame=np.arange(F)[e], steps_per_sample=20, q=Z["q"][e], dq=Z["dq"][e], qd=Z["qd"][e], vd=Z["vd"][e], root=Z["root"][e], link=Z["link"][e], prop=PROP[e], object_names=Z["objects"], objects=Z["obj"][e], physics="Isaac Sim PhysX, AI-operated")
 jn = [str(x) for x in M["joint_names"]]
 perm = [jn.index(n) for n in names]
 Qr = M["joint_pos"][idx][:, perm]
@@ -58,7 +61,7 @@ pk, lim = Z["peak_force"], Z["limits"]
 r = pk / lim
 m["peak_joint_force_over_limit_top5"] = [(names[i], round(float(r[i]), 3)) for i in np.argsort(-r)[:5]]
 m["pelvis_min_z"] = round(float(lp("pelvis")[:, 2].min()), 3)
-sd = f"{OUT}/shot"
+sd = f"{OUT}/shot{SUF}"
 os.makedirs(sd, exist_ok=True)
 I = [links.index(b) for b in bn]
 L = Z["link"]
@@ -95,7 +98,8 @@ tk = bn.index("torso_link")
 Ti = rowT(L[:, I[tk], :3].astype(float), L[:, I[tk], 3:7].astype(float))
 qr = S["xquat"][idx, tk]
 Tr = rowT(S["xpos"][idx, tk].astype(float), qr[:, [1, 2, 3, 0]].astype(float))
-eye = S["eye_mats"][idx] @ np.linalg.inv(Tr) @ Ti
+EM = np.load(SH + "step1h/shot.npz", allow_pickle=True)["eye_mats"] if task == "mug" else S["eye_mats"]
+eye = EM[idx] @ np.linalg.inv(Tr) @ Ti
 out = dict(S)
 fe, ft, fh = S["film_eye"][idx], S["film_tgt"][idx], S["film_hfov"]
 if task in VIEW:
@@ -108,5 +112,5 @@ np.savez(sd + "/shot.npz", **out)
 for f in ("robot_visual.npz", "props_visual.npz"):
     if os.path.exists(sh + "/" + f):
         shutil.copy(sh + "/" + f, sd + "/" + f)
-json.dump(m, open(f"{OUT}/metrics.json", "w"), indent=1)
+json.dump(m, open(f"{OUT}/metrics{SUF}.json", "w"), indent=1)
 print(json.dumps(m, indent=0))

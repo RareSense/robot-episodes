@@ -41,7 +41,7 @@ import omni.usd  # noqa: E402
 from pxr import Gf, Sdf, UsdGeom, UsdLux, UsdPhysics, UsdShade, Vt  # noqa: E402
 
 S = dict(np.load(os.path.join(A.shot, "shot.npz"), allow_pickle=True))
-V = np.load(os.path.join(A.shot, "robot_visual.npz"), allow_pickle=True)
+V = np.load("D:/tea_robot/work/isaac/shots/cupg2h/robot_visual.npz", allow_pickle=True)      # same robot meshes, and this file names them, so the head can be hidden in the eye view
 st = carb.settings.get_settings()
 SETTINGS = {"/rtx/rendermode": "PathTracing" if A.mode == "pt" else "RaytracedLighting",
             "/rtx/pathtracing/spp": A.spp, "/rtx/pathtracing/totalSpp": A.spp,

@@ -94,6 +94,8 @@ def handservo(tr):
             p, q = rec_hand(h, tr)
             if HS.get('bias'):
                 p = p + HS['bias'](h, tr)
+            if HS.get('qb'):
+                q = qmulw(HS['qb'](h, tr), q)
             T = L[HL[h]]
             e = np.zeros(6)
             e[:3] = p - T[:3]
