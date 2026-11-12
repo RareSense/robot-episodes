@@ -25,7 +25,7 @@ All runs are simulation and AI-operated.
 | Robot | Folder | Videos | Data |
 |---|---|---|---|
 | Stretch 3 | [stretch/](stretch/README.md) | [Videos](stretch/videos/README.md) | Full recording and LeRobot dataset; [30 generated rooms](stretch/rooms/README.md), 30 recorded episodes |
-| Unitree G1 | [g1/](g1/README.md) | [Videos](g1/videos/README.md) | Per-step motion data, MuJoCo recordings and LeRobot dataset |
+| Unitree G1 | [g1/](g1/README.md) | [Videos](g1/videos/README.md) | Per-step motion data, MuJoCo recordings and LeRobot dataset; [G1 oven](g1/oven/README.md): 5 full 8-minute episodes in 5 rooms with main, head and hand videos |
 | Unitree H1-2 | [h1_2/](h1_2/README.md) | [Videos](h1_2/videos/README.md) | [Saved runs](h1_2/data/README.md), recordings and water particles |
 
 Each robot folder holds its own code, data, model, videos index and examples.

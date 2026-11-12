@@ -1,0 +1,810 @@
+{
+ "id": "t165",
+ "operated": "AI-operated",
+ "result": {
+  "passed": true,
+  "checks": [
+   {
+    "name": "all steps done",
+    "ok": true,
+    "value": "11 of 11",
+    "limit": "11 of 11"
+   },
+   {
+    "name": "door open for loading (deg)",
+    "ok": true,
+    "value": 82.98,
+    "limit": "> 80"
+   },
+   {
+    "name": "door shut for heating (deg)",
+    "ok": true,
+    "value": 1.49,
+    "limit": "< 2"
+   },
+   {
+    "name": "door open for unloading (deg)",
+    "ok": true,
+    "value": 84.38,
+    "limit": "> 80"
+   },
+   {
+    "name": "door shut at the end (deg)",
+    "ok": true,
+    "value": 0.23,
+    "limit": "< 2"
+   },
+   {
+    "name": "plate on the rack: place error (m)",
+    "ok": true,
+    "value": 0.0067,
+    "limit": "< 0.020"
+   },
+   {
+    "name": "plate on the rack: resting on it (height error, m)",
+    "ok": true,
+    "value": -0.0001,
+    "limit": "|.| < 0.005"
+   },
+   {
+    "name": "plate on the rack: tilt (deg)",
+    "ok": true,
+    "value": 0.01,
+    "limit": "< 5"
+   },
+   {
+    "name": "knob turned on (deg)",
+    "ok": true,
+    "value": 49.0,
+    "limit": ">= 42"
+   },
+   {
+    "name": "food heated (peak C)",
+    "ok": true,
+    "value": 48.5,
+    "limit": "> 40"
+   },
+   {
+    "name": "food on the plate at the end (offset in plate, m)",
+    "ok": true,
+    "value": [
+     0.0009,
+     -0.0115,
+     0.0419
+    ],
+    "limit": "|xy| < 0.064, on top"
+   },
+   {
+    "name": "plate back on the counter: from its spot (m)",
+    "ok": true,
+    "value": 0.0047,
+    "limit": "< 0.030"
+   },
+   {
+    "name": "plate back on the counter: resting on it (m)",
+    "ok": true,
+    "value": -0.0006,
+    "limit": "|.| < 0.004"
+   },
+   {
+    "name": "plate back on the counter: tilt (deg)",
+    "ok": true,
+    "value": 0.02,
+    "limit": "< 5"
+   },
+   {
+    "name": "oven drift (m)",
+    "ok": true,
+    "value": 0.0027,
+    "limit": "< 0.005"
+   },
+   {
+    "name": "oven turn (deg)",
+    "ok": true,
+    "value": -0.873,
+    "limit": "< 1"
+   },
+   {
+    "name": "other knobs untouched (deg)",
+    "ok": true,
+    "value": {
+     "sel": 0.0,
+     "func": 0.0,
+     "timer": 0.0
+    },
+    "limit": "< 5"
+   },
+   {
+    "name": "no fall (lowest pelvis height, m)",
+    "ok": true,
+    "value": 0.687,
+    "limit": "> 0.461"
+   },
+   {
+    "name": "no wall or furniture contact",
+    "ok": true,
+    "value": [],
+    "limit": "none"
+   },
+   {
+    "name": "no body contact with the counter (hand excepted)",
+    "ok": true,
+    "value": [],
+    "limit": "none"
+   }
+  ],
+  "funnel": {
+   "walk_to_counter": true,
+   "open_door": true,
+   "pick_plate": true,
+   "place_on_rack": true,
+   "close_door": true,
+   "knob_on": true,
+   "wait_heat": true,
+   "open_door_2": true,
+   "take_out": true,
+   "place_on_counter": true,
+   "close_door_2": true
+  },
+  "first_failed_step": null
+ },
+ "stages": [
+  {
+   "step": "walk_to_counter",
+   "ok": true,
+   "t_start": 0.5,
+   "t_end": 34.95,
+   "wall_s": 31.5,
+   "door_deg": 6.4,
+   "info": {
+    "ok": true,
+    "err_xy": 0.029,
+    "err_yaw": -0.003,
+    "seconds": 5.5,
+    "standing": true,
+    "route_legs": 1
+   }
+  },
+  {
+   "step": "open_door",
+   "ok": true,
+   "t_start": 34.95,
+   "t_end": 66.22,
+   "wall_s": 26.7,
+   "door_deg": 82.98,
+   "info": {
+    "ok": true,
+    "goal": 1,
+    "tries": 1,
+    "measured": 82.98,
+    "no_retry": null
+   }
+  },
+  {
+   "step": "pick_plate",
+   "ok": true,
+   "t_start": 66.22,
+   "t_end": 88.84,
+   "wall_s": 21.8,
+   "door_deg": 88.01,
+   "info": {
+    "ok": true,
+    "err_xy": 0.014,
+    "err_yaw": 0.01,
+    "seconds": 5.5,
+    "standing": true,
+    "lifted": 0.064,
+    "tilt": 6.8,
+    "tries": 1
+   }
+  },
+  {
+   "step": "place_on_rack",
+   "ok": true,
+   "t_start": 88.84,
+   "t_end": 152.82,
+   "wall_s": 42.2,
+   "door_deg": 88.01,
+   "info": {
+    "ok": true,
+    "goal": 2,
+    "tries": 1,
+    "measured": {
+     "plate": [
+      -0.03,
+      0.11,
+      0.155
+     ],
+     "err": 0.0067,
+     "tilt": 0.0
+    },
+    "no_retry": null
+   }
+  },
+  {
+   "step": "close_door",
+   "ok": true,
+   "t_start": 152.82,
+   "t_end": 225.16,
+   "wall_s": 64.5,
+   "door_deg": 1.49,
+   "info": {
+    "ok": true,
+    "goal": 3,
+    "tries": 2,
+    "measured": 1.49,
+    "no_retry": null
+   }
+  },
+  {
+   "step": "knob_on",
+   "ok": true,
+   "t_start": 225.16,
+   "t_end": 267.51,
+   "wall_s": 26.5,
+   "door_deg": 0.23,
+   "info": {
+    "ok": true,
+    "goal": 4,
+    "tries": 1,
+    "measured": 49.0,
+    "no_retry": null,
+    "knob_deg": 49.0
+   }
+  },
+  {
+   "step": "wait_heat",
+   "ok": true,
+   "t_start": 267.51,
+   "t_end": 279.41,
+   "wall_s": 9.1,
+   "door_deg": 0.24,
+   "info": {
+    "ok": true,
+    "goal": 5,
+    "tries": 1,
+    "measured": {
+     "seconds_on": 12.3,
+     "temp": 48.5
+    },
+    "no_retry": null
+   }
+  },
+  {
+   "step": "open_door_2",
+   "ok": true,
+   "t_start": 279.41,
+   "t_end": 359.99,
+   "wall_s": 62.7,
+   "door_deg": 84.38,
+   "info": {
+    "goal6": {
+     "ok": true,
+     "goal": 6,
+     "tries": 1,
+     "measured": 1.4,
+     "no_retry": null
+    },
+    "goal7": {
+     "ok": true,
+     "goal": 7,
+     "tries": 1,
+     "measured": 84.38,
+     "no_retry": null
+    },
+    "ok": true
+   }
+  },
+  {
+   "step": "take_out",
+   "ok": true,
+   "t_start": 359.99,
+   "t_end": 405.93,
+   "wall_s": 43.2,
+   "door_deg": 88.01,
+   "info": {
+    "ok": true,
+    "goal": 8,
+    "tries": 1,
+    "measured": {
+     "plate": [
+      -0.04,
+      -0.11,
+      0.188
+     ],
+     "held": true,
+     "tilt": 2.8
+    },
+    "no_retry": null
+   }
+  },
+  {
+   "step": "place_on_counter",
+   "ok": true,
+   "t_start": 405.93,
+   "t_end": 470.28,
+   "wall_s": 46.5,
+   "door_deg": 88.01,
+   "info": {
+    "ok": true,
+    "goal": 9,
+    "tries": 1,
+    "measured": {
+     "err": 0.0047,
+     "dz": -0.0006,
+     "tilt": 0.0
+    },
+    "no_retry": null
+   }
+  },
+  {
+   "step": "close_door_2",
+   "ok": true,
+   "t_start": 470.28,
+   "t_end": 511.23,
+   "wall_s": 38.5,
+   "door_deg": 0.28,
+   "info": {
+    "ok": true,
+    "goal": 10,
+    "tries": 1,
+    "measured": 0.28,
+    "no_retry": null
+   }
+  }
+ ],
+ "measurements": {
+  "rack_target": [
+   -0.022858681342730502,
+   0.10982254097838824,
+   0.15535433790918493
+  ],
+  "after_place": {
+   "plate_oven": [
+    -0.0296,
+    0.1098,
+    0.1553
+   ],
+   "tilt_deg": 0.01,
+   "food_in_plate": [
+    0.0,
+    -0.012,
+    0.0419
+   ]
+  },
+  "heat_hold": {
+   "reshut": 1,
+   "door_deg": 0.24
+  },
+  "heat": {
+   "on": true,
+   "temp": 48.48197306316654,
+   "seconds_on": 12.279999999999827,
+   "peak": 48.48197306316654,
+   "target": 94.46899394253364
+  }
+ },
+ "wall_seconds": 415.4,
+ "sim_seconds": 513.2,
+ "real_time_factor": 1.24,
+ "qp_fail_steps": 0,
+ "touches": [],
+ "frames": [
+  "00_spawn.jpg",
+  "01_walk_to_counter.jpg",
+  "02_open_door.jpg",
+  "03_pick_plate.jpg",
+  "04_place_on_rack.jpg",
+  "05_close_door.jpg",
+  "06_knob_on.jpg",
+  "07_wait_heat.jpg",
+  "08_open_door_2.jpg",
+  "09_take_out.jpg",
+  "10_place_on_counter.jpg",
+  "11_close_door_2.jpg",
+  "12_end.jpg"
+ ],
+ "method": "goal list + rule solver",
+ "goals": [
+  {
+   "goal": 1,
+   "kind": "joint",
+   "spec": {
+    "joint": "oven_door_j",
+    "state": "open"
+   },
+   "attempts": [
+    {
+     "n": 1,
+     "ok": true,
+     "measured": 82.98,
+     "sim_s": 31.3,
+     "wall_s": 26.7,
+     "info": {
+      "door_deg": 83.0,
+      "ok": true
+     }
+    }
+   ],
+   "ok": true,
+   "measured": 82.98
+  },
+  {
+   "goal": 2,
+   "kind": "place",
+   "spec": {
+    "object": "plate",
+    "on": "rack"
+   },
+   "attempts": [
+    {
+     "n": 1,
+     "ok": true,
+     "measured": {
+      "plate": [
+       -0.03,
+       0.11,
+       0.155
+      ],
+      "err": 0.0067,
+      "tilt": 0.0
+     },
+     "sim_s": 64.0,
+     "wall_s": 42.2,
+     "info": {
+      "ok": true,
+      "err": 0.0067,
+      "tilt": 0.0
+     }
+    }
+   ],
+   "ok": true,
+   "measured": {
+    "plate": [
+     -0.03,
+     0.11,
+     0.155
+    ],
+    "err": 0.0067,
+    "tilt": 0.0
+   }
+  },
+  {
+   "goal": 3,
+   "kind": "joint",
+   "spec": {
+    "joint": "oven_door_j",
+    "state": "shut"
+   },
+   "attempts": [
+    {
+     "n": 1,
+     "ok": false,
+     "measured": 2.25,
+     "sim_s": 66.5,
+     "wall_s": 60.0,
+     "info": {
+      "ok": false,
+      "err_xy": 0.025,
+      "err_yaw": -0.011,
+      "seconds": 3.9,
+      "standing": true,
+      "door_deg": 2.25,
+      "closed_deg": 0.62
+     }
+    },
+    {
+     "n": 2,
+     "ok": true,
+     "measured": 1.49,
+     "sim_s": 5.9,
+     "wall_s": 4.4,
+     "info": {
+      "ok": true,
+      "door_deg": 1.49
+     }
+    }
+   ],
+   "ok": true,
+   "measured": 1.49
+  },
+  {
+   "goal": 4,
+   "kind": "joint",
+   "spec": {
+    "joint": "oven_knob_temp_j",
+    "state": "on",
+    "value_deg": 60.8
+   },
+   "attempts": [
+    {
+     "n": 1,
+     "ok": true,
+     "measured": 49.0,
+     "sim_s": 42.4,
+     "wall_s": 26.5,
+     "info": {
+      "knob_deg": 49.0,
+      "others": {
+       "sel": 0.0,
+       "func": 0.0,
+       "timer": 0.0
+      },
+      "ok": true,
+      "door_deg": 0.23
+     }
+    }
+   ],
+   "ok": true,
+   "measured": 49.0
+  },
+  {
+   "goal": 5,
+   "kind": "hold",
+   "spec": {
+    "heat": "plate_food",
+    "seconds": 16.1
+   },
+   "attempts": [
+    {
+     "n": 1,
+     "ok": true,
+     "measured": {
+      "seconds_on": 12.3,
+      "temp": 48.5
+     },
+     "sim_s": 11.9,
+     "wall_s": 9.1,
+     "info": {
+      "ok": true,
+      "food_temp": 48.5
+     }
+    }
+   ],
+   "ok": true,
+   "measured": {
+    "seconds_on": 12.3,
+    "temp": 48.5
+   }
+  },
+  {
+   "goal": 6,
+   "kind": "joint",
+   "spec": {
+    "joint": "oven_knob_temp_j",
+    "state": "off",
+    "value_deg": 1.7
+   },
+   "attempts": [
+    {
+     "n": 1,
+     "ok": true,
+     "measured": 1.4,
+     "sim_s": 39.6,
+     "wall_s": 26.2,
+     "info": {
+      "ok": true,
+      "err_xy": 0.017,
+      "err_yaw": 0.008,
+      "seconds": 3.1,
+      "standing": true,
+      "knob_deg": 1.4,
+      "door_deg": 9.11
+     }
+    }
+   ],
+   "ok": true,
+   "measured": 1.4
+  },
+  {
+   "goal": 7,
+   "kind": "joint",
+   "spec": {
+    "joint": "oven_door_j",
+    "state": "open"
+   },
+   "attempts": [
+    {
+     "n": 1,
+     "ok": true,
+     "measured": 84.38,
+     "sim_s": 41.0,
+     "wall_s": 36.5,
+     "info": {
+      "door_deg": 84.4,
+      "ok": true
+     }
+    }
+   ],
+   "ok": true,
+   "measured": 84.38
+  },
+  {
+   "goal": 8,
+   "kind": "out",
+   "spec": {
+    "object": "plate",
+    "out_of": "oven"
+   },
+   "attempts": [
+    {
+     "n": 1,
+     "ok": true,
+     "measured": {
+      "plate": [
+       -0.04,
+       -0.11,
+       0.188
+      ],
+      "held": true,
+      "tilt": 2.8
+     },
+     "sim_s": 45.9,
+     "wall_s": 43.2,
+     "info": {
+      "ok": true,
+      "err_xy": 0.025,
+      "err_yaw": 0.007,
+      "seconds": 4.7,
+      "standing": true,
+      "lifted": 0.035,
+      "tilt": 2.8,
+      "plate_out": [
+       -0.04,
+       -0.11,
+       0.188
+      ],
+      "food": [
+       0.0,
+       -0.011,
+       0.042
+      ]
+     }
+    }
+   ],
+   "ok": true,
+   "measured": {
+    "plate": [
+     -0.04,
+     -0.11,
+     0.188
+    ],
+    "held": true,
+    "tilt": 2.8
+   }
+  },
+  {
+   "goal": 9,
+   "kind": "place",
+   "spec": {
+    "object": "plate",
+    "on": "counter",
+    "at": "start"
+   },
+   "attempts": [
+    {
+     "n": 1,
+     "ok": true,
+     "measured": {
+      "err": 0.0047,
+      "dz": -0.0006,
+      "tilt": 0.0
+     },
+     "sim_s": 64.3,
+     "wall_s": 46.5,
+     "info": {
+      "ok": true,
+      "err": 0.0047,
+      "height": -0.0006,
+      "tilt": 0.01
+     }
+    }
+   ],
+   "ok": true,
+   "measured": {
+    "err": 0.0047,
+    "dz": -0.0006,
+    "tilt": 0.0
+   }
+  },
+  {
+   "goal": 10,
+   "kind": "joint",
+   "spec": {
+    "joint": "oven_door_j",
+    "state": "shut"
+   },
+   "attempts": [
+    {
+     "n": 1,
+     "ok": true,
+     "measured": 0.28,
+     "sim_s": 40.9,
+     "wall_s": 38.5,
+     "info": {
+      "ok": true,
+      "err_xy": 0.023,
+      "err_yaw": -0.011,
+      "seconds": 3.9,
+      "standing": true,
+      "door_deg": 0.28,
+      "holding": true
+     }
+    }
+   ],
+   "ok": true,
+   "measured": 0.28
+  },
+  {
+   "goal": 11,
+   "kind": "stand",
+   "spec": {
+    "robot": "standing"
+   },
+   "attempts": [
+    {
+     "n": 1,
+     "ok": true,
+     "measured": {
+      "zmin": 0.687
+     },
+     "sim_s": 1.0,
+     "wall_s": 0.6,
+     "info": {
+      "ok": true
+     }
+    }
+   ],
+   "ok": true,
+   "measured": {
+    "zmin": 0.687
+   }
+  }
+ ],
+ "plan": {
+  "S": [
+   0.413617,
+   -0.258
+  ],
+  "D": [
+   0.2718070817792471,
+   -0.318
+  ],
+  "C": [
+   0.2718070817792471,
+   -0.43799999999999994
+  ],
+  "K": [
+   0.1133396825252085,
+   -0.318
+  ],
+  "along": 0.1,
+  "tried_S": 1,
+  "ok": true
+ },
+ "plan_seconds": 0.0,
+ "guard_events": 3,
+ "guard_log": [
+  {
+   "t": 26.59,
+   "reason": "capture point -8.0 cm from the support edge",
+   "held": [
+    "ee_left"
+   ]
+  },
+  {
+   "t": 49.31,
+   "reason": "capture point 0.5 cm from the support edge",
+   "held": [
+    "ee_left"
+   ]
+  },
+  {
+   "t": 337.09,
+   "reason": "capture point -1.4 cm from the support edge",
+   "held": [
+    "ee_left"
+   ]
+  }
+ ]
+}

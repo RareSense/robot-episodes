@@ -36,6 +36,14 @@ A Unitree G1 with three-finger hands makes tea, following a person's head-camera
 
 ---
 
+## G1 oven: five full episodes
+
+Long-horizon whole-body task, 7.5 to 9 minutes each: walk to a counter, open an oven, put a plate of food in, heat it, take it out, close the door. Five episodes, each in a different room with a different oven. MuJoCo torque-level physics, contact-only grasps, a 20-check validator with values (5 of 5 pass), full state recordings, and main, head and hand videos. See [oven/](oven/README.md).
+
+<a href="oven/README.md"><img src="oven/hero.gif" width="880" alt="G1 oven episode: main, head and hand views"></a>
+
+---
+
 ## Data
 
 ### `data/`
