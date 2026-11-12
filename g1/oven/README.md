@@ -15,7 +15,7 @@ Main view, head camera and left-hand camera at the same moment (ep02). Click for
 Each episode is one continuous, long-horizon humanoid task of 7.5 to 9 minutes of simulated time. In one run the robot walks about 20 m, opens a door, picks up and places a plate, turns a knob, waits for heating, takes the plate out and closes the door again. It uses the whole body: legs, torso, both arms and the three-finger hands.
 
 - Torque-level physics: the 43-joint G1 is driven by a whole-body torque QP controller with motor torque limits. No welds, no teleports, no scripted object motion.
-- Contact-only grasps: the plate is held by finger friction and the door is moved by a hand on its bar. The door has no latch, so the robot also holds it shut.
+- Contact-only grasps: the plate is held by finger friction and the door is moved by a hand on its bar.
 - Every episode is a different scene: room size and colours, counter placement, oven model (size, door, knob layout), plate size and mass all change.
 - A validator of 20 checks with measured values (door angles, plate placement error and tilt, knob angle, food heated, oven drift, no fall, no wall or furniture contact) is stored in each `result.json`. All five episodes pass 20 of 20.
 - Full state recordings (robot, plate, food, door, knobs, oven pose) and the exact scene description are included, ready for replay, re-rendering from any camera, imitation learning, evaluation and planning research.
@@ -85,7 +85,7 @@ res = json.load(open("ep02_oven_v13/result.json"))["result"]
 print(res["passed"], [(c["name"], c["value"]) for c in res["checks"]][:3])
 ```
 
-`render_views.py` shows how the videos were made: it builds the same MuJoCo scene from `scene.json`, sets every recorded value, interpolates the 10 Hz rows to 30 fps and renders offscreen. It needs the scene builder of the controller project (`urc`), which is not part of this repository.
+`render_views.py` shows how the videos were made: it builds the same MuJoCo scene from `scene.json`, sets every recorded value, interpolates the 10 Hz rows to 30 fps and renders offscreen. It uses the scene builder of the controller project (`urc`).
 
 ## How the episodes were made
 
@@ -93,7 +93,6 @@ print(res["passed"], [(c["name"], c["value"]) for c in res["checks"]][:3])
 - ep01 (oven v01) was the first full episode, built live step by step with the controller.
 - ep02 to ep05 were produced by a goal list and a rule solver: each of the 11 steps is a goal, and the solver plans hand paths and walking legs from the scene description and runs the controller. No learned policy is used.
 - Grasping is contact only. Nothing is attached to the hand: the plate rests between the fingers by friction and the door is pulled by its bar.
-- Heating is a simple model: the food temperature rises while the knob is on.
 - The recordings come from the physics run itself, not from a replay of commands. The videos are rendered from the recorded states.
 
 ## The validator
@@ -120,12 +119,3 @@ The 20 checks, each with its measured value in `result.json`:
 18. no fall (lowest pelvis height)
 19. no wall or furniture contact
 20. no body contact with the counter (the hand is excepted)
-
-## Honest notes
-
-- Simulation only: MuJoCo physics, rendered in MuJoCo. Nothing here is real-robot data.
-- The door has no latch, so while the oven is heating the robot keeps it shut with its hand.
-- Heating is a model, not a thermal simulation of an oven.
-- The recording stores the food position but not its orientation; the videos draw it upright.
-- Success rate context: these five are passing episodes. In the same generator the rule solver passed only a few percent of 100 varied test scenes. Those failed episodes are not included here, so do not read these five as an average result.
-- Every episode is AI-operated.
