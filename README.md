@@ -15,7 +15,7 @@ Three robots. Household tasks. Videos, recordings, datasets and code.
 <table>
 <tr>
 <td align="center" width="33%"><a href="stretch/README.md"><img src="stretch/videos/previews/stretch_card.jpg" width="100%" alt="Stretch placing a pizza in the oven"><br><b>Stretch</b></a><br>Pizza in and out of an oven<br>Isaac Sim, CPU PhysX</td>
-<td align="center" width="33%"><a href="g1/oven/README.md"><img src="g1/oven/ep02_oven_v13/previews/main.gif" width="270" alt="G1 oven"><br><b>G1</b></a><br>Full oven task in 5 different rooms, and making tea<br>MuJoCo, whole-body torque control</td>
+<td align="center" width="33%"><a href="g1/oven/README.md"><img src="g1/oven/g1_oven_card.jpg" width="100%" alt="G1 placing a plate in the oven"><br><b>G1</b></a><br>Full oven task in 5 different rooms, and making tea<br>MuJoCo, whole-body torque control</td>
 <td align="center" width="33%"><a href="h1_2/README.md"><img src="h1_2/videos/previews/h12_carry.jpg" width="270" alt="H1-2"><br><b>H1-2</b></a><br>Making tea with live water<br>Isaac Sim, GPU PhysX</td>
 </tr>
 </table>
